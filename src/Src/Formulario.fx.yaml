@@ -77,35 +77,35 @@ Formulario As screen:
         FontWeight: =FontWeight.Bold
         Size: =22
         Text: ="Crear nueva solicitud"
-        Width: =800
+        Width: =900
         X: =(Parent.Width - Width) / 2
-        Y: =80
+        Y: =75
         ZIndex: =2
 
     LblFormSub_F As label:
         Color: =RGBA(102, 102, 102, 1)
         Size: =10
         Text: ="Completa los campos para registrar un incidente o requerimiento de soporte TI."
-        Width: =800
+        Width: =900
         X: =(Parent.Width - Width) / 2
-        Y: =110
+        Y: =105
         ZIndex: =2
 
     Divider1_F As rectangle:
         Fill: =RGBA(234, 237, 237, 1)
         Height: =1
-        Width: =800
+        Width: =900
         X: =(Parent.Width - Width) / 2
-        Y: =135
+        Y: =125
         ZIndex: =2
 
     LblTipo_F As label:
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="Tipo de solicitud *"
-        Width: =800
+        Width: =900
         X: =(Parent.Width - Width) / 2
-        Y: =150
+        Y: =145
         ZIndex: =2
 
     BgIncidente_F As rectangle:
@@ -115,9 +115,9 @@ Formulario As screen:
         RadiusBottomRight: =8
         RadiusTopLeft: =8
         RadiusTopRight: =8
-        Width: =385
-        X: =(Parent.Width - 800) / 2
-        Y: =175
+        Width: =440
+        X: =(Parent.Width - 900) / 2
+        Y: =170
         ZIndex: =2
 
     BorderIncidente_F As rectangle:
@@ -129,33 +129,33 @@ Formulario As screen:
         RadiusBottomRight: =8
         RadiusTopLeft: =8
         RadiusTopRight: =8
-        Width: =385
-        X: =(Parent.Width - 800) / 2
-        Y: =175
+        Width: =440
+        X: =(Parent.Width - 900) / 2
+        Y: =170
         ZIndex: =3
 
     IconInc_F As icon.Laptop:
         Color: =RGBA(255, 153, 0, 1)
         Height: =24
         Width: =24
-        X: =((Parent.Width - 800) / 2) + 15
-        Y: =198
+        X: =((Parent.Width - 900) / 2) + 20
+        Y: =193
         ZIndex: =4
 
     LblIncTitle_F As label:
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="Incidente"
-        X: =((Parent.Width - 800) / 2) + 50
-        Y: =190
+        X: =((Parent.Width - 900) / 2) + 60
+        Y: =183
         ZIndex: =4
 
     LblIncDesc_F As label:
         Color: =RGBA(128, 128, 128, 1)
         Size: =9
         Text: ="Falla o error inesperado"
-        X: =((Parent.Width - 800) / 2) + 50
-        Y: =210
+        X: =((Parent.Width - 900) / 2) + 60
+        Y: =203
         ZIndex: =4
 
     BgReq_F As rectangle:
@@ -165,9 +165,9 @@ Formulario As screen:
         RadiusBottomRight: =8
         RadiusTopLeft: =8
         RadiusTopRight: =8
-        Width: =385
-        X: =((Parent.Width - 800) / 2) + 415
-        Y: =175
+        Width: =440
+        X: =((Parent.Width - 900) / 2) + 460
+        Y: =170
         ZIndex: =2
 
     BorderReq_F As rectangle:
@@ -179,53 +179,53 @@ Formulario As screen:
         RadiusBottomRight: =8
         RadiusTopLeft: =8
         RadiusTopRight: =8
-        Width: =385
-        X: =((Parent.Width - 800) / 2) + 415
-        Y: =175
+        Width: =440
+        X: =((Parent.Width - 900) / 2) + 460
+        Y: =170
         ZIndex: =3
 
     IconReq_F As icon.Document:
         Color: =RGBA(86, 89, 89, 1)
         Height: =24
         Width: =24
-        X: =((Parent.Width - 800) / 2) + 430
-        Y: =198
+        X: =((Parent.Width - 900) / 2) + 480
+        Y: =193
         ZIndex: =4
 
     LblReqTitle_F As label:
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="Requerimiento"
-        X: =((Parent.Width - 800) / 2) + 465
-        Y: =190
+        X: =((Parent.Width - 900) / 2) + 520
+        Y: =183
         ZIndex: =4
 
     LblReqDesc_F As label:
         Color: =RGBA(128, 128, 128, 1)
         Size: =9
         Text: ="Solicitud de servicio"
-        X: =((Parent.Width - 800) / 2) + 465
-        Y: =210
+        X: =((Parent.Width - 900) / 2) + 520
+        Y: =203
         ZIndex: =4
 
     LblCat_F As label:
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="Categoría *"
-        Width: =800
+        Width: =900
         X: =(Parent.Width - Width) / 2
         Y: =260
         ZIndex: =2
 
     BgSoft_F As rectangle:
         Fill: =RGBA(255, 153, 0, 0.05)
-        Height: =90
+        Height: =80
         RadiusBottomLeft: =8
         RadiusBottomRight: =8
         RadiusTopLeft: =8
         RadiusTopRight: =8
-        Width: =250
-        X: =(Parent.Width - 800) / 2
+        Width: =290
+        X: =(Parent.Width - 900) / 2
         Y: =285
         ZIndex: =2
 
@@ -233,46 +233,110 @@ Formulario As screen:
         Fill: =RGBA(0,0,0,0)
         BorderColor: =RGBA(255, 153, 0, 1)
         BorderThickness: =2
-        Height: =90
+        Height: =80
         RadiusBottomLeft: =8
         RadiusBottomRight: =8
         RadiusTopLeft: =8
         RadiusTopRight: =8
-        Width: =250
-        X: =(Parent.Width - 800) / 2
+        Width: =290
+        X: =(Parent.Width - 900) / 2
         Y: =285
         ZIndex: =3
-
-    IconSoft_F As icon.Laptop:
-        Color: =RGBA(35, 47, 62, 1)
-        Height: =32
-        Width: =32
-        X: =((Parent.Width - 800) / 2) + 109
-        Y: =305
-        ZIndex: =4
 
     LblSoftTitle_F As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="Software"
-        Width: =250
-        X: =(Parent.Width - 800) / 2
-        Y: =340
+        Width: =290
+        X: =(Parent.Width - 900) / 2
+        Y: =315
+        ZIndex: =4
+
+    BgHard_F As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =80
+        RadiusBottomLeft: =8
+        RadiusBottomRight: =8
+        RadiusTopLeft: =8
+        RadiusTopRight: =8
+        Width: =290
+        X: =((Parent.Width - 900) / 2) + 305
+        Y: =285
+        ZIndex: =2
+
+    BorderHard_F As rectangle:
+        Fill: =RGBA(0,0,0,0)
+        BorderColor: =RGBA(211, 211, 211, 1)
+        BorderThickness: =1
+        Height: =80
+        RadiusBottomLeft: =8
+        RadiusBottomRight: =8
+        RadiusTopLeft: =8
+        RadiusTopRight: =8
+        Width: =290
+        X: =((Parent.Width - 900) / 2) + 305
+        Y: =285
+        ZIndex: =3
+
+    LblHardTitle_F As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="Hardware"
+        Width: =290
+        X: =((Parent.Width - 900) / 2) + 305
+        Y: =315
+        ZIndex: =4
+
+    BgAcc_F As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =80
+        RadiusBottomLeft: =8
+        RadiusBottomRight: =8
+        RadiusTopLeft: =8
+        RadiusTopRight: =8
+        Width: =290
+        X: =((Parent.Width - 900) / 2) + 610
+        Y: =285
+        ZIndex: =2
+
+    BorderAcc_F As rectangle:
+        Fill: =RGBA(0,0,0,0)
+        BorderColor: =RGBA(211, 211, 211, 1)
+        BorderThickness: =1
+        Height: =80
+        RadiusBottomLeft: =8
+        RadiusBottomRight: =8
+        RadiusTopLeft: =8
+        RadiusTopRight: =8
+        Width: =290
+        X: =((Parent.Width - 900) / 2) + 610
+        Y: =285
+        ZIndex: =3
+
+    LblAccTitle_F As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="Acceso"
+        Width: =290
+        X: =((Parent.Width - 900) / 2) + 610
+        Y: =315
         ZIndex: =4
 
     LblDesc_F As label:
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="Descripción *"
-        Width: =800
+        Width: =900
         X: =(Parent.Width - Width) / 2
-        Y: =390
+        Y: =380
         ZIndex: =2
 
     TxtDesc_F As text:
         Fill: =RGBA(43, 43, 43, 1)
-        Height: =100
+        Height: =80
         HintText: ="Describe detalladamente el problema o solicitud..."
         Mode: =TextMode.MultiLine
         PaddingLeft: =15
@@ -281,18 +345,18 @@ Formulario As screen:
         RadiusTopLeft: =8
         RadiusTopRight: =8
         Size: =10
-        Width: =800
+        Width: =900
         X: =(Parent.Width - Width) / 2
-        Y: =415
+        Y: =405
         ZIndex: =2
 
     LblAttach_F As label:
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="Evidencias adjuntas"
-        Width: =800
+        Width: =900
         X: =(Parent.Width - Width) / 2
-        Y: =530
+        Y: =500
         ZIndex: =2
 
     BgAttach_F As rectangle:
@@ -300,23 +364,15 @@ Formulario As screen:
         BorderStyle: =BorderStyle.Dashed
         BorderColor: =RGBA(211, 211, 211, 1)
         BorderThickness: =1
-        Height: =110
+        Height: =80
         RadiusBottomLeft: =8
         RadiusBottomRight: =8
         RadiusTopLeft: =8
         RadiusTopRight: =8
-        Width: =800
+        Width: =900
         X: =(Parent.Width - Width) / 2
-        Y: =555
+        Y: =525
         ZIndex: =2
-
-    IconClip_F As icon.Paperclip:
-        Color: =RGBA(35, 47, 62, 1)
-        Height: =32
-        Width: =32
-        X: =(Parent.Width - Width) / 2
-        Y: =570
-        ZIndex: =3
 
     LblAttachMain_F As label:
         Align: =Align.Center
@@ -324,16 +380,16 @@ Formulario As screen:
         FontWeight: =FontWeight.Bold
         Size: =10
         Text: ="Haz clic para adjuntar o arrastra aquí"
-        Width: =800
+        Width: =900
         X: =(Parent.Width - Width) / 2
-        Y: =610
+        Y: =550
         ZIndex: =3
 
     BtnSubmit_F As button:
         BorderColor: =RGBA(234, 237, 237, 1)
         BorderThickness: =1
         Color: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(35, 47, 62, 0.1)
+        Fill: =RGBA(35, 47, 62, 1)
         FontWeight: =FontWeight.Bold
         Height: =45
         RadiusBottomLeft: =12
@@ -343,7 +399,7 @@ Formulario As screen:
         Text: ="Enviar Solicitud →"
         Width: =400
         X: =(Parent.Width - Width) / 2
-        Y: =680
+        Y: =625
         ZIndex: =2
 
     FooterBg_F As rectangle:
