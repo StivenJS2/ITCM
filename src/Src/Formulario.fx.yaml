@@ -1,393 +1,364 @@
 Formulario As screen:
     Fill: =RGBA(255, 255, 255, 1)
 
-    HeaderContainer_F As groupContainer:
+    HeaderBg_F As rectangle:
         Fill: =RGBA(35, 47, 62, 1)
         Height: =60
         Width: =Parent.Width
         X: =0
         Y: =0
-        ZIndex: =10
-
-        LblAmazonLogo_F As label:
-            Color: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Bold
-            Size: =20
-            Text: ="Amazon"
-            Width: =120
-            X: =20
-            Y: =(Parent.Height - Height) / 2
-            ZIndex: =1
-
-        NavButtons_F As groupContainer:
-            Height: =Parent.Height
-            Width: =400
-            X: =160
-            Y: =0
-            ZIndex: =2
-
-            BtnNavForm_F As button:
-                BorderColor: =RGBA(255, 153, 0, 1)
-                Fill: =RGBA(35, 47, 62, 1)
-                FontWeight: =FontWeight.Bold
-                Height: =40
-                OnSelect: =Navigate(Formulario)
-                Text: ="Formulario"
-                Width: =120
-                X: =0
-                Y: =(Parent.Height - Height) / 2
-                ZIndex: =1
-
-            BtnNavGest_F As button:
-                Fill: =RGBA(35, 47, 62, 1)
-                Height: =40
-                OnSelect: =Navigate(Gestion)
-                Text: ="Gestión"
-                Width: =120
-                X: =130
-                Y: =(Parent.Height - Height) / 2
-                ZIndex: =2
-
-            BtnNavTickets_F As button:
-                Fill: =RGBA(35, 47, 62, 1)
-                Height: =40
-                OnSelect: =Navigate(Tickets)
-                Text: ="Tickets"
-                Width: =120
-                X: =260
-                Y: =(Parent.Height - Height) / 2
-                ZIndex: =3
-
-        UserContainer_F As groupContainer:
-            Height: =Parent.Height
-            Width: =200
-            X: =Parent.Width - Width - 20
-            Y: =0
-            ZIndex: =3
-
-            BtnUserAvatar_F As button:
-                Fill: =RGBA(255, 153, 0, 1)
-                Height: =36
-                RadiusBottomLeft: =18
-                RadiusBottomRight: =18
-                RadiusTopLeft: =18
-                RadiusTopRight: =18
-                Text: =Left(User().FullName, 1)
-                Width: =36
-                X: =0
-                Y: =(Parent.Height - Height) / 2
-                ZIndex: =1
-
-            LblUserHi_F As label:
-                Color: =RGBA(255, 255, 255, 1)
-                Size: =10
-                Text: ="Hola, Usuario"
-                Width: =140
-                X: =46
-                Y: =(Parent.Height - Height) / 2
-                ZIndex: =2
-
-    MainContent_F As groupContainer:
-        Height: =640
-        Width: =800
-        X: =(Parent.Width - Width) / 2
-        Y: =70
         ZIndex: =1
 
-        LblFormTitle_F As label:
-            FontWeight: =FontWeight.Bold
-            Size: =22
-            Text: ="Crear nueva solicitud"
-            Width: =Parent.Width
-            X: =0
-            Y: =0
+    LblAmazonLogo_F As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =20
+        Text: ="Amazon"
+        Width: =120
+        X: =20
+        Y: =15
+        ZIndex: =2
 
-        LblFormSub_F As label:
-            Color: =RGBA(102, 102, 102, 1)
-            Size: =10
-            Text: ="Completa los campos para registrar un incidente o requerimiento de soporte TI."
-            Width: =Parent.Width
-            X: =0
-            Y: =30
+    BtnNavForm_F As button:
+        BorderColor: =RGBA(255, 153, 0, 1)
+        Fill: =RGBA(35, 47, 62, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =40
+        OnSelect: =Navigate(Formulario)
+        Text: ="Formulario"
+        Width: =120
+        X: =160
+        Y: =10
+        ZIndex: =2
 
-        Divider1_F As rectangle:
-            Fill: =RGBA(234, 237, 237, 1)
-            Height: =1
-            Width: =Parent.Width
-            X: =0
-            Y: =55
+    BtnNavGest_F As button:
+        Fill: =RGBA(35, 47, 62, 1)
+        Height: =40
+        OnSelect: =Navigate(Gestion)
+        Text: ="Gestión"
+        Width: =120
+        X: =290
+        Y: =10
+        ZIndex: =2
 
-        LblTipo_F As label:
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="Tipo de solicitud *"
-            Width: =Parent.Width
-            X: =0
-            Y: =70
+    BtnNavTickets_F As button:
+        Fill: =RGBA(35, 47, 62, 1)
+        Height: =40
+        OnSelect: =Navigate(Tickets)
+        Text: ="Tickets"
+        Width: =120
+        X: =420
+        Y: =10
+        ZIndex: =2
 
-        CardIncidente_F As groupContainer:
-            BorderColor: =RGBA(255, 153, 0, 1)
-            BorderThickness: =2
-            Fill: =RGBA(255, 153, 0, 0.05)
-            Height: =70
-            RadiusBottomLeft: =8
-            RadiusBottomRight: =8
-            RadiusTopLeft: =8
-            RadiusTopRight: =8
-            Width: =385
-            X: =0
-            Y: =95
+    BtnUserAvatar_F As button:
+        Fill: =RGBA(255, 153, 0, 1)
+        Height: =36
+        RadiusBottomLeft: =18
+        RadiusBottomRight: =18
+        RadiusTopLeft: =18
+        RadiusTopRight: =18
+        Text: =Left(User().FullName, 1)
+        Width: =36
+        X: =Parent.Width - 200
+        Y: =12
+        ZIndex: =2
 
-            IconInc_F As icon.Laptop:
-                Color: =RGBA(255, 153, 0, 1)
-                Height: =24
-                Width: =24
-                X: =15
-                Y: =23
+    LblUserHi_F As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Size: =10
+        Text: ="Hola, Usuario"
+        Width: =140
+        X: =Parent.Width - 154
+        Y: =18
+        ZIndex: =2
 
-            LblIncTitle_F As label:
-                FontWeight: =FontWeight.Bold
-                Size: =10
-                Text: ="Incidente"
-                X: =50
-                Y: =15
+    LblFormTitle_F As label:
+        FontWeight: =FontWeight.Bold
+        Size: =22
+        Text: ="Crear nueva solicitud"
+        Width: =800
+        X: =(Parent.Width - Width) / 2
+        Y: =80
+        ZIndex: =2
 
-            LblIncDesc_F As label:
-                Color: =RGBA(128, 128, 128, 1)
-                Size: =9
-                Text: ="Falla o error inesperado"
-                X: =50
-                Y: =35
+    LblFormSub_F As label:
+        Color: =RGBA(102, 102, 102, 1)
+        Size: =10
+        Text: ="Completa los campos para registrar un incidente o requerimiento de soporte TI."
+        Width: =800
+        X: =(Parent.Width - Width) / 2
+        Y: =110
+        ZIndex: =2
 
-        CardRequerimiento_F As groupContainer:
-            BorderColor: =RGBA(211, 211, 211, 1)
-            BorderThickness: =1
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =70
-            RadiusBottomLeft: =8
-            RadiusBottomRight: =8
-            RadiusTopLeft: =8
-            RadiusTopRight: =8
-            Width: =385
-            X: =415
-            Y: =95
+    Divider1_F As rectangle:
+        Fill: =RGBA(234, 237, 237, 1)
+        Height: =1
+        Width: =800
+        X: =(Parent.Width - Width) / 2
+        Y: =135
+        ZIndex: =2
 
-            IconReq_F As icon.Document:
-                Color: =RGBA(86, 89, 89, 1)
-                Height: =24
-                Width: =24
-                X: =15
-                Y: =23
+    LblTipo_F As label:
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="Tipo de solicitud *"
+        Width: =800
+        X: =(Parent.Width - Width) / 2
+        Y: =150
+        ZIndex: =2
 
-            LblReqTitle_F As label:
-                FontWeight: =FontWeight.Bold
-                Size: =10
-                Text: ="Requerimiento"
-                X: =50
-                Y: =15
+    BgIncidente_F As rectangle:
+        Fill: =RGBA(255, 153, 0, 0.05)
+        Height: =70
+        RadiusBottomLeft: =8
+        RadiusBottomRight: =8
+        RadiusTopLeft: =8
+        RadiusTopRight: =8
+        Width: =385
+        X: =(Parent.Width - 800) / 2
+        Y: =175
+        ZIndex: =2
 
-            LblReqDesc_F As label:
-                Color: =RGBA(128, 128, 128, 1)
-                Size: =9
-                Text: ="Solicitud de servicio"
-                X: =50
-                Y: =35
+    BorderIncidente_F As rectangle:
+        Fill: =RGBA(0,0,0,0)
+        BorderColor: =RGBA(255, 153, 0, 1)
+        BorderThickness: =2
+        Height: =70
+        RadiusBottomLeft: =8
+        RadiusBottomRight: =8
+        RadiusTopLeft: =8
+        RadiusTopRight: =8
+        Width: =385
+        X: =(Parent.Width - 800) / 2
+        Y: =175
+        ZIndex: =3
 
-        LblCat_F As label:
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="Categoría *"
-            Width: =Parent.Width
-            X: =0
-            Y: =180
+    IconInc_F As icon.Laptop:
+        Color: =RGBA(255, 153, 0, 1)
+        Height: =24
+        Width: =24
+        X: =((Parent.Width - 800) / 2) + 15
+        Y: =198
+        ZIndex: =4
 
-        CardSoftware_F As groupContainer:
-            BorderColor: =RGBA(255, 153, 0, 1)
-            BorderThickness: =2
-            Fill: =RGBA(255, 153, 0, 0.05)
-            Height: =90
-            RadiusBottomLeft: =8
-            RadiusBottomRight: =8
-            RadiusTopLeft: =8
-            RadiusTopRight: =8
-            Width: =250
-            X: =0
-            Y: =205
+    LblIncTitle_F As label:
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="Incidente"
+        X: =((Parent.Width - 800) / 2) + 50
+        Y: =190
+        ZIndex: =4
 
-            IconSoft_F As icon.Laptop:
-                Color: =RGBA(35, 47, 62, 1)
-                Height: =32
-                Width: =32
-                X: =(Parent.Width - Width) / 2
-                Y: =15
+    LblIncDesc_F As label:
+        Color: =RGBA(128, 128, 128, 1)
+        Size: =9
+        Text: ="Falla o error inesperado"
+        X: =((Parent.Width - 800) / 2) + 50
+        Y: =210
+        ZIndex: =4
 
-            LblSoftTitle_F As label:
-                Align: =Align.Center
-                FontWeight: =FontWeight.Bold
-                Size: =10
-                Text: ="Software"
-                Width: =Parent.Width
-                X: =0
-                Y: =55
+    BgReq_F As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =70
+        RadiusBottomLeft: =8
+        RadiusBottomRight: =8
+        RadiusTopLeft: =8
+        RadiusTopRight: =8
+        Width: =385
+        X: =((Parent.Width - 800) / 2) + 415
+        Y: =175
+        ZIndex: =2
 
-        CardHardware_F As groupContainer:
-            BorderColor: =RGBA(211, 211, 211, 1)
-            BorderThickness: =1
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =90
-            RadiusBottomLeft: =8
-            RadiusBottomRight: =8
-            RadiusTopLeft: =8
-            RadiusTopRight: =8
-            Width: =250
-            X: =275
-            Y: =205
+    BorderReq_F As rectangle:
+        Fill: =RGBA(0,0,0,0)
+        BorderColor: =RGBA(211, 211, 211, 1)
+        BorderThickness: =1
+        Height: =70
+        RadiusBottomLeft: =8
+        RadiusBottomRight: =8
+        RadiusTopLeft: =8
+        RadiusTopRight: =8
+        Width: =385
+        X: =((Parent.Width - 800) / 2) + 415
+        Y: =175
+        ZIndex: =3
 
-            IconHard_F As icon.ComputerDesktop:
-                Color: =RGBA(35, 47, 62, 1)
-                Height: =32
-                Width: =32
-                X: =(Parent.Width - Width) / 2
-                Y: =15
+    IconReq_F As icon.Document:
+        Color: =RGBA(86, 89, 89, 1)
+        Height: =24
+        Width: =24
+        X: =((Parent.Width - 800) / 2) + 430
+        Y: =198
+        ZIndex: =4
 
-            LblHardTitle_F As label:
-                Align: =Align.Center
-                FontWeight: =FontWeight.Bold
-                Size: =10
-                Text: ="Hardware"
-                Width: =Parent.Width
-                X: =0
-                Y: =55
+    LblReqTitle_F As label:
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="Requerimiento"
+        X: =((Parent.Width - 800) / 2) + 465
+        Y: =190
+        ZIndex: =4
 
-        CardAcceso_F As groupContainer:
-            BorderColor: =RGBA(211, 211, 211, 1)
-            BorderThickness: =1
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =90
-            RadiusBottomLeft: =8
-            RadiusBottomRight: =8
-            RadiusTopLeft: =8
-            RadiusTopRight: =8
-            Width: =250
-            X: =550
-            Y: =205
+    LblReqDesc_F As label:
+        Color: =RGBA(128, 128, 128, 1)
+        Size: =9
+        Text: ="Solicitud de servicio"
+        X: =((Parent.Width - 800) / 2) + 465
+        Y: =210
+        ZIndex: =4
 
-            IconAcc_F As icon.Key:
-                Color: =RGBA(255, 153, 0, 1)
-                Height: =32
-                Width: =32
-                X: =(Parent.Width - Width) / 2
-                Y: =15
+    LblCat_F As label:
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="Categoría *"
+        Width: =800
+        X: =(Parent.Width - Width) / 2
+        Y: =260
+        ZIndex: =2
 
-            LblAccTitle_F As label:
-                Align: =Align.Center
-                FontWeight: =FontWeight.Bold
-                Size: =10
-                Text: ="Acceso"
-                Width: =Parent.Width
-                X: =0
-                Y: =55
+    BgSoft_F As rectangle:
+        Fill: =RGBA(255, 153, 0, 0.05)
+        Height: =90
+        RadiusBottomLeft: =8
+        RadiusBottomRight: =8
+        RadiusTopLeft: =8
+        RadiusTopRight: =8
+        Width: =250
+        X: =(Parent.Width - 800) / 2
+        Y: =285
+        ZIndex: =2
 
-        LblDesc_F As label:
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="Descripción *"
-            Width: =Parent.Width
-            X: =0
-            Y: =310
+    BorderSoft_F As rectangle:
+        Fill: =RGBA(0,0,0,0)
+        BorderColor: =RGBA(255, 153, 0, 1)
+        BorderThickness: =2
+        Height: =90
+        RadiusBottomLeft: =8
+        RadiusBottomRight: =8
+        RadiusTopLeft: =8
+        RadiusTopRight: =8
+        Width: =250
+        X: =(Parent.Width - 800) / 2
+        Y: =285
+        ZIndex: =3
 
-        TxtDesc_F As text:
-            Fill: =RGBA(43, 43, 43, 1)
-            Height: =100
-            HintText: ="Describe detalladamente el problema o solicitud..."
-            Mode: =TextMode.MultiLine
-            PaddingLeft: =15
-            RadiusBottomLeft: =8
-            RadiusBottomRight: =8
-            RadiusTopLeft: =8
-            RadiusTopRight: =8
-            Size: =10
-            Width: =Parent.Width
-            X: =0
-            Y: =335
+    IconSoft_F As icon.Laptop:
+        Color: =RGBA(35, 47, 62, 1)
+        Height: =32
+        Width: =32
+        X: =((Parent.Width - 800) / 2) + 109
+        Y: =305
+        ZIndex: =4
 
-        LblAttach_F As label:
-            FontWeight: =FontWeight.Bold
-            Size: =10
-            Text: ="Evidencias adjuntas"
-            Width: =Parent.Width
-            X: =0
-            Y: =450
+    LblSoftTitle_F As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="Software"
+        Width: =250
+        X: =(Parent.Width - 800) / 2
+        Y: =340
+        ZIndex: =4
 
-        AttachBox_F As groupContainer:
-            BorderColor: =RGBA(211, 211, 211, 1)
-            BorderStyle: =BorderStyle.Dashed
-            BorderThickness: =1
-            Fill: =RGBA(249, 250, 251, 1)
-            Height: =110
-            RadiusBottomLeft: =8
-            RadiusBottomRight: =8
-            RadiusTopLeft: =8
-            RadiusTopRight: =8
-            Width: =Parent.Width
-            X: =0
-            Y: =475
+    LblDesc_F As label:
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="Descripción *"
+        Width: =800
+        X: =(Parent.Width - Width) / 2
+        Y: =390
+        ZIndex: =2
 
-            IconClip_F As icon.Paperclip:
-                Color: =RGBA(35, 47, 62, 1)
-                Height: =32
-                Width: =32
-                X: =(Parent.Width - Width) / 2
-                Y: =15
+    TxtDesc_F As text:
+        Fill: =RGBA(43, 43, 43, 1)
+        Height: =100
+        HintText: ="Describe detalladamente el problema o solicitud..."
+        Mode: =TextMode.MultiLine
+        PaddingLeft: =15
+        RadiusBottomLeft: =8
+        RadiusBottomRight: =8
+        RadiusTopLeft: =8
+        RadiusTopRight: =8
+        Size: =10
+        Width: =800
+        X: =(Parent.Width - Width) / 2
+        Y: =415
+        ZIndex: =2
 
-            LblAttachMain_F As label:
-                Align: =Align.Center
-                Color: =RGBA(0, 120, 212, 1)
-                FontWeight: =FontWeight.Bold
-                Size: =10
-                Text: ="Haz clic para adjuntar o arrastra aquí"
-                Width: =Parent.Width
-                X: =0
-                Y: =55
+    LblAttach_F As label:
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="Evidencias adjuntas"
+        Width: =800
+        X: =(Parent.Width - Width) / 2
+        Y: =530
+        ZIndex: =2
 
-            LblAttachSub_F As label:
-                Align: =Align.Center
-                Color: =RGBA(160, 160, 160, 1)
-                Size: =9
-                Text: ="Imágenes (JPG, PNG, GIF) o videos (MP4, MOV) · Máx. 25 MB por archivo"
-                Width: =Parent.Width
-                X: =0
-                Y: =75
+    BgAttach_F As rectangle:
+        Fill: =RGBA(249, 250, 251, 1)
+        BorderStyle: =BorderStyle.Dashed
+        BorderColor: =RGBA(211, 211, 211, 1)
+        BorderThickness: =1
+        Height: =110
+        RadiusBottomLeft: =8
+        RadiusBottomRight: =8
+        RadiusTopLeft: =8
+        RadiusTopRight: =8
+        Width: =800
+        X: =(Parent.Width - Width) / 2
+        Y: =555
+        ZIndex: =2
 
-        BtnSubmit_F As button:
-            BorderColor: =RGBA(234, 237, 237, 1)
-            BorderThickness: =1
-            Color: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(35, 47, 62, 0.1)
-            FontWeight: =FontWeight.Bold
-            Height: =45
-            RadiusBottomLeft: =12
-            RadiusBottomRight: =12
-            RadiusTopLeft: =12
-            RadiusTopRight: =12
-            Text: ="Enviar Solicitud →"
-            Width: =400
-            X: =(Parent.Width - Width) / 2
-            Y: =600
+    IconClip_F As icon.Paperclip:
+        Color: =RGBA(35, 47, 62, 1)
+        Height: =32
+        Width: =32
+        X: =(Parent.Width - Width) / 2
+        Y: =570
+        ZIndex: =3
 
-    Footer_F As groupContainer:
+    LblAttachMain_F As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 120, 212, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="Haz clic para adjuntar o arrastra aquí"
+        Width: =800
+        X: =(Parent.Width - Width) / 2
+        Y: =610
+        ZIndex: =3
+
+    BtnSubmit_F As button:
+        BorderColor: =RGBA(234, 237, 237, 1)
+        BorderThickness: =1
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(35, 47, 62, 0.1)
+        FontWeight: =FontWeight.Bold
+        Height: =45
+        RadiusBottomLeft: =12
+        RadiusBottomRight: =12
+        RadiusTopLeft: =12
+        RadiusTopRight: =12
+        Text: ="Enviar Solicitud →"
+        Width: =400
+        X: =(Parent.Width - Width) / 2
+        Y: =680
+        ZIndex: =2
+
+    FooterBg_F As rectangle:
         Fill: =RGBA(35, 47, 62, 1)
         Height: =60
         Width: =Parent.Width
         X: =0
-        Y: =Parent.Height - Height
-        ZIndex: =4
+        Y: =Parent.Height - Self.Height
+        ZIndex: =1
 
-        LblFoot_F As label:
-            Color: =RGBA(221, 221, 221, 1)
-            Size: =10
-            Text: ="Amazon Style ITCM | Soporte TI · © 2026"
-            Width: =600
-            X: =40
-            Y: =(Parent.Height - Height) / 2
-            ZIndex: =1
+    LblFoot_F As label:
+        Color: =RGBA(221, 221, 221, 1)
+        Size: =10
+        Text: ="Amazon Style ITCM | Soporte TI · © 2026"
+        Width: =600
+        X: =40
+        Y: =Parent.Height - 40
+        ZIndex: =2
