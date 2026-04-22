@@ -117,7 +117,6 @@ Formulario As screen:
             X: =0
             Y: =55
 
-        # Tipo de solicitud
         LblTipo_F As label:
             FontWeight: =FontWeight.Bold
             Size: =10
@@ -194,7 +193,6 @@ Formulario As screen:
                 X: =50
                 Y: =35
 
-        # Categoría
         LblCat_F As label:
             FontWeight: =FontWeight.Bold
             Size: =10
@@ -290,7 +288,6 @@ Formulario As screen:
                 X: =0
                 Y: =55
 
-        # Descripción
         LblDesc_F As label:
             FontWeight: =FontWeight.Bold
             Size: =10
@@ -314,7 +311,6 @@ Formulario As screen:
             X: =0
             Y: =335
 
-        # Evidencias
         LblAttach_F As label:
             FontWeight: =FontWeight.Bold
             Size: =10
