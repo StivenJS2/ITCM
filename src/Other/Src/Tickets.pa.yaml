@@ -1,0 +1,414 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Tickets:
+    Properties:
+      Fill: =RGBA(255, 255, 255, 1)
+      LoadingSpinnerColor: =RGBA(255, 153, 0, 1)
+    Children:
+      - RectNavBg_T:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(51, 62, 72, 1)
+            Height: =60
+            Width: =Parent.Width
+      - RectFiltersBg:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =90
+            Width: =1326
+            X: =20
+            Y: =80
+      - RectTableContainer:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =450
+            Width: =1326
+            X: =20
+            Y: =190
+      - RectUserAvatar_T:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(255, 153, 0, 1)
+            Height: =40
+            Width: =40
+            X: =20
+            Y: =10
+      - LblUserName_T:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Segoe UI'
+            Size: =12
+            Text: =User().FullName
+            Width: =200
+            X: =70
+            Y: =10
+      - LblNavFormulario_T:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            Height: =60
+            OnSelect: =Navigate(Formulario)
+            Text: ="Formulario"
+            X: =400
+      - LblNavGestion_T:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            Height: =60
+            OnSelect: =Navigate(Gestion)
+            Text: ="Gestión"
+            X: =550
+      - LblNavTickets_T:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 153, 0, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =60
+            OnSelect: =Navigate(Tickets)
+            Text: ="Tickets"
+            X: =700
+      - LblFiltroId:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =20
+            Size: =10
+            Text: ="BUSCAR POR ID"
+            X: =40
+            Y: =95
+      - RectInputId:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(168, 177, 185, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 176, 240, 1)
+            Height: =34
+            Width: =180
+            X: =40
+            Y: =120
+      - LblFiltroTipo:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =20
+            Size: =10
+            Text: ="TIPO"
+            X: =240
+            Y: =95
+      - RectInputTipo_T:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(168, 177, 185, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 176, 240, 1)
+            Height: =34
+            Width: =180
+            X: =240
+            Y: =120
+      - LblFiltroCat:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =20
+            Size: =10
+            Text: ="CATEGORÍA"
+            X: =440
+            Y: =95
+      - RectInputCat_T:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(168, 177, 185, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 176, 240, 1)
+            Height: =34
+            Width: =180
+            X: =440
+            Y: =120
+      - LblFiltroEst:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =20
+            Size: =10
+            Text: ="ESTADO"
+            X: =640
+            Y: =95
+      - RectInputEst:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(168, 177, 185, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 176, 240, 1)
+            Height: =34
+            Width: =180
+            X: =640
+            Y: =120
+      - RectBtnFiltrar:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(255, 153, 0, 1)
+            Height: =34
+            Width: =120
+            X: =1200
+            Y: =120
+      - LblH_Id:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Size: =14
+            Text: ="ID"
+            Width: =80
+            X: =40
+            Y: =200
+      - LblH_Tipo:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Size: =14
+            Text: ="Tipo"
+            Width: =120
+            X: =140
+            Y: =200
+      - LblH_Cat:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Size: =14
+            Text: ="Categoría"
+            X: =280
+            Y: =200
+      - LblH_Estado:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Size: =14
+            Text: ="Estado"
+            Width: =120
+            X: =450
+            Y: =200
+      - LblH_Desc:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Size: =14
+            Text: ="Descripción"
+            Width: =400
+            X: =590
+            Y: =200
+      - RectHeaderLine:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(168, 177, 185, 1)
+            Height: =1
+            Width: =1280
+            X: =40
+            Y: =240
+      - LblR1_Id:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            Height: =60
+            Size: =14
+            Text: ="INC-001"
+            Width: =80
+            X: =40
+            Y: =250
+      - LblR1_Tipo:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            Height: =60
+            Size: =14
+            Text: ="Incidente"
+            Width: =120
+            X: =140
+            Y: =250
+      - LblR1_Cat:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            Height: =60
+            Size: =14
+            Text: ="Software"
+            X: =280
+            Y: =250
+      - RectR1_Chip:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(255, 153, 0, 1)
+            Height: =24
+            Width: =80
+            X: =450
+            Y: =268
+      - LblR1_Desc:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            Height: =60
+            Size: =14
+            Text: ="No puedo acceder a mi correo institucional"
+            Width: =400
+            X: =590
+            Y: =250
+      - RectLine1:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(234, 237, 237, 1)
+            Height: =1
+            Width: =1280
+            X: =40
+            Y: =310
+      - RectNavActiveIndicator_T:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(255, 153, 0, 1)
+            Height: =4
+            X: =700
+            Y: =56
+      - LblBtnFiltrar:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =34
+            Size: =14
+            Text: ="Filtrar"
+            Width: =120
+            X: =1200
+            Y: =120
+      - LblR1_Estado:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Fill: =RGBA(255, 153, 0, 1)
+            Font: =Font.'Open Sans'
+            Height: =24
+            Size: =9
+            Text: ="ABIERTO"
+            Width: =80
+            X: =450
+            Y: =268
+      - RectFooterBg_G_1:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(35, 47, 47, 1)
+            Height: =66
+            Width: =Parent.Width
+            Y: =702
+      - LblFooterBrand_G_1:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(221, 221, 221, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            Size: =14
+            Text: ="ITCM - Amazon Ticket Management"
+            Width: =400
+            X: =33
+            Y: =718
+      - LblFooterRights_G_1:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(221, 221, 221, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            Height: =30
+            Size: =14
+            Text: ="© 2026 Amazon Style UI. Todos los derechos reservados."
+            Width: =528
+            X: =816
+            Y: =718
