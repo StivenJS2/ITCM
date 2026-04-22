@@ -1,0 +1,30 @@
+# Formulario
+
+## Form Screen Design
+
+### Request Type
+* Dropdown selection with options: 
+  - Incident
+  - Request
+  - Question
+
+### Category
+* Dropdown selection with options based on Request Type
+
+### Description
+* Text area for detailed description of the request/issue.
+
+### File Attachments
+* Option to upload files (maximum 5 files allowed).
+
+### Styling
+* Use a responsive grid layout.
+* Styling for fields:
+  - Input boxes should have rounded corners.
+  - Background color: #f9f9f9.
+  - Text color: #333333.
+* Buttons with hover effect and active state styling.
+
+### Layout
+* Sections should be clearly defined with headers.
+* Adequate space between different sections (margin and padding).
