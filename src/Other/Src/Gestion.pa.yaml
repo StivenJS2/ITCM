@@ -10,644 +10,671 @@ Screens:
   Gestion:
     Properties:
       Fill: =RGBA(255, 255, 255, 1)
-      LoadingSpinnerColor: =RGBA(255, 153, 0, 1)
+      LoadingSpinnerColor: =RGBA(0, 51, 102, 1)
     Children:
-      - RectNavBg_G:
+      - HeaderBg_G:
           Control: Rectangle@2.3.0
           Properties:
             BorderColor: =RGBA(0, 0, 255, 1)
-            Fill: =RGBA(35, 47, 47, 1)
+            Fill: =RGBA(51, 62, 72, 1)
             Height: =60
             Width: =Parent.Width
-      - RectFooterBg_G:
+      - FooterBg_G:
           Control: Rectangle@2.3.0
           Properties:
             BorderColor: =RGBA(0, 0, 255, 1)
-            Fill: =RGBA(35, 47, 47, 1)
-            Height: =66
+            Fill: =RGBA(51, 62, 72, 1)
+            Height: =60
             Width: =Parent.Width
-            Y: =701
-      - RectUserAvatar_G:
+            Y: =Parent.Height - Self.Height
+      - TableHeaderBg_G:
           Control: Rectangle@2.3.0
           Properties:
             BorderColor: =RGBA(0, 0, 255, 1)
-            Fill: =RGBA(255, 153, 0, 1)
-            Height: =40
-            Width: =40
-            X: =20
-            Y: =10
-      - LblUserName_G:
-          Control: Label@2.5.1
+            Fill: =RGBA(204, 218, 228, 0.9)
+            Height: =45
+            Width: =Parent.Width - 60
+            X: =30
+            Y: =210
+      - BtnNavForm_G:
+          Control: Classic/Button@2.2.0
           Properties:
-            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderColor: =ColorFade(Self.Fill, -15%)
             Color: =RGBA(255, 255, 255, 1)
-            DisabledColor: =RGBA(186, 186, 186, 1)
-            Font: =Font.'Segoe UI'
-            Size: =12
-            Text: =User().FullName
-            Width: =200
-            X: =70
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Fill: =RGBA(35, 47, 62, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, 20%)
+            OnSelect: =Navigate(Formulario)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Size: =13
+            Text: ="Formulario"
+            Width: =120
+            X: =160
             Y: =10
-      - LblNavFormulario_G:
+      - BtnNavGest_G:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =RGBA(255, 153, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Fill: =RGBA(35, 47, 62, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, 20%)
+            OnSelect: =Navigate(Gestion)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Size: =13
+            Text: ="Gestión"
+            Width: =120
+            X: =290
+            Y: =10
+      - BtnNavTickets_G:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Fill: =RGBA(35, 47, 62, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, 20%)
+            OnSelect: =Navigate(Tickets)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Size: =13
+            Text: ="Tickets"
+            Width: =120
+            X: =420
+            Y: =10
+      - LblUserHi_G:
           Control: Label@2.5.1
           Properties:
-            Align: =Align.Center
             BorderColor: =RGBA(0, 0, 0, 1)
             Color: =RGBA(255, 255, 255, 1)
             DisabledColor: =RGBA(186, 186, 186, 1)
             Font: =Font.'Open Sans'
-            Height: =60
-            OnSelect: =Navigate(Formulario)
-            Text: ="Formulario"
-            X: =400
-      - LblNavGestion_G:
+            Size: =15
+            Text: ="Hola, Usuario"
+            Width: =185
+            X: =1166
+            Y: =10
+      - BtnUserAvatar_G:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Fill: =RGBA(255, 153, 0, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            Height: =36
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, 20%)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =18
+            RadiusBottomRight: =18
+            RadiusTopLeft: =18
+            RadiusTopRight: =18
+            Size: =13
+            Text: ="J"
+            Width: =36
+            X: =1114
+            Y: =12
+      - LblAmazonLogo_G:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =33
+            Size: =20
+            Text: ="Amaz"
+            Width: =120
+            X: =20
+            Y: =15
+      - TxtID_G:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 40%)
+            DisabledColor: =ColorFade(Self.Color, 40%)
+            DisabledFill: =Self.Fill
+            Fill: =RGBA(204, 218, 228, 1)
+            FocusedBorderThickness: =3
+            Font: =Font.'Open Sans'
+            Height: =34
+            HintText: ="ID Caso"
+            HoverBorderColor: =Self.Color
+            HoverColor: =Self.Color
+            HoverFill: =Self.Fill
+            RadiusBottomLeft: =17
+            RadiusBottomRight: =17
+            RadiusTopLeft: =17
+            RadiusTopRight: =17
+            Size: =10
+            Width: =130
+            X: =39
+            Y: =90
+      - TxtNum_G:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 40%)
+            DisabledColor: =ColorFade(Self.Color, 40%)
+            DisabledFill: =Self.Fill
+            Fill: =RGBA(204, 218, 228, 1)
+            FocusedBorderThickness: =3
+            Font: =Font.'Open Sans'
+            Height: =34
+            HintText: ="N° Caso"
+            HoverBorderColor: =Self.Color
+            HoverColor: =Self.Color
+            HoverFill: =Self.Fill
+            RadiusBottomLeft: =17
+            RadiusBottomRight: =17
+            RadiusTopLeft: =17
+            RadiusTopRight: =17
+            Size: =10
+            Width: =130
+            X: =179
+            Y: =90
+      - TxtUser_G:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 40%)
+            DisabledColor: =ColorFade(Self.Color, 40%)
+            DisabledFill: =Self.Fill
+            Fill: =RGBA(204, 218, 228, 1)
+            FocusedBorderThickness: =3
+            Font: =Font.'Open Sans'
+            Height: =34
+            HintText: ="Usuario"
+            HoverBorderColor: =Self.Color
+            HoverColor: =Self.Color
+            HoverFill: =Self.Fill
+            RadiusBottomLeft: =17
+            RadiusBottomRight: =17
+            RadiusTopLeft: =17
+            RadiusTopRight: =17
+            Size: =10
+            Width: =180
+            X: =319
+            Y: =90
+      - DdEstado_G:
+          Control: DropDown@0.0.45
+          Properties:
+            DisplayMode: =%DisplayMode.RESERVED%.Edit
+            Fill: =RGBA(204, 218, 228, 1)
+            Height: =34
+            Items: =["Estado", "Pendiente", "En Progreso", "Resuelto"]
+            Width: =160
+            X: =509
+            Y: =90
+      - DdCat_G:
+          Control: DropDown@0.0.45
+          Properties:
+            Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+            Fill: =RGBA(204, 218, 228, 1)
+            Height: =34
+            Items: =["Categoría", "Software", "Hardware", "Acceso"]
+            Width: =160
+            X: =695
+            Y: =90
+      - DtFecha_G:
+          Control: Classic/DatePicker@2.6.0
+          Properties:
+            BorderColor: =RGBA(51, 62, 72, 1)
+            DisabledBorderColor: =RGBA(51, 62, 72, 1)
+            DisabledColor: =RGBA(70, 68, 64, 1)
+            DisabledFill: =Self.Fill
+            Fill: =RGBA(204, 218, 228, 1)
+            Font: =Font.'Open Sans'
+            Height: =34
+            IconBackground: =RGBA(35, 31, 32, 1)
+            IconFill: =RGBA(255, 255, 255, 1)
+            Width: =180
+            X: =881
+            Y: =90
+      - BtnFiltrar_G:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Fill: =RGBA(51, 62, 72, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            Height: =34
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, 20%)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =17
+            RadiusBottomRight: =17
+            RadiusTopLeft: =17
+            RadiusTopRight: =17
+            Size: =13
+            Text: ="Filtrar"
+            Width: =100
+            X: =1111
+            Y: =92
+      - BtnLimpiar_G:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =RGBA(35, 47, 62, 1)
+            BorderThickness: =1
+            Color: =RGBA(35, 47, 62, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Fill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            Height: =34
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, 20%)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =17
+            RadiusBottomRight: =17
+            RadiusTopLeft: =17
+            RadiusTopRight: =17
+            Size: =13
+            Text: ="Limpiar"
+            Width: =100
+            X: =1221
+            Y: =92
+      - LblTableTitle_G:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Size: =18
+            Text: ="Mis solicitudes"
+            Width: =198
+            X: =30
+            Y: =157
+      - LblCount_G:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            Size: =10
+            Text: ="2 registros encontrados"
+            Width: =200
+            X: =Parent.Width - 230
+            Y: =175
+      - LblH4_G:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =29
+            Size: =11
+            Text: ="CATEGORIA"
+            Width: =107
+            X: =808
+            Y: =221
+      - LblH1_G:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =29
+            Size: =11
+            Text: ="FECHA DE REGISTRO"
+            Width: =159
+            X: =282
+            Y: =221
+      - LblH2_G:
           Control: Label@2.5.1
           Properties:
             Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            Size: =11
+            Text: ="ESTADO"
+            Width: =82
+            X: =78
+            Y: =221
+      - LblH3_G:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            Size: =11
+            Text: ="TIPO DE SOLICITUD"
+            Width: =155
+            X: =540
+            Y: =221
+      - LblFoot_G:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(221, 221, 221, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            Height: =23
+            Size: =10
+            Text: ="Amazon Style ITCM | Soporte TI · © 2026"
+            Width: =290
+            X: =20
+            Y: =726
+      - Rectangle2:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(161, 159, 157, 1)
+            Fill: =RGBA(0, 69, 120, 1)
+            FocusedBorderThickness: =4
+            Height: =37
+            HoverFill: =RGBA(0, 120, 212, 1)
+            PressedFill: =RGBA(0, 120, 212, 1)
+            Width: =3
+            X: =224
+            Y: =212
+      - Rectangle3:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(161, 159, 157, 1)
+            Fill: =RGBA(0, 69, 120, 1)
+            FocusedBorderThickness: =4
+            Height: =37
+            HoverFill: =RGBA(0, 120, 212, 1)
+            PressedFill: =RGBA(0, 120, 212, 1)
+            Width: =3
+            X: =478
+            Y: =216
+      - Rectangle4:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(161, 159, 157, 1)
+            Fill: =RGBA(0, 69, 120, 1)
+            FocusedBorderThickness: =4
+            Height: =37
+            HoverFill: =RGBA(0, 120, 212, 1)
+            PressedFill: =RGBA(0, 120, 212, 1)
+            Width: =3
+            X: =721
+            Y: =215
+      - Rectangle5:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(161, 159, 157, 1)
+            Fill: =RGBA(0, 69, 120, 1)
+            FocusedBorderThickness: =4
+            Height: =37
+            HoverFill: =RGBA(0, 120, 212, 1)
+            PressedFill: =RGBA(0, 120, 212, 1)
+            Width: =3
+            X: =963
+            Y: =216
+      - Divider1_F_2:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(145, 143, 141, 1)
+            Height: =1
+            Width: =1300
+            X: =30
+            Y: =149
+      - Gallery3:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(245, 245, 245, 1)
+            Height: =458
+            Items: =ITCM
+            TemplateSize: =108
+            Width: =1306
+            X: =30
+            Y: =250
+          Children:
+            - Separator8:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =8
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+            - Subtitle3_1:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(71, 69, 64, 1)
+                  DisabledColor: =RGBA(161, 159, 157, 1)
+                  DisplayMode: =DisplayMode.View
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =24
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =12
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =ThisItem.TipoIR.Value
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =154
+                  X: =492
+                  Y: =41
+            - LblRowCat1_G_1:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(128, 128, 128, 1)
+                  DisabledColor: =RGBA(186, 186, 186, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =24
+                  Size: =10
+                  Text: =ThisItem.'Fecha/Hora'
+                  Width: =148
+                  X: =256
+                  Y: =41
+            - Subtitle3_3:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(71, 69, 64, 1)
+                  DisabledColor: =RGBA(161, 159, 157, 1)
+                  DisplayMode: =DisplayMode.View
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =24
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =12
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =ThisItem.Categoria.Value
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =154
+                  X: =732
+                  Y: =41
+            - BTN_ESTADO:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderThickness: =3
+                  Color: =Switch(ThisItem.Estado.Value,"Registrado",RGBA(0,69,120,100),"Por Aprobacion",RGBA(63,87,27,100),"En Proceso",RGBA(255,191,0,100),"Solucionado",RGBA(118,0,0,100),RGBA(80,80,80,1))
+                  DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+                  DisabledColor: =ColorFade(Self.Fill, 90%)
+                  DisabledFill: =ColorFade(Self.Fill, 70%)
+                  Fill: =Switch(ThisItem.Estado.Value,"Registrado",RGBA(102, 143, 174, 100),"Por Aprobacion",RGBA(187,221,140,100 ),"En Proceso",RGBA(222,222,124,47),"Solucionado",RGBA(220,153,153,100),RGBA(200,200,200,02))
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Normal
+                  Height: =30
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =ColorFade(Self.Fill, 20%)
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  RadiusBottomLeft: =17
+                  RadiusBottomRight: =17
+                  RadiusTopLeft: =17
+                  RadiusTopRight: =17
+                  Size: =13
+                  Text: =ThisItem.Estado.Value
+                  Width: =152
+                  X: =17
+                  Y: =35
+            - Divider1_F_5:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 0, 255, 1)
+                  Fill: =RGBA(145, 143, 141, 1)
+                  Height: =1
+                  Width: =1300
+                  X: =1
+                  Y: =103
+            - SimList_BtnVer1:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  Color: =RGBA(51, 51, 51, 1)
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  Fill: =RGBA(49, 89, 162, 0.6)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =36
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  RadiusBottomLeft: =18
+                  RadiusBottomRight: =18
+                  RadiusTopLeft: =18
+                  RadiusTopRight: =18
+                  Text: ="VER"
+                  Width: =120
+                  X: =988
+                  Y: =35
+            - SimList_BtnVer1_1:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  Color: =RGBA(64, 64, 64, 1)
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  Fill: =RGBA(213, 25, 0, 0.56)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =36
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  RadiusBottomLeft: =18
+                  RadiusBottomRight: =18
+                  RadiusTopLeft: =18
+                  RadiusTopRight: =18
+                  Text: ="CANCELAR"
+                  Width: =120
+                  X: =1140
+                  Y: =35
+      - LblH4_G_1:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =29
+            Size: =11
+            Text: ="ACCIONES"
+            Width: =107
+            X: =1107
+            Y: =219
+      - LblAmazonLogo_G_1:
+          Control: Label@2.5.1
+          Properties:
             BorderColor: =RGBA(0, 0, 0, 1)
             Color: =RGBA(255, 153, 0, 1)
             DisabledColor: =RGBA(186, 186, 186, 1)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
-            Height: =60
-            OnSelect: =Navigate(Gestion)
-            Text: ="Gestión"
-            X: =550
-      - LblNavTickets_G:
-          Control: Label@2.5.1
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(255, 255, 255, 1)
-            DisabledColor: =RGBA(186, 186, 186, 1)
-            Font: =Font.'Open Sans'
-            Height: =60
-            OnSelect: =Navigate(Tickets)
-            Text: ="Tickets"
-            X: =700
-      - LblFooterBrand_G:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(221, 221, 221, 1)
-            DisabledColor: =RGBA(186, 186, 186, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =30
-            Size: =14
-            Text: ="ITCM - Amazon Ticket Management"
-            Width: =400
-            X: =33
-            Y: =717
-      - LblFooterRights_G:
-          Control: Label@2.5.1
-          Properties:
-            Align: =Align.Right
-            BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(221, 221, 221, 1)
-            DisabledColor: =RGBA(186, 186, 186, 1)
-            Font: =Font.'Open Sans'
-            Height: =30
-            Size: =14
-            Text: ="© 2026 Amazon Style UI. Todos los derechos reservados."
-            Width: =528
-            X: =816
-            Y: =717
-      - RectNavActiveIndicator_G:
-          Control: Rectangle@2.3.0
-          Properties:
-            BorderColor: =RGBA(0, 0, 255, 1)
-            Fill: =RGBA(255, 153, 0, 1)
-            Height: =4
-            X: =550
-            Y: =130
-      - RectFilterBg:
-          Control: Rectangle@2.3.0
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(248, 250, 252, 1)
-            Height: =84
-            Width: =1326
-            X: =20
-            Y: =94
-      - TxtIdCaso:
-          Control: Classic/TextInput@2.3.2
-          Properties:
-            BorderColor: =RGBA(226, 232, 240, 1)
-            BorderThickness: =1
-            Font: =Font.'Open Sans'
-            Height: =44
-            HintText: ="ID Caso"
-            HoverBorderColor: =RGBA(0, 18, 107, 1)
-            HoverFill: =RGBA(186, 202, 226, 1)
-            RadiusBottomLeft: =8
-            RadiusBottomRight: =8
-            RadiusTopLeft: =8
-            RadiusTopRight: =8
+            Height: =33
+            Size: =20
+            Text: ="on"
             Width: =100
-            X: =30
-            Y: =114
-      - TxtNumCaso:
-          Control: Classic/TextInput@2.3.2
-          Properties:
-            BorderColor: =RGBA(226, 232, 240, 1)
-            BorderThickness: =1
-            Font: =Font.'Open Sans'
-            Height: =44
-            HintText: ="N° Caso"
-            HoverBorderColor: =RGBA(0, 18, 107, 1)
-            HoverFill: =RGBA(186, 202, 226, 1)
-            RadiusBottomLeft: =8
-            RadiusBottomRight: =8
-            RadiusTopLeft: =8
-            RadiusTopRight: =8
-            Width: =100
-            X: =140
-            Y: =114
-      - TxtUsuarios:
-          Control: Classic/TextInput@2.3.2
-          Properties:
-            BorderColor: =RGBA(226, 232, 240, 1)
-            BorderThickness: =1
-            Font: =Font.'Open Sans'
-            Height: =44
-            HintText: ="Usuarios"
-            HoverBorderColor: =RGBA(0, 18, 107, 1)
-            HoverFill: =RGBA(186, 202, 226, 1)
-            RadiusBottomLeft: =8
-            RadiusBottomRight: =8
-            RadiusTopLeft: =8
-            RadiusTopRight: =8
-            Width: =130
-            X: =250
-            Y: =114
-      - DdCategoria:
-          Control: DropDown@0.0.45
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            BorderStyle: =BorderStyle.Solid
-            BorderThickness: =2
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =44
-            Items: =["Categoría", "Cuentas & Listas", "Usuarios Externos", "Permisos", "Nube Javeriana", "Conceptos", "Usuario VPN", "NAS Javeriana"]
-            PaddingBottom: =10
-            PaddingLeft: =10
-            PaddingRight: =10
-            PaddingTop: =10
-            Width: =160
-            X: =390
-            Y: =114
-      - DdSubcategoria:
-          Control: DropDown@0.0.45
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            BorderStyle: =BorderStyle.Solid
-            BorderThickness: =2
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =44
-            Items: |-
-              =Switch(
-                  DdCategoria.Selected.Value,
-                  "Cuentas & Listas", ["Buzón de correo", "Calendario institucional", "Lista de correo institucional dinámica", "Lista de correo institucional estática"],
-                  "Usuarios Externos", ["Creacion o renovacion de usuarios externos"],
-                  "Permisos", ["Admisiones", "Catálogo y Programación de Clases", "Cuentas por Pagar", "Finanzas Estudiantiles", "Gastos de viaje", "Módulo de Recursos Humanos", "Operaciones Internas y Control de compromisos", "Registro Académico", "Sistema Gestión de Grados", "Solicitud de compras de bienes y servicios"],
-                  "Nube Javeriana", ["Large", "Medium", "Small", "Tiny"],
-                  "Conceptos", ["Concepto de compra o renovación de hardware", "Concepto de compra o renovación de software"],
-                  ["Subcategoría"]
-              )
-            PaddingBottom: =10
-            PaddingLeft: =10
-            PaddingRight: =10
-            PaddingTop: =10
-            Visible: =DdCategoria.Selected.Value in ["Cuentas & Listas", "Usuarios Externos", "Permisos", "Nube Javeriana", "Conceptos"]
-            Width: =230
-            X: =560
-            Y: =114
-      - DtDesde:
-          Control: Classic/DatePicker@2.6.0
-          Properties:
-            BorderColor: =RGBA(226, 232, 240, 1)
-            BorderThickness: =1
-            DateTimeZone: =%DateTimeZone.RESERVED%.Local
-            DisplayMode: =%DisplayMode.RESERVED%.Edit
-            Font: =Font.'Open Sans'
-            Format: =%DateTimeFormat.RESERVED%.ShortDate
-            Height: =44
-            IconBackground: =RGBA(56, 96, 178, 1)
-            IconFill: =RGBA(255, 255, 255, 1)
-            InputTextPlaceholder: ="Desde"
-            StartOfWeek: =%StartOfWeek.RESERVED%.Sunday
-            Width: =120
-            X: =800
-            Y: =114
-      - DtHasta:
-          Control: Classic/DatePicker@2.6.0
-          Properties:
-            BorderColor: =RGBA(226, 232, 240, 1)
-            BorderThickness: =1
-            DateTimeZone: =%DateTimeZone.RESERVED%.Local
-            DisplayMode: =%DisplayMode.RESERVED%.Edit
-            Font: =Font.'Open Sans'
-            Format: =%DateTimeFormat.RESERVED%.ShortDate
-            Height: =44
-            IconBackground: =RGBA(56, 96, 178, 1)
-            IconFill: =RGBA(255, 255, 255, 1)
-            InputTextPlaceholder: ="Hasta"
-            StartOfWeek: =%StartOfWeek.RESERVED%.Sunday
-            Width: =120
-            X: =930
-            Y: =114
-      - LblHeadEstado:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(148, 163, 184, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =30
-            Size: =10
-            Text: ="ESTADO"
-            X: =40
-            Y: =190
-      - BtnFiltrar:
-          Control: Classic/Button@2.2.0
-          Properties:
-            BorderColor: =RGBA(26, 58, 110, 1)
-            Color: =RGBA(255, 255, 255, 1)
-            DisabledBorderColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(26, 58, 110, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =44
-            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
-            PressedBorderColor: =Self.Fill
-            PressedColor: =Self.Fill
-            PressedFill: =Self.Color
-            RadiusBottomLeft: =8
-            RadiusBottomRight: =8
-            RadiusTopLeft: =8
-            RadiusTopRight: =8
-            Text: ="Filtrar"
-            Width: =110
-            X: =1060
-            Y: =114
-      - LblHeadCategoria:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(148, 163, 184, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =30
-            Size: =10
-            Text: ="CATEGORÍA"
-            X: =180
-            Y: =190
-      - BtnFiltrar_1:
-          Control: Classic/Button@2.2.0
-          Properties:
-            BorderColor: =RGBA(26, 58, 110, 1)
-            BorderThickness: =1
-            Color: =RGBA(26, 58, 110, 1)
-            DisabledBorderColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =44
-            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
-            PressedBorderColor: =Self.Fill
-            PressedColor: =Self.Fill
-            PressedFill: =Self.Color
-            RadiusBottomLeft: =8
-            RadiusBottomRight: =8
-            RadiusTopLeft: =8
-            RadiusTopRight: =8
-            Text: ="Limpiar"
-            Width: =110
-            X: =1180
-            Y: =114
-      - LblHeadInfo:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(148, 163, 184, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =30
-            Size: =10
-            Text: ="INFORMACIÓN DEL CASO"
-            Width: =460
-            X: =340
-            Y: =190
-      - LblHeadFecha:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(148, 163, 184, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =30
-            Size: =10
-            Text: ="FECHA REGISTRO"
-            X: =820
-            Y: =190
-      - LblHeadAccion:
-          Control: Label@2.5.1
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(148, 163, 184, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =30
-            Size: =10
-            Text: ="ACCIÓN"
-            Width: =140
-            X: =1060
-            Y: =190
-      - SimList_Bg1:
-          Control: Rectangle@2.3.0
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =72
-            Width: =1326
-            Y: =230
-      - SimList_RectPill1:
-          Control: Rectangle@2.3.0
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =ColorFade(RGBA(245, 158, 11, 1), 85%)
-            Height: =32
-            Width: =110
-            X: =40
-            Y: =250
-      - SimList_LblEstado1:
-          Control: Label@2.5.1
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(245, 158, 11, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =32
-            Size: =10
-            Text: ="Pendiente"
-            Width: =110
-            X: =40
-            Y: =250
-      - SimList_LblCat1:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(51, 65, 85, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =72
-            Size: =11
-            Text: ="Incidente"
-            X: =180
-            Y: =230
-      - SimList_BtnAvatar1:
-          Control: Classic/Button@2.2.0
-          Properties:
-            BorderColor: =ColorFade(Self.Fill, -15%)
-            BorderThickness: =0
-            Color: =RGBA(245, 158, 11, 1)
-            DisabledBorderColor: =RGBA(166, 166, 166, 1)
-            DisabledColor: =RGBA(245, 158, 11, 1)
-            DisabledFill: =ColorFade(RGBA(245, 158, 11, 1), 85%)
-            DisplayMode: =DisplayMode.Disabled
-            Fill: =RGBA(56, 96, 178, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
-            PaddingLeft: =0
-            PaddingRight: =0
-            PressedBorderColor: =Self.Fill
-            PressedColor: =Self.Fill
-            PressedFill: =Self.Color
-            RadiusBottomLeft: =20
-            RadiusBottomRight: =20
-            RadiusTopLeft: =20
-            RadiusTopRight: =20
-            Size: =14
-            Text: ="I"
-            Width: =40
-            X: =340
-            Y: =246
-      - SimList_LblAsunto1:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(15, 23, 42, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =24
-            Size: =12
-            Text: ="Falla de conectividad a la red institucional"
-            Width: =460
-            X: =395
-            Y: =246
-      - SimList_LblId1:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(100, 116, 139, 1)
-            Font: =Font.'Open Sans'
-            Height: =20
-            Size: =10
-            Text: ="INC-2026-001"
-            Width: =460
-            X: =395
-            Y: =268
-      - SimList_LblFecha1:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(51, 65, 85, 1)
-            Font: =Font.'Open Sans'
-            Height: =72
-            Size: =11
-            Text: ="15 abr 2026"
-            X: =820
-            Y: =230
-      - SimList_BtnVer1:
-          Control: Classic/Button@2.2.0
-          Properties:
-            BorderColor: =ColorFade(Self.Fill, -15%)
-            Color: =RGBA(26, 58, 110, 1)
-            DisabledBorderColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(241, 245, 249, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =36
-            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
-            PressedBorderColor: =Self.Fill
-            PressedColor: =Self.Fill
-            PressedFill: =Self.Color
-            RadiusBottomLeft: =18
-            RadiusBottomRight: =18
-            RadiusTopLeft: =18
-            RadiusTopRight: =18
-            Text: ="Detalles"
-            Width: =120
-            X: =1060
-            Y: =248
-      - SimList_Line1:
-          Control: Rectangle@2.3.0
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(226, 232, 240, 1)
-            Height: =1
-            Width: =1326
-            Y: =301
-      - SimList_Bg2:
-          Control: Rectangle@2.3.0
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =72
-            Width: =1326
-            Y: =302
-      - SimList_RectPill2:
-          Control: Rectangle@2.3.0
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =ColorFade(RGBA(14, 165, 233, 1), 85%)
-            Height: =32
-            Width: =110
-            X: =40
-            Y: =322
-      - SimList_LblEstado2:
-          Control: Label@2.5.1
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(14, 165, 233, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =32
-            Size: =10
-            Text: ="En Progreso"
-            Width: =110
-            X: =40
-            Y: =322
-      - SimList_LblCat2:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(51, 65, 85, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Semibold
-            Height: =72
-            Size: =11
-            Text: ="Requerimiento"
-            X: =180
-            Y: =302
-      - SimList_BtnAvatar2:
-          Control: Classic/Button@2.2.0
-          Properties:
-            BorderColor: =ColorFade(Self.Fill, -15%)
-            BorderThickness: =0
-            Color: =RGBA(14, 165, 233, 1)
-            DisabledBorderColor: =RGBA(166, 166, 166, 1)
-            DisabledColor: =RGBA(14, 165, 233, 1)
-            DisabledFill: =ColorFade(RGBA(14, 165, 233, 1), 85%)
-            DisplayMode: =DisplayMode.Disabled
-            Fill: =RGBA(56, 96, 178, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
-            PaddingLeft: =0
-            PaddingRight: =0
-            PressedBorderColor: =Self.Fill
-            PressedColor: =Self.Fill
-            PressedFill: =Self.Color
-            RadiusBottomLeft: =20
-            RadiusBottomRight: =20
-            RadiusTopLeft: =20
-            RadiusTopRight: =20
-            Size: =14
-            Text: ="R"
-            Width: =40
-            X: =340
-            Y: =318
-      - SimList_LblAsunto2:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(15, 23, 42, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =24
-            Size: =12
-            Text: ="Instalación de software (AutoCAD)"
-            Width: =460
-            X: =395
-            Y: =318
-      - SimList_LblId2:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(100, 116, 139, 1)
-            Font: =Font.'Open Sans'
-            Height: =20
-            Size: =10
-            Text: ="REQ-2026-002"
-            Width: =460
-            X: =395
-            Y: =340
-      - SimList_LblFecha2:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Color: =RGBA(51, 65, 85, 1)
-            Font: =Font.'Open Sans'
-            Height: =72
-            Size: =11
-            Text: ="16 abr 2026"
-            X: =820
-            Y: =302
-      - SimList_BtnVer2:
-          Control: Classic/Button@2.2.0
-          Properties:
-            BorderColor: =ColorFade(Self.Fill, -15%)
-            Color: =RGBA(26, 58, 110, 1)
-            DisabledBorderColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(241, 245, 249, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =36
-            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
-            PressedBorderColor: =Self.Fill
-            PressedColor: =Self.Fill
-            PressedFill: =Self.Color
-            RadiusBottomLeft: =18
-            RadiusBottomRight: =18
-            RadiusTopLeft: =18
-            RadiusTopRight: =18
-            Text: ="Detalles"
-            Width: =120
-            X: =1060
-            Y: =320
-      - SimList_Line2:
-          Control: Rectangle@2.3.0
-          Properties:
-            BorderColor: =RGBA(0, 18, 107, 1)
-            Fill: =RGBA(226, 232, 240, 1)
-            Height: =1
-            Width: =1326
-            Y: =373
+            X: =94
+            Y: =15

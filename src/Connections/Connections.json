@@ -1,1 +1,31 @@
-{}
+{
+  "a5e45b46-4eb3-42dd-adb5-c62f6b2c63c3": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/releases/v1.0.1769/1.0.1769.4361/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://livejaverianaedu-my.sharepoint.com/personal/jstiven_morales_javeriana_edu_co": {
+        "dataSources": {
+          "ITCM": {
+            "tableName": "5a81cd3e-40fb-44ba-9d73-a719433debfe"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "ITCM"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "a5e45b46-4eb3-42dd-adb5-c62f6b2c63c3"
+  }
+}

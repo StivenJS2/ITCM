@@ -1,55 +1,63 @@
 Gestion As screen:
-    Fill: =RGBA(255, 255, 255, 1)
 
     HeaderBg_G As rectangle:
-        Fill: =RGBA(35, 47, 62, 1)
+        Fill: =RGBA(51, 62, 72, 1)
         Height: =60
         Width: =Parent.Width
-        X: =0
-        Y: =0
         ZIndex: =1
 
-    LblAmazonLogo_G As label:
-        Color: =RGBA(255, 255, 255, 1)
-        FontWeight: =FontWeight.Bold
-        Size: =20
-        Text: ="Amazon"
-        Width: =120
-        X: =20
-        Y: =15
+    FooterBg_G As rectangle:
+        Fill: =RGBA(51, 62, 72, 1)
+        Height: =60
+        Width: =Parent.Width
+        Y: =Parent.Height - Self.Height
         ZIndex: =2
+
+    TableHeaderBg_G As rectangle:
+        Fill: =RGBA(235, 240, 245, 1)
+        Height: =40
+        Width: =Parent.Width - 60
+        X: =30
+        Y: =210
+        ZIndex: =3
 
     BtnNavForm_G As button:
         Fill: =RGBA(35, 47, 62, 1)
-        Height: =40
         OnSelect: =Navigate(Formulario)
         Text: ="Formulario"
         Width: =120
         X: =160
         Y: =10
-        ZIndex: =2
+        ZIndex: =5
 
     BtnNavGest_G As button:
         BorderColor: =RGBA(255, 153, 0, 1)
         Fill: =RGBA(35, 47, 62, 1)
         FontWeight: =FontWeight.Bold
-        Height: =40
         OnSelect: =Navigate(Gestion)
         Text: ="Gestión"
         Width: =120
         X: =290
         Y: =10
-        ZIndex: =2
+        ZIndex: =6
 
     BtnNavTickets_G As button:
         Fill: =RGBA(35, 47, 62, 1)
-        Height: =40
         OnSelect: =Navigate(Tickets)
         Text: ="Tickets"
         Width: =120
         X: =420
         Y: =10
-        ZIndex: =2
+        ZIndex: =7
+
+    LblUserHi_G As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Size: =15
+        Text: ="Hola, Usuario"
+        Width: =185
+        X: =1166
+        Y: =10
+        ZIndex: =8
 
     BtnUserAvatar_G As button:
         Fill: =RGBA(255, 153, 0, 1)
@@ -58,94 +66,102 @@ Gestion As screen:
         RadiusBottomRight: =18
         RadiusTopLeft: =18
         RadiusTopRight: =18
-        Text: =Left(User().FullName, 1)
+        Text: ="J"
         Width: =36
-        X: =Parent.Width - 200
+        X: =1114
         Y: =12
-        ZIndex: =2
+        ZIndex: =9
 
-    LblUserHi_G As label:
+    LblAmazonLogo_G As label:
         Color: =RGBA(255, 255, 255, 1)
-        Size: =10
-        Text: ="Hola, Usuario"
-        Width: =140
-        X: =Parent.Width - 154
-        Y: =18
-        ZIndex: =2
+        FontWeight: =FontWeight.Bold
+        Height: =33
+        Size: =20
+        Text: ="Amaz"
+        Width: =120
+        X: =20
+        Y: =15
+        ZIndex: =10
 
     TxtID_G As text:
-        Fill: =RGBA(51, 51, 51, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(204, 218, 228, 1)
         Height: =34
         HintText: ="ID Caso"
-        PaddingLeft: =12
         RadiusBottomLeft: =17
         RadiusBottomRight: =17
         RadiusTopLeft: =17
         RadiusTopRight: =17
         Size: =10
         Width: =130
-        X: =30
-        Y: =80
-        ZIndex: =2
+        X: =39
+        Y: =90
+        ZIndex: =11
 
     TxtNum_G As text:
-        Fill: =RGBA(51, 51, 51, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(204, 218, 228, 1)
         Height: =34
         HintText: ="N° Caso"
-        PaddingLeft: =12
         RadiusBottomLeft: =17
         RadiusBottomRight: =17
         RadiusTopLeft: =17
         RadiusTopRight: =17
         Size: =10
         Width: =130
-        X: =170
-        Y: =80
-        ZIndex: =2
+        X: =179
+        Y: =90
+        ZIndex: =12
 
     TxtUser_G As text:
-        Fill: =RGBA(51, 51, 51, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(204, 218, 228, 1)
         Height: =34
         HintText: ="Usuario"
-        PaddingLeft: =12
         RadiusBottomLeft: =17
         RadiusBottomRight: =17
         RadiusTopLeft: =17
         RadiusTopRight: =17
         Size: =10
         Width: =180
-        X: =310
-        Y: =80
-        ZIndex: =2
+        X: =319
+        Y: =90
+        ZIndex: =13
 
     DdEstado_G As Desplegable.pcfdataset:
-        Fill: =RGBA(51, 51, 51, 1)
+        Fill: =RGBA(204, 218, 228, 1)
         Height: =34
         Items: =["Estado", "Pendiente", "En Progreso", "Resuelto"]
         Width: =160
-        X: =500
-        Y: =80
-        ZIndex: =2
+        X: =509
+        Y: =90
+        ZIndex: =14
 
     DdCat_G As Desplegable.pcfdataset:
-        Fill: =RGBA(51, 51, 51, 1)
+        Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(204, 218, 228, 1)
         Height: =34
         Items: =["Categoría", "Software", "Hardware", "Acceso"]
+        Visible: =true
         Width: =160
-        X: =640
-        Y: =80
-        ZIndex: =2
+        X: =695
+        Y: =90
+        ZIndex: =15
 
     DtFecha_G As datepicker:
-        Fill: =RGBA(51, 51, 51, 1)
+        BorderColor: =RGBA(51, 62, 72, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =RGBA(51, 62, 72, 1)
+        Fill: =RGBA(204, 218, 228, 1)
         Height: =34
         Width: =180
-        X: =810
-        Y: =80
-        ZIndex: =2
+        X: =881
+        Y: =90
+        ZIndex: =16
 
     BtnFiltrar_G As button:
-        Fill: =RGBA(35, 47, 62, 1)
+        Fill: =RGBA(51, 62, 72, 1)
         Height: =34
         RadiusBottomLeft: =17
         RadiusBottomRight: =17
@@ -153,9 +169,9 @@ Gestion As screen:
         RadiusTopRight: =17
         Text: ="Filtrar"
         Width: =100
-        X: =1030
-        Y: =80
-        ZIndex: =2
+        X: =1111
+        Y: =92
+        ZIndex: =17
 
     BtnLimpiar_G As button:
         BorderColor: =RGBA(35, 47, 62, 1)
@@ -169,18 +185,18 @@ Gestion As screen:
         RadiusTopRight: =17
         Text: ="Limpiar"
         Width: =100
-        X: =1140
-        Y: =80
-        ZIndex: =2
+        X: =1221
+        Y: =92
+        ZIndex: =18
 
     LblTableTitle_G As label:
         FontWeight: =FontWeight.Bold
         Size: =18
         Text: ="Mis solicitudes"
-        Width: =300
+        Width: =198
         X: =30
-        Y: =170
-        ZIndex: =2
+        Y: =157
+        ZIndex: =19
 
     LblCount_G As label:
         Align: =Align.Right
@@ -190,145 +206,291 @@ Gestion As screen:
         Width: =200
         X: =Parent.Width - 230
         Y: =175
-        ZIndex: =2
-
-    TableHeaderBg_G As rectangle:
-        Fill: =RGBA(243, 245, 247, 1)
-        Height: =40
-        Width: =Parent.Width - 60
-        X: =30
-        Y: =210
-        ZIndex: =1
-
-    LblH1_G As label:
-        Color: =RGBA(128, 128, 128, 1)
-        FontWeight: =FontWeight.Bold
-        Size: =9
-        Text: ="ESTADO"
-        Width: =110
-        X: =45
-        Y: =220
-        ZIndex: =2
-
-    LblH2_G As label:
-        Color: =RGBA(128, 128, 128, 1)
-        FontWeight: =FontWeight.Bold
-        Size: =9
-        Text: ="CATEGORÍA"
-        Width: =130
-        X: =155
-        Y: =220
-        ZIndex: =2
-
-    LblH3_G As label:
-        Color: =RGBA(128, 128, 128, 1)
-        FontWeight: =FontWeight.Bold
-        Size: =9
-        Text: ="INFORMACIÓN DEL CASO"
-        Width: =320
-        X: =285
-        Y: =220
-        ZIndex: =2
+        ZIndex: =20
 
     LblH4_G As label:
-        Color: =RGBA(128, 128, 128, 1)
+        Color: =RGBA(100, 110, 120, 1)
         FontWeight: =FontWeight.Bold
-        Size: =9
-        Text: ="DETALLES"
-        Width: =320
-        X: =605
-        Y: =220
-        ZIndex: =2
+        Height: =29
+        Size: =10
+        Text: ="CATEGORIA"
+        Width: =107
+        X: =808
+        Y: =221
+        ZIndex: =21
 
-    RowBg1_G As rectangle:
-        BorderColor: =RGBA(243, 245, 247, 1)
-        BorderThickness: =1
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =100
-        Width: =Parent.Width - 60
-        X: =30
-        Y: =250
-        ZIndex: =1
+    LblH1_G As label:
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =29
+        Size: =10
+        Text: ="FECHA DE REGISTRO"
+        Width: =159
+        X: =282
+        Y: =221
+        ZIndex: =22
 
-    BgChipPend_G As rectangle:
-        Fill: =RGBA(255, 244, 229, 1)
-        Height: =28
-        RadiusBottomLeft: =14
-        RadiusBottomRight: =14
-        RadiusTopLeft: =14
-        RadiusTopRight: =14
-        Width: =90
-        X: =45
-        Y: =286
-        ZIndex: =2
-
-    LblPend_G As label:
+    LblH2_G As label:
         Align: =Align.Center
-        Color: =RGBA(184, 114, 0, 1)
+        Color: =RGBA(100, 110, 120, 1)
         FontWeight: =FontWeight.Bold
-        Size: =9
-        Text: ="Pendiente"
-        Width: =90
-        X: =45
-        Y: =290
-        ZIndex: =3
-
-    LblRowCat1_G As label:
+        Height: =28
         Size: =10
-        Text: ="Incidente"
-        Width: =130
-        X: =155
-        Y: =290
-        ZIndex: =2
+        Text: ="ESTADO"
+        Width: =82
+        X: =78
+        Y: =221
+        ZIndex: =23
 
-    LblSubj1_G As label:
+    LblH3_G As label:
+        Color: =RGBA(100, 110, 120, 1)
         FontWeight: =FontWeight.Bold
+        Height: =28
         Size: =10
-        Text: ="Falla de conectividad a la red institucional"
-        Width: =280
-        X: =325
-        Y: =280
-        ZIndex: =2
-
-    LblID1_G As label:
-        Color: =RGBA(128, 128, 128, 1)
-        Size: =8
-        Text: ="INC-2026-001"
-        Width: =100
-        X: =325
-        Y: =300
-        ZIndex: =2
-
-    BtnVerDetail1_G As button:
-        BorderColor: =RGBA(35, 47, 62, 0.2)
-        BorderThickness: =1
-        Color: =RGBA(35, 47, 62, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =34
-        RadiusBottomLeft: =17
-        RadiusBottomRight: =17
-        RadiusTopLeft: =17
-        RadiusTopRight: =17
-        Text: ="Detalles"
-        Width: =100
-        X: =1180
-        Y: =283
-        ZIndex: =2
-
-    FooterBg_G As rectangle:
-        Fill: =RGBA(35, 47, 62, 1)
-        Height: =60
-        Width: =Parent.Width
-        X: =0
-        Y: =Parent.Height - Self.Height
-        ZIndex: =1
+        Text: ="TIPO DE SOLICITUD"
+        Width: =155
+        X: =540
+        Y: =221
+        ZIndex: =24
 
     LblFoot_G As label:
         Color: =RGBA(221, 221, 221, 1)
+        Height: =23
         Size: =10
         Text: ="Amazon Style ITCM | Soporte TI · © 2026"
-        Width: =600
-        X: =40
-        Y: =Parent.Height - 40
-        ZIndex: =2
+        Width: =290
+        X: =20
+        Y: =726
+        ZIndex: =30
+
+    Rectangle2 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledFill: =RGBA(161, 159, 157, 1)
+        Fill: =RGBA(0, 69, 120, 1)
+        FocusedBorderThickness: =4
+        Height: =37
+        HoverFill: =RGBA(0, 120, 212, 1)
+        PressedFill: =RGBA(0, 120, 212, 1)
+        Width: =3
+        X: =224
+        Y: =212
+        ZIndex: =32
+
+    Rectangle3 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledFill: =RGBA(161, 159, 157, 1)
+        Fill: =RGBA(0, 69, 120, 1)
+        FocusedBorderThickness: =4
+        Height: =37
+        HoverFill: =RGBA(0, 120, 212, 1)
+        PressedFill: =RGBA(0, 120, 212, 1)
+        Width: =3
+        X: =478
+        Y: =216
+        ZIndex: =33
+
+    Rectangle4 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledFill: =RGBA(161, 159, 157, 1)
+        Fill: =RGBA(0, 69, 120, 1)
+        FocusedBorderThickness: =4
+        Height: =37
+        HoverFill: =RGBA(0, 120, 212, 1)
+        PressedFill: =RGBA(0, 120, 212, 1)
+        Width: =3
+        X: =721
+        Y: =215
+        ZIndex: =34
+
+    Rectangle5 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledFill: =RGBA(161, 159, 157, 1)
+        Fill: =RGBA(0, 69, 120, 1)
+        FocusedBorderThickness: =4
+        Height: =37
+        HoverFill: =RGBA(0, 120, 212, 1)
+        PressedFill: =RGBA(0, 120, 212, 1)
+        Width: =3
+        X: =963
+        Y: =216
+        ZIndex: =35
+
+    Divider1_F_2 As rectangle:
+        Fill: =RGBA(145, 143, 141, 1)
+        Height: =1
+        Width: =1300
+        X: =30
+        Y: =149
+        ZIndex: =36
+
+    "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        BorderColor: =RGBA(245, 245, 245, 1)
+        DelayItemLoading: =true
+        Height: =458
+        HoverFill: =RGBA(245, 248, 252, 1)
+        Items: =ITCM
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateFill: =If(ThisItem.IsSelected, RGBA(235, 242, 250, 1), RGBA(255, 255, 255, 1))
+        TemplatePadding: =0
+        TemplateSize: =88
+        Width: =1306
+        X: =30
+        Y: =250
+        ZIndex: =37
+
+        Separator8 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(220, 225, 230, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =2
+
+        Subtitle3_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(50, 60, 70, 1)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Segoe UI'
+            Height: =24
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =12
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =13
+            Text: =ThisItem.TipoIR.Value
+            Width: =154
+            X: =492
+            Y: =32
+            ZIndex: =4
+
+        LblRowCat1_G_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(100, 110, 120, 1)
+            Height: =24
+            Size: =12
+            Text: =ThisItem.'Fecha/Hora'
+            Width: =148
+            X: =256
+            Y: =32
+            ZIndex: =6
+
+        Subtitle3_3 As label:
+            Align: =Align.Center
+            Color: =RGBA(50, 60, 70, 1)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Segoe UI'
+            Height: =24
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =12
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =13
+            Text: =ThisItem.Categoria.Value
+            Width: =154
+            X: =732
+            Y: =32
+            ZIndex: =7
+
+        BTN_ESTADO As button:
+            BorderThickness: =0
+            Color: =Switch(ThisItem.Estado.Value,"Registrado",RGBA(0,56,100,1),"Por Aprobacion",RGBA(40,70,10,1),"En Proceso",RGBA(100,75,0,1),"Solucionado",RGBA(90,0,0,1),RGBA(60,60,60,1))
+            Fill: =Switch(ThisItem.Estado.Value,"Registrado",RGBA(210,228,242,1),"Por Aprobacion",RGBA(220,240,195,1),"En Proceso",RGBA(255,243,180,1),"Solucionado",RGBA(245,210,210,1),RGBA(220,220,220,1))
+            Height: =28
+            HoverFill: =Switch(ThisItem.Estado.Value,"Registrado",RGBA(190,215,235,1),"Por Aprobacion",RGBA(200,230,165,1),"En Proceso",RGBA(245,230,155,1),"Solucionado",RGBA(235,190,190,1),RGBA(200,200,200,1))
+            RadiusBottomLeft: =14
+            RadiusBottomRight: =14
+            RadiusTopLeft: =14
+            RadiusTopRight: =14
+            Size: =11
+            Text: =ThisItem.Estado.Value
+            Width: =140
+            X: =22
+            Y: =30
+            ZIndex: =8
+
+        Divider1_F_5 As rectangle:
+            Fill: =RGBA(210, 215, 220, 1)
+            Height: =1
+            Width: =1300
+            X: =1
+            Y: =87
+            ZIndex: =9
+
+        SimList_BtnVer1 As button:
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(49, 89, 162, 1)
+            Height: =30
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(49, 89, 162, 1), -25%)
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =12
+            Text: ="Ver"
+            Width: =90
+            X: =1010
+            Y: =29
+            ZIndex: =10
+
+        SimList_BtnVer1_1 As button:
+            BorderColor: =RGBA(180, 60, 40, 1)
+            BorderThickness: =1
+            Color: =RGBA(160, 40, 20, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(255, 245, 244, 1)
+            Height: =30
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(200, 50, 30, 1)
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =12
+            Text: ="Cancelar"
+            Width: =100
+            X: =1140
+            Y: =29
+            ZIndex: =11
+
+    LblH4_G_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =29
+        Size: =10
+        Text: ="ACCIONES"
+        Width: =107
+        X: =1107
+        Y: =219
+        ZIndex: =38
+
+    LblAmazonLogo_G_1 As label:
+        Color: =RGBA(255, 153, 0, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =33
+        Size: =20
+        Text: ="on"
+        Width: =100
+        X: =94
+        Y: =15
+        ZIndex: =39
+
