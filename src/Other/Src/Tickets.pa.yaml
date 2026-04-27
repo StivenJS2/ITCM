@@ -189,241 +189,6 @@ Screens:
             Width: =160
             X: =530
             Y: =92
-      - LblTableTitle_T:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(71, 69, 64, 1)
-            DisabledColor: =RGBA(186, 186, 186, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Size: =18
-            Text: ="Administración de tickets"
-            Width: =330
-            X: =30
-            Y: =170
-      - LblH1_T:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(128, 128, 128, 1)
-            DisabledColor: =RGBA(186, 186, 186, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =27
-            Size: =9
-            Text: ="TIPO"
-            Width: =64
-            X: =81
-            Y: =220
-      - LblH3_T:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(128, 128, 128, 1)
-            DisabledColor: =RGBA(186, 186, 186, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =27
-            Size: =9
-            Text: ="ESTADO"
-            Width: =81
-            X: =439
-            Y: =220
-      - LblH4_T:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(128, 128, 128, 1)
-            DisabledColor: =RGBA(186, 186, 186, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =27
-            Size: =9
-            Text: ="USUARIO"
-            Width: =86
-            X: =659
-            Y: =220
-      - LblH2_T:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(128, 128, 128, 1)
-            DisabledColor: =RGBA(186, 186, 186, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =23
-            Size: =9
-            Text: ="CATEGORÍA"
-            Width: =95
-            X: =242
-            Y: =224
-      - BtnVer1_T:
-          Control: Classic/Button@2.2.0
-          Properties:
-            BorderColor: =RGBA(35, 47, 62, 0.2)
-            BorderThickness: =1
-            Color: =RGBA(35, 47, 62, 1)
-            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
-            DisabledColor: =ColorFade(Self.Fill, 90%)
-            DisabledFill: =ColorFade(Self.Fill, 70%)
-            Fill: =RGBA(255, 255, 255, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =32
-            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
-            HoverColor: =Self.Color
-            HoverFill: =ColorFade(Self.Fill, 20%)
-            PressedBorderColor: =Self.Fill
-            PressedColor: =Self.Fill
-            PressedFill: =Self.Color
-            RadiusBottomLeft: =16
-            RadiusBottomRight: =16
-            RadiusTopLeft: =16
-            RadiusTopRight: =16
-            Size: =13
-            Text: ="Ver"
-            Width: =60
-            X: =1045
-            Y: =269
-      - BtnEdit1_T:
-          Control: Classic/Button@2.2.0
-          Properties:
-            BorderColor: =RGBA(35, 47, 62, 0.2)
-            BorderThickness: =1
-            Color: =RGBA(35, 47, 62, 1)
-            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
-            DisabledColor: =ColorFade(Self.Fill, 90%)
-            DisabledFill: =ColorFade(Self.Fill, 70%)
-            Fill: =RGBA(255, 255, 255, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =32
-            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
-            HoverColor: =Self.Color
-            HoverFill: =ColorFade(Self.Fill, 20%)
-            PressedBorderColor: =Self.Fill
-            PressedColor: =Self.Fill
-            PressedFill: =Self.Color
-            RadiusBottomLeft: =16
-            RadiusBottomRight: =16
-            RadiusTopLeft: =16
-            RadiusTopRight: =16
-            Size: =13
-            Text: ="Edit"
-            Width: =60
-            X: =1115
-            Y: =269
-      - BgChipTipo1_T:
-          Control: Rectangle@2.3.0
-          Properties:
-            BorderColor: =RGBA(0, 0, 255, 1)
-            Fill: =RGBA(255, 244, 229, 1)
-            Height: =28
-            Width: =100
-            X: =45
-            Y: =271
-      - LblCat1_T:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(71, 69, 64, 1)
-            DisabledColor: =RGBA(186, 186, 186, 1)
-            Font: =Font.'Open Sans'
-            Height: =24
-            Size: =10
-            Text: ="Software"
-            Width: =83
-            X: =241
-            Y: =273
-      - LblTipo1_T:
-          Control: Label@2.5.1
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(184, 114, 0, 1)
-            DisabledColor: =RGBA(186, 186, 186, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =24
-            Size: =9
-            Text: ="Incidente"
-            Width: =100
-            X: =45
-            Y: =275
-      - Rectangle2_1:
-          Control: Rectangle@2.3.0
-          Properties:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =2
-            DisabledFill: =RGBA(161, 159, 157, 1)
-            Fill: =RGBA(0, 69, 120, 1)
-            FocusedBorderThickness: =4
-            Height: =37
-            HoverFill: =RGBA(0, 120, 212, 1)
-            PressedFill: =RGBA(0, 120, 212, 1)
-            Width: =3
-            X: =170
-            Y: =212
-      - Rectangle2_2:
-          Control: Rectangle@2.3.0
-          Properties:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =2
-            DisabledFill: =RGBA(161, 159, 157, 1)
-            Fill: =RGBA(0, 69, 120, 1)
-            FocusedBorderThickness: =4
-            Height: =37
-            HoverFill: =RGBA(0, 120, 212, 1)
-            PressedFill: =RGBA(0, 120, 212, 1)
-            Width: =3
-            X: =380
-            Y: =212
-      - Rectangle2_3:
-          Control: Rectangle@2.3.0
-          Properties:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =2
-            DisabledFill: =RGBA(161, 159, 157, 1)
-            Fill: =RGBA(0, 69, 120, 1)
-            FocusedBorderThickness: =4
-            Height: =37
-            HoverFill: =RGBA(0, 120, 212, 1)
-            PressedFill: =RGBA(0, 120, 212, 1)
-            Width: =3
-            X: =601
-            Y: =212
-      - Rectangle2_4:
-          Control: Rectangle@2.3.0
-          Properties:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =2
-            DisabledFill: =RGBA(161, 159, 157, 1)
-            Fill: =RGBA(0, 69, 120, 1)
-            FocusedBorderThickness: =4
-            Height: =37
-            HoverFill: =RGBA(0, 120, 212, 1)
-            PressedFill: =RGBA(0, 120, 212, 1)
-            Width: =3
-            X: =949
-            Y: =212
-      - LblH4_T_1:
-          Control: Label@2.5.1
-          Properties:
-            BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(128, 128, 128, 1)
-            DisabledColor: =RGBA(186, 186, 186, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =31
-            Text: ="Acciones"
-            Width: =121
-            X: =1045
-            Y: =216
       - FooterBg_G_2:
           Control: Rectangle@2.3.0
           Properties:
@@ -462,9 +227,9 @@ Screens:
             DisabledColor: =RGBA(186, 186, 186, 1)
             Font: =Font.'Open Sans'
             Size: =15
-            Text: ="Hola, Usuario"
+            Text: ="Hola, " & First(Split(User().FullName, " ")).Value & "!"
             Width: =185
-            X: =1167
+            X: =1188
             Y: =10
       - BtnUserAvatar_G_1:
           Control: Classic/Button@2.2.0
@@ -491,5 +256,660 @@ Screens:
             Size: =13
             Text: ="J"
             Width: =36
-            X: =1115
+            X: =1140
             Y: =12
+      - LblTableTitle_T:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Size: =18
+            Text: ="Administración de tickets"
+            Width: =330
+            X: =33
+            Y: =157
+      - LblCount_T:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            Size: =10
+            Text: ="15 registros encontrados"
+            Width: =220
+            X: =Parent.Width - 250
+            Y: =175
+      - TableHeaderBg_T_1:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(235, 240, 245, 1)
+            Height: =40
+            Width: =1307
+            X: =29
+            Y: =205
+      - LblH_Fecha_T:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(100, 110, 120, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            Size: =10
+            Text: ="FECHA / HORA"
+            X: =170
+            Y: =211
+      - LblH_Estado_T:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(100, 110, 120, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            Size: =10
+            Text: ="ESTADO"
+            Width: =120
+            X: =394
+            Y: =211
+      - LblH_Tipo_T:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(100, 110, 120, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            Size: =10
+            Text: ="TIPO"
+            Width: =100
+            X: =615
+            Y: =211
+      - LblH_Cat_T:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(100, 110, 120, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            Size: =10
+            Text: ="CATEGORÍA"
+            Width: =120
+            X: =820
+            Y: =211
+      - LblH_Acciones_T:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(100, 110, 120, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            Size: =10
+            Text: ="ACCIONES"
+            Width: =120
+            X: =1083
+            Y: =211
+      - GalleryTickets:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(245, 245, 245, 1)
+            Height: =460
+            Items: =ITCM
+            LoadingSpinner: =LoadingSpinner.None
+            TemplateFill: =RGBA(255, 255, 255, 1)
+            TemplateSize: =88
+            Width: =1306
+            X: =30
+            Y: =245
+          Children:
+            - SeparatorT:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  Fill: =RGBA(210, 215, 220, 1)
+                  Height: =1
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+            - LblFecha_T:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(100, 110, 120, 1)
+                  DisabledColor: =RGBA(186, 186, 186, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =43
+                  Size: =12
+                  Text: =ThisItem.'Fecha/Hora'
+                  Width: =133
+                  X: =147
+                  Y: =25
+            - BtnEstado_T:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderThickness: =0
+                  Color: |-
+                    =Switch(
+
+                        ThisItem.Estado.Value,
+
+                        "Registrado", RGBA(0, 56, 100, 1),
+
+                        "Por Aprobacion", RGBA(130, 70, 0, 1),
+
+                        "En Proceso", RGBA(100, 75, 0, 1),
+
+                        "Solucionado", RGBA(40, 70, 10, 1),
+
+                        "Cancelado", RGBA(180, 0, 0, 1), 
+
+                        RGBA(60, 60, 60, 1)
+
+                    )
+                  DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+                  DisabledColor: =ColorFade(Self.Fill, 90%)
+                  DisabledFill: =ColorFade(Self.Fill, 70%)
+                  Fill: |-
+                    =Switch(
+
+                        ThisItem.Estado.Value,
+
+                        "Registrado", RGBA(210,228,242,1),
+
+                        "Por Aprobacion", RGBA(255, 230, 200, 1),
+
+                        "En Proceso", RGBA(255, 243, 180, 1),
+
+                        "Solucionado", RGBA(220, 240, 195, 1),
+
+                        "Cancelado", RGBA(255, 210, 210, 1),
+
+                        RGBA(220, 220, 220, 1)
+
+                    )
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Normal
+                  Height: =28
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =ColorFade(Self.Fill, 20%)
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  RadiusBottomLeft: =14
+                  RadiusBottomRight: =14
+                  RadiusTopLeft: =14
+                  RadiusTopRight: =14
+                  Size: =11
+                  Text: =ThisItem.Estado.Value
+                  Width: =140
+                  X: =362
+                  Y: =33
+            - LblTipo_T:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 60, 70, 1)
+                  DisabledColor: =RGBA(186, 186, 186, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =24
+                  Text: =ThisItem.TipoIR.Value
+                  Width: =140
+                  X: =572
+                  Y: =33
+            - LblCat_T:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 60, 70, 1)
+                  DisabledColor: =RGBA(186, 186, 186, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =24
+                  Text: =ThisItem.Categoria.Value
+                  X: =780
+                  Y: =33
+            - BtnVerT:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  Color: =RGBA(255, 255, 255, 1)
+                  DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+                  DisabledColor: =ColorFade(Self.Fill, 90%)
+                  DisabledFill: =ColorFade(Self.Fill, 70%)
+                  Fill: =RGBA(49, 89, 162, 0.72)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Normal
+                  Height: =30
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =ColorFade(Self.Fill, 20%)
+                  OnSelect: |-
+                    =UpdateContext({mostrarModalT: true})
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  RadiusBottomLeft: =15
+                  RadiusBottomRight: =15
+                  RadiusTopLeft: =15
+                  RadiusTopRight: =15
+                  Size: =12
+                  Text: ="Ver"
+                  Width: =90
+                  X: =1017
+                  Y: =32
+            - BtnVerT_1:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  BorderColor: =RGBA(255, 153, 0, 1)
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+                  DisabledColor: =ColorFade(Self.Fill, 90%)
+                  DisabledFill: =ColorFade(Self.Fill, 70%)
+                  Fill: =RGBA(255, 191, 0, 0.14)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Normal
+                  Height: =30
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =ColorFade(Self.Fill, 20%)
+                  OnSelect: |-
+                    =UpdateContext({mostrarModalT: true})
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  RadiusBottomLeft: =15
+                  RadiusBottomRight: =15
+                  RadiusTopLeft: =15
+                  RadiusTopRight: =15
+                  Size: =12
+                  Text: ="Editar"
+                  Width: =90
+                  X: =1120
+                  Y: =32
+            - LblTipo_T_1:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 60, 70, 1)
+                  DisabledColor: =RGBA(186, 186, 186, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =24
+                  Text: =ThisItem.ID
+                  Width: =140
+                  X: =1
+                  Y: =35
+      - ModalOverlayT:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0.45)
+            Height: =Parent.Height
+            OnSelect: |-
+              =UpdateContext({mostrarModalT: false})
+            Visible: =mostrarModalT
+            Width: =Parent.Width
+      - ModalBoxT:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =620
+            Visible: =mostrarModalT
+            Width: =640
+            X: =(Parent.Width - Self.Width) / 2
+            Y: =(Parent.Height - Self.Height) / 2
+      - ModalHeaderBarT:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(255, 153, 0, 1)
+            Height: =6
+            Visible: =mostrarModalT
+            Width: =640
+            X: =ModalBoxT.X
+            Y: =ModalBoxT.Y
+      - ModalTitleT:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(35, 47, 62, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =32
+            Size: =16
+            Text: ="Detalle del Ticket"
+            Visible: =mostrarModalT
+            Width: =400
+            X: =ModalBoxT.X + 24
+            Y: =ModalBoxT.Y + 20
+      - BtnCerrarModalT:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            BorderThickness: =0
+            Color: =RGBA(100, 100, 100, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Fill: =RGBA(240, 240, 240, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            Height: =30
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, 20%)
+            OnSelect: |-
+              =UpdateContext({mostrarModalT: false})
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =14
+            Text: ="✕"
+            Visible: =mostrarModalT
+            Width: =30
+            X: =ModalBoxT.X + ModalBoxT.Width - 44
+            Y: =ModalBoxT.Y + 16
+      - ModalContentTextT:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 50, 50, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            Height: =350
+            Size: =12
+            Text: |-
+              ="ID: 12345\n\nFecha/Hora: 01/01/2026 10:00 AM\n\nTipo: Incidente\n\nCategoría: Software\n\nNombre: Usuario Demo\n\nCorreo: usuario@demo.com\n\nDescripción: Problema de acceso al sistema principal.\n\nDatos Adjuntos: 0 archivos"
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =mostrarModalT
+            Width: =590
+            X: =ModalBoxT.X + 24
+            Y: =ModalBoxT.Y + 80
+      - ModalLblAgenteKey_T:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(130, 130, 130, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Size: =10
+            Text: ="AGENTE DESIGNADO"
+            Visible: =mostrarModalT
+            Width: =200
+            X: =ModalBoxT.X + 24
+            Y: =ModalBoxT.Y + 460
+      - ModalLblAgenteVal_T:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(0, 69, 120, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Size: =12
+            Text: ="Sin asignar"
+            Visible: =mostrarModalT
+            Width: =200
+            X: =ModalBoxT.X + 24
+            Y: =ModalBoxT.Y + 480
+      - BtnAbrirEscalarT:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =RGBA(255, 153, 0, 1)
+            BorderThickness: =1
+            Color: =RGBA(180, 100, 0, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Fill: =RGBA(255, 248, 235, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            Height: =34
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, 20%)
+            OnSelect: |-
+              =UpdateContext({mostrarModalEscalar: true})
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =17
+            RadiusBottomRight: =17
+            RadiusTopLeft: =17
+            RadiusTopRight: =17
+            Size: =12
+            Text: ="⬆ Escalar caso"
+            Visible: =mostrarModalT
+            Width: =150
+            X: =ModalBoxT.X + 250
+            Y: =ModalBoxT.Y + 470
+      - ModalOverlayEscalar:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0.55)
+            Height: =Parent.Height
+            OnSelect: |-
+              =UpdateContext({mostrarModalEscalar: false})
+            Visible: =mostrarModalEscalar
+            Width: =Parent.Width
+      - ModalBoxEscalar:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =420
+            Visible: =mostrarModalEscalar
+            Width: =480
+            X: =(Parent.Width - Self.Width) / 2
+            Y: =(Parent.Height - Self.Height) / 2
+      - ModalEscalarHeaderBar:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(255, 153, 0, 1)
+            Height: =6
+            Visible: =mostrarModalEscalar
+            Width: =480
+            X: =ModalBoxEscalar.X
+            Y: =ModalBoxEscalar.Y
+      - ModalEscalarTitle:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(35, 47, 62, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            Size: =15
+            Text: ="¿A quién deseas escalar este caso?"
+            Visible: =mostrarModalEscalar
+            Width: =390
+            X: =475
+            Y: =193
+      - BtnCerrarEscalar:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            BorderThickness: =0
+            Color: =RGBA(100, 100, 100, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Fill: =RGBA(240, 240, 240, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            Height: =30
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, 20%)
+            OnSelect: |-
+              =UpdateContext({mostrarModalEscalar: false})
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =14
+            Text: ="✕"
+            Visible: =mostrarModalEscalar
+            Width: =30
+            X: =884
+            Y: =191
+      - GalleryAgentes:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(220, 225, 230, 1)
+            BorderThickness: =1
+            DelayItemLoading: =false
+            Height: =240
+            Items: |-
+              =Table({Nombre: "Agente Soporte 1", Correo: "agente1@soporte.com"}, {Nombre: "Agente Soporte 2", Correo: "agente2@soporte.com"})
+            LoadingSpinner: =LoadingSpinner.None
+            TemplateSize: =56
+            Visible: =mostrarModalEscalar
+            Width: =432
+            X: =ModalBoxEscalar.X + 24
+            Y: =ModalBoxEscalar.Y + 80
+          Children:
+            - AgenteRowBg:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 0, 255, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =Parent.TemplateHeight
+                  Width: =Parent.TemplateWidth
+            - AgenteIconCircle:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderThickness: =0
+                  Color: =RGBA(255, 255, 255, 1)
+                  DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+                  DisabledColor: =ColorFade(Self.Fill, 90%)
+                  DisabledFill: =ColorFade(Self.Fill, 70%)
+                  Fill: =RGBA(49, 89, 162, 0.15)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Normal
+                  Height: =36
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =ColorFade(Self.Fill, 20%)
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  RadiusBottomLeft: =18
+                  RadiusBottomRight: =18
+                  RadiusTopLeft: =18
+                  RadiusTopRight: =18
+                  Size: =14
+                  Text: ="A"
+                  Width: =36
+                  X: =12
+                  Y: =10
+            - AgenteLblNombre:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(35, 47, 62, 1)
+                  DisabledColor: =RGBA(186, 186, 186, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =22
+                  Text: =ThisItem.Nombre
+                  Width: =250
+                  X: =58
+                  Y: =8
+            - AgenteLblEmail:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(100, 110, 120, 1)
+                  DisabledColor: =RGBA(186, 186, 186, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =18
+                  Size: =10
+                  Text: =ThisItem.Correo
+                  Width: =280
+                  X: =58
+                  Y: =30
+      - BtnEscalarConfirmar:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Fill: =RGBA(49, 89, 162, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            Height: =50
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, 20%)
+            OnSelect: |-
+              =UpdateContext({mostrarModalEscalar: false, mostrarModalT: false})
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =17
+            RadiusBottomRight: =17
+            RadiusTopLeft: =17
+            RadiusTopRight: =17
+            Size: =13
+            Text: ="Confirmar escalamiento"
+            Visible: =mostrarModalEscalar
+            Width: =200
+            X: =ModalBoxEscalar.X + ModalBoxEscalar.Width - 224
+            Y: =ModalBoxEscalar.Y + 350
+      - LblH_Tipo_T_1:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(100, 110, 120, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            Size: =10
+            Text: ="ID_Caso"
+            Width: =100
+            X: =53
+            Y: =211

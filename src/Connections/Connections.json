@@ -1,4 +1,22 @@
 {
+  "0748cc2f-71e9-4251-a407-15040d25dfc4": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Usuarios de Office 365",
+      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/releases/v1.0.1788/1.0.1788.4544/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "UsuariosdeOffice365"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "0748cc2f-71e9-4251-a407-15040d25dfc4"
+  },
   "a5e45b46-4eb3-42dd-adb5-c62f6b2c63c3": {
     "appActions": [
       "providers/PowerPlatform.Governance/Operations/Read",
@@ -19,10 +37,18 @@
             "tableName": "5a81cd3e-40fb-44ba-9d73-a719433debfe"
           }
         }
+      },
+      "https://livejaverianaedu-my.sharepoint.com/personal/jstiven_morales_javeriana_edu_co/_layouts/15/lists.aspx?openCreate=true": {
+        "dataSources": {
+          "Roles De Usuario": {
+            "tableName": "fce95ed2-fb73-4cc1-80bb-8ecf1bae1edf"
+          }
+        }
       }
     },
     "dataSources": [
-      "ITCM"
+      "ITCM",
+      "Roles De Usuario"
     ],
     "dependencies": {},
     "dependents": [],

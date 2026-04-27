@@ -1,5 +1,33 @@
 App As appinfo:
     BackEnabled: =true
+    OnStart: |-
+        =Set(
+            varRegistroUsuario, 
+            LookUp('Roles De Usuario', Correo = User().Email)
+        );
+        
+        If(
+            IsBlank(varRegistroUsuario),
+            Patch(
+                'Roles De Usuario',
+                Defaults('Roles De Usuario'),
+                {
+                    Title: User().FullName,
+                    Correo: User().Email,
+                    Rol: { Value: "Usuario" }
+                }
+            );
+        
+            Set(
+                varRegistroUsuario, 
+                LookUp('Roles De Usuario', Correo = User().Email)
+            )
+        );
+        
+        Set(
+            varRolUsuario, 
+            varRegistroUsuario.Rol.Value
+        )
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:

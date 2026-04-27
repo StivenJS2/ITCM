@@ -1,4 +1,11 @@
 Tickets As screen:
+    OnVisible: |-
+        =UpdateContext({
+            varFiltroID_T: Blank(),
+            varFiltroUser_T: Blank(),
+            varFiltroTipo_T: Blank(),
+            varFiltroCat_T: Blank()
+        })
 
     HeaderBg_T As rectangle:
         Fill: =RGBA(35, 47, 62, 1)
@@ -113,193 +120,6 @@ Tickets As screen:
         Y: =92
         ZIndex: =2
 
-    LblTableTitle_T As label:
-        FontWeight: =FontWeight.Bold
-        Size: =18
-        Text: ="Administración de tickets"
-        Width: =330
-        X: =30
-        Y: =170
-        ZIndex: =2
-
-    LblH1_T As label:
-        Color: =RGBA(128, 128, 128, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =27
-        Size: =9
-        Text: ="TIPO"
-        Width: =64
-        X: =81
-        Y: =220
-        ZIndex: =2
-
-    LblH3_T As label:
-        Color: =RGBA(128, 128, 128, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =27
-        Size: =9
-        Text: ="ESTADO"
-        Width: =81
-        X: =439
-        Y: =220
-        ZIndex: =2
-
-    LblH4_T As label:
-        Color: =RGBA(128, 128, 128, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =27
-        Size: =9
-        Text: ="USUARIO"
-        Width: =86
-        X: =659
-        Y: =220
-        ZIndex: =2
-
-    LblH2_T As label:
-        Color: =RGBA(128, 128, 128, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =23
-        Size: =9
-        Text: ="CATEGORÍA"
-        Width: =95
-        X: =242
-        Y: =224
-        ZIndex: =2
-
-    BtnVer1_T As button:
-        BorderColor: =RGBA(35, 47, 62, 0.2)
-        BorderThickness: =1
-        Color: =RGBA(35, 47, 62, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =32
-        RadiusBottomLeft: =16
-        RadiusBottomRight: =16
-        RadiusTopLeft: =16
-        RadiusTopRight: =16
-        Text: ="Ver"
-        Width: =60
-        X: =1045
-        Y: =269
-        ZIndex: =2
-
-    BtnEdit1_T As button:
-        BorderColor: =RGBA(35, 47, 62, 0.2)
-        BorderThickness: =1
-        Color: =RGBA(35, 47, 62, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =32
-        RadiusBottomLeft: =16
-        RadiusBottomRight: =16
-        RadiusTopLeft: =16
-        RadiusTopRight: =16
-        Text: ="Edit"
-        Width: =60
-        X: =1115
-        Y: =269
-        ZIndex: =2
-
-    BgChipTipo1_T As rectangle:
-        Fill: =RGBA(255, 244, 229, 1)
-        Height: =28
-        Width: =100
-        X: =45
-        Y: =271
-        ZIndex: =2
-
-    LblCat1_T As label:
-        Height: =24
-        Size: =10
-        Text: ="Software"
-        Width: =83
-        X: =241
-        Y: =273
-        ZIndex: =2
-
-    LblTipo1_T As label:
-        Align: =Align.Center
-        Color: =RGBA(184, 114, 0, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =24
-        Size: =9
-        Text: ="Incidente"
-        Width: =100
-        X: =45
-        Y: =275
-        ZIndex: =3
-
-    Rectangle2_1 As rectangle:
-        BorderColor: =RGBA(0, 0, 0, 0)
-        BorderStyle: =BorderStyle.None
-        BorderThickness: =2
-        DisabledFill: =RGBA(161, 159, 157, 1)
-        Fill: =RGBA(0, 69, 120, 1)
-        FocusedBorderThickness: =4
-        Height: =37
-        HoverFill: =RGBA(0, 120, 212, 1)
-        PressedFill: =RGBA(0, 120, 212, 1)
-        Width: =3
-        X: =170
-        Y: =212
-        ZIndex: =4
-
-    Rectangle2_2 As rectangle:
-        BorderColor: =RGBA(0, 0, 0, 0)
-        BorderStyle: =BorderStyle.None
-        BorderThickness: =2
-        DisabledFill: =RGBA(161, 159, 157, 1)
-        Fill: =RGBA(0, 69, 120, 1)
-        FocusedBorderThickness: =4
-        Height: =37
-        HoverFill: =RGBA(0, 120, 212, 1)
-        PressedFill: =RGBA(0, 120, 212, 1)
-        Width: =3
-        X: =380
-        Y: =212
-        ZIndex: =5
-
-    Rectangle2_3 As rectangle:
-        BorderColor: =RGBA(0, 0, 0, 0)
-        BorderStyle: =BorderStyle.None
-        BorderThickness: =2
-        DisabledFill: =RGBA(161, 159, 157, 1)
-        Fill: =RGBA(0, 69, 120, 1)
-        FocusedBorderThickness: =4
-        Height: =37
-        HoverFill: =RGBA(0, 120, 212, 1)
-        PressedFill: =RGBA(0, 120, 212, 1)
-        Width: =3
-        X: =601
-        Y: =212
-        ZIndex: =6
-
-    Rectangle2_4 As rectangle:
-        BorderColor: =RGBA(0, 0, 0, 0)
-        BorderStyle: =BorderStyle.None
-        BorderThickness: =2
-        DisabledFill: =RGBA(161, 159, 157, 1)
-        Fill: =RGBA(0, 69, 120, 1)
-        FocusedBorderThickness: =4
-        Height: =37
-        HoverFill: =RGBA(0, 120, 212, 1)
-        PressedFill: =RGBA(0, 120, 212, 1)
-        Width: =3
-        X: =949
-        Y: =212
-        ZIndex: =7
-
-    LblH4_T_1 As label:
-        Color: =RGBA(128, 128, 128, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =31
-        Size: =13
-        Text: ="Acciones"
-        Width: =121
-        X: =1045
-        Y: =216
-        ZIndex: =8
-
     FooterBg_G_2 As rectangle:
         Fill: =RGBA(35, 47, 62, 1)
         Height: =60
@@ -328,9 +148,9 @@ Tickets As screen:
     LblUserHi_G_1 As label:
         Color: =RGBA(255, 255, 255, 1)
         Size: =15
-        Text: ="Hola, Usuario"
+        Text: ="Hola, " & First(Split(User().FullName, " ")).Value & "!"
         Width: =185
-        X: =1167
+        X: =1188
         Y: =10
         ZIndex: =12
 
@@ -343,7 +163,1065 @@ Tickets As screen:
         RadiusTopRight: =18
         Text: ="J"
         Width: =36
-        X: =1115
+        X: =1140
         Y: =12
         ZIndex: =13
+
+    LblTableTitle_T As label:
+        FontWeight: =FontWeight.Bold
+        Size: =18
+        Text: ="Administración de tickets"
+        Width: =330
+        X: =33
+        Y: =157
+        ZIndex: =17
+
+    LblCount_T As label:
+        Align: =Align.Right
+        Color: =RGBA(128, 128, 128, 1)
+        Size: =10
+        Text: ="15 registros encontrados"
+        Width: =220
+        X: =Parent.Width - 250
+        Y: =175
+        ZIndex: =18
+
+    TableHeaderBg_T_1 As rectangle:
+        Fill: =RGBA(235, 240, 245, 1)
+        Height: =40
+        Width: =1307
+        X: =29
+        Y: =205
+        ZIndex: =19
+
+    LblH_Fecha_T As label:
+        Align: =Align.Center
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =28
+        Size: =10
+        Text: ="FECHA / HORA"
+        X: =170
+        Y: =211
+        ZIndex: =20
+
+    LblH_Estado_T As label:
+        Align: =Align.Center
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =28
+        Size: =10
+        Text: ="ESTADO"
+        Width: =120
+        X: =394
+        Y: =211
+        ZIndex: =21
+
+    LblH_Tipo_T As label:
+        Align: =Align.Center
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =28
+        Size: =10
+        Text: ="TIPO"
+        Width: =100
+        X: =615
+        Y: =211
+        ZIndex: =22
+
+    LblH_Cat_T As label:
+        Align: =Align.Center
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =28
+        Size: =10
+        Text: ="CATEGORÍA"
+        Width: =120
+        X: =820
+        Y: =211
+        ZIndex: =23
+
+    LblH_Acciones_T As label:
+        Align: =Align.Center
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =28
+        Size: =10
+        Text: ="ACCIONES"
+        Width: =120
+        X: =1083
+        Y: =211
+        ZIndex: =24
+
+    "GalleryTickets As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        BorderColor: =RGBA(245, 245, 245, 1)
+        DelayItemLoading: =true
+        Height: =460
+        Items: |-
+            =Filter(
+                ITCM,
+                (IsBlank(varFiltroID_T) || ID = Value(varFiltroID_T)),
+                (IsBlank(varFiltroUser_T) || StartsWith(Nombre, varFiltroUser_T)),
+                (IsBlank(varFiltroTipo_T) || varFiltroTipo_T = "Tipo" || TipoIR.Value = varFiltroTipo_T),
+                (IsBlank(varFiltroCat_T) || varFiltroCat_T = "Categoría" || Categoria.Value = varFiltroCat_T)
+            )
+        Layout: =Layout.Vertical
+        TemplateFill: =RGBA(255, 255, 255, 1)
+        TemplatePadding: =0
+        TemplateSize: =88
+        Width: =1306
+        X: =30
+        Y: =245
+        ZIndex: =29
+
+        SeparatorT As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(210, 215, 220, 1)
+            Height: =1
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =1
+
+        LblFecha_T As label:
+            Align: =Align.Center
+            Color: =RGBA(100, 110, 120, 1)
+            Height: =43
+            Size: =12
+            Text: =ThisItem.'Fecha/Hora'
+            Width: =133
+            X: =147
+            Y: =25
+            ZIndex: =2
+
+        BtnEstado_T As button:
+            BorderThickness: =0
+            Color: |-
+                =Switch(
+                
+                    ThisItem.Estado.Value,
+                
+                    "Registrado", RGBA(0, 56, 100, 1),
+                
+                    "Por Aprobacion", RGBA(130, 70, 0, 1),
+                
+                    "En Proceso", RGBA(100, 75, 0, 1),
+                
+                    "Solucionado", RGBA(40, 70, 10, 1),
+                
+                    "Cancelado", RGBA(180, 0, 0, 1), 
+                
+                    RGBA(60, 60, 60, 1)
+                
+                )
+            Fill: |-
+                =Switch(
+                
+                    ThisItem.Estado.Value,
+                
+                    "Registrado", RGBA(210,228,242,1),
+                
+                    "Por Aprobacion", RGBA(255, 230, 200, 1),
+                
+                    "En Proceso", RGBA(255, 243, 180, 1),
+                
+                    "Solucionado", RGBA(220, 240, 195, 1),
+                
+                    "Cancelado", RGBA(255, 210, 210, 1),
+                
+                    RGBA(220, 220, 220, 1)
+                
+                )
+            Height: =28
+            RadiusBottomLeft: =14
+            RadiusBottomRight: =14
+            RadiusTopLeft: =14
+            RadiusTopRight: =14
+            Size: =11
+            Text: =ThisItem.Estado.Value
+            Width: =140
+            X: =362
+            Y: =33
+            ZIndex: =3
+
+        LblTipo_T As label:
+            Align: =Align.Center
+            Color: =RGBA(50, 60, 70, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =24
+            Size: =13
+            Text: =ThisItem.TipoIR.Value
+            Width: =140
+            X: =572
+            Y: =33
+            ZIndex: =4
+
+        LblCat_T As label:
+            Align: =Align.Center
+            Color: =RGBA(50, 60, 70, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =24
+            Size: =13
+            Text: =ThisItem.Categoria.Value
+            X: =780
+            Y: =33
+            ZIndex: =5
+
+        BtnCancelarT As button:
+            BorderColor: =RGBA(180, 60, 40, 1)
+            BorderThickness: =1
+            Color: =RGBA(160, 40, 20, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(255, 245, 244, 1)
+            Height: =30
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(200, 50, 30, 1)
+            OnSelect: |-
+                =UpdateContext({mostrarModalCancelT: true, itemSeleccionadoT: ThisItem})
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =12
+            Text: ="Cancelar"
+            Width: =100
+            X: =1017
+            Y: =32
+            ZIndex: =6
+
+        BtnEditarT As button:
+            BorderColor: =RGBA(255, 153, 0, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 191, 0, 0.14)
+            Height: =30
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(255, 191, 0, 0.35)
+            OnSelect: |-
+                =UpdateContext({mostrarModalEditarT: true, itemSeleccionadoT: ThisItem})
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =12
+            Text: ="Editar"
+            Width: =90
+            X: =1130
+            Y: =32
+            ZIndex: =7
+
+        LblTipo_T_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(50, 60, 70, 1)
+            Height: =24
+            Size: =13
+            Text: =ThisItem.ID
+            Width: =140
+            X: =1
+            Y: =35
+            ZIndex: =8
+
+    ModalOverlayCancelT As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.5)
+        Height: =Parent.Height
+        OnSelect: |-
+            =UpdateContext({mostrarModalCancelT: false})
+        Visible: =mostrarModalCancelT
+        Width: =Parent.Width
+        ZIndex: =50
+
+    ModalCancelBoxT As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =200
+        Visible: =mostrarModalCancelT
+        Width: =400
+        X: =(Parent.Width - Self.Width) / 2
+        Y: =(Parent.Height - Self.Height) / 2
+        ZIndex: =51
+
+    ModalCancelTxtT As label:
+        Align: =Align.Center
+        Size: =12
+        Text: ="¿Estás seguro/a que deseas cancelar este ticket?"
+        Visible: =mostrarModalCancelT
+        Width: =ModalCancelBoxT.Width - 40
+        X: =ModalCancelBoxT.X + 20
+        Y: =ModalCancelBoxT.Y + 40
+        ZIndex: =52
+
+    ModalCancelBtnConfirmT As button:
+        Fill: =RGBA(180, 60, 40, 1)
+        Height: =34
+        OnSelect: |-
+            =Patch(
+                ITCM,
+                itemSeleccionadoT,
+                { Estado: { Value: "Cancelado" } }
+            );
+            UpdateContext({mostrarModalCancelT: false});
+            Notify("El estado se ha actualizado a Cancelado", NotificationType.Success)
+        RadiusBottomLeft: =17
+        RadiusBottomRight: =17
+        RadiusTopLeft: =17
+        RadiusTopRight: =17
+        Text: ="Confirmar"
+        Visible: =mostrarModalCancelT
+        Width: =120
+        X: =ModalCancelBoxT.X + (ModalCancelBoxT.Width / 2) - 130
+        Y: =ModalCancelBoxT.Y + 130
+        ZIndex: =53
+
+    ModalCancelBtnBackT As button:
+        BorderColor: =RGBA(51, 62, 72, 1)
+        BorderThickness: =1
+        Color: =RGBA(51, 62, 72, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =34
+        OnSelect: |-
+            =UpdateContext({mostrarModalCancelT: false})
+        RadiusBottomLeft: =17
+        RadiusBottomRight: =17
+        RadiusTopLeft: =17
+        RadiusTopRight: =17
+        Text: ="Cancelar"
+        Visible: =mostrarModalCancelT
+        Width: =120
+        X: =ModalCancelBoxT.X + (ModalCancelBoxT.Width / 2) + 10
+        Y: =ModalCancelBoxT.Y + 130
+        ZIndex: =54
+
+
+    ModalOverlayEscalar As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.55)
+        Height: =Parent.Height
+        OnSelect: |-
+            =UpdateContext({mostrarModalEscalar: false})
+        Visible: =mostrarModalEscalar
+        Width: =Parent.Width
+        ZIndex: =80
+
+    ModalBoxEscalar As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =420
+        Visible: =mostrarModalEscalar
+        Width: =480
+        X: =(Parent.Width - Self.Width) / 2
+        Y: =(Parent.Height - Self.Height) / 2
+        ZIndex: =81
+
+    ModalEscalarHeaderBar As rectangle:
+        Fill: =RGBA(255, 153, 0, 1)
+        Height: =6
+        Visible: =mostrarModalEscalar
+        Width: =480
+        X: =ModalBoxEscalar.X
+        Y: =ModalBoxEscalar.Y
+        ZIndex: =82
+
+    ModalEscalarTitle As label:
+        Color: =RGBA(35, 47, 62, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =28
+        Size: =15
+        Text: ="¿A quién deseas escalar este caso?"
+        Visible: =mostrarModalEscalar
+        Width: =390
+        X: =475
+        Y: =193
+        ZIndex: =83
+
+    BtnCerrarEscalar As button:
+        BorderThickness: =0
+        Color: =RGBA(100, 100, 100, 1)
+        Fill: =RGBA(240, 240, 240, 1)
+        Height: =30
+        OnSelect: |-
+            =UpdateContext({mostrarModalEscalar: false})
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =14
+        Text: ="✕"
+        Visible: =mostrarModalEscalar
+        Width: =30
+        X: =884
+        Y: =191
+        ZIndex: =84
+
+    "GalleryAgentes As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        BorderColor: =RGBA(220, 225, 230, 1)
+        BorderThickness: =1
+        Height: =240
+        Items: |-
+            =Table({Nombre: "Agente Soporte 1", Correo: "agente1@soporte.com"}, {Nombre: "Agente Soporte 2", Correo: "agente2@soporte.com"})
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =56
+        Visible: =mostrarModalEscalar
+        Width: =432
+        X: =ModalBoxEscalar.X + 24
+        Y: =ModalBoxEscalar.Y + 80
+        ZIndex: =87
+
+        AgenteRowBg As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Parent.TemplateHeight
+            Width: =Parent.TemplateWidth
+            ZIndex: =1
+
+        AgenteIconCircle As button:
+            BorderThickness: =0
+            Fill: =RGBA(49, 89, 162, 0.15)
+            Height: =36
+            RadiusBottomLeft: =18
+            RadiusBottomRight: =18
+            RadiusTopLeft: =18
+            RadiusTopRight: =18
+            Size: =14
+            Text: ="A"
+            Width: =36
+            X: =12
+            Y: =10
+            ZIndex: =3
+
+        AgenteLblNombre As label:
+            Color: =RGBA(35, 47, 62, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =22
+            Size: =13
+            Text: =ThisItem.Nombre
+            Width: =250
+            X: =58
+            Y: =8
+            ZIndex: =4
+
+        AgenteLblEmail As label:
+            Color: =RGBA(100, 110, 120, 1)
+            Height: =18
+            Size: =10
+            Text: =ThisItem.Correo
+            Width: =280
+            X: =58
+            Y: =30
+            ZIndex: =5
+
+    BtnEscalarConfirmar As button:
+        Fill: =RGBA(49, 89, 162, 1)
+        Height: =50
+        OnSelect: |-
+            =UpdateContext({mostrarModalEscalar: false, mostrarModalT: false})
+        RadiusBottomLeft: =17
+        RadiusBottomRight: =17
+        RadiusTopLeft: =17
+        RadiusTopRight: =17
+        Text: ="Confirmar escalamiento"
+        Visible: =mostrarModalEscalar
+        Width: =200
+        X: =ModalBoxEscalar.X + ModalBoxEscalar.Width - 224
+        Y: =ModalBoxEscalar.Y + 350
+        ZIndex: =88
+
+    LblH_Tipo_T_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =28
+        Size: =10
+        Text: ="ID_Caso"
+        Width: =100
+        X: =53
+        Y: =211
+        ZIndex: =89
+
+    BtnFiltrar_T As button:
+        Fill: =RGBA(51, 62, 72, 1)
+        Height: =34
+        OnSelect: |-
+            =UpdateContext({
+                varFiltroID_T: TxtID_T.Text,
+                varFiltroUser_T: TxtUser_T.Text,
+                varFiltroTipo_T: DdTipo_T.Selected.Value,
+                varFiltroCat_T: DdCat_T.Selected.Value
+            })
+        RadiusBottomLeft: =17
+        RadiusBottomRight: =17
+        RadiusTopLeft: =17
+        RadiusTopRight: =17
+        Text: ="Filtrar"
+        Width: =100
+        X: =710
+        Y: =92
+        ZIndex: =90
+
+    BtnLimpiar_T As button:
+        BorderColor: =RGBA(35, 47, 62, 1)
+        BorderThickness: =1
+        Color: =RGBA(35, 47, 62, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =34
+        OnSelect: |-
+            =Reset(TxtID_T);
+            Reset(TxtUser_T);
+            Reset(DdTipo_T);
+            Reset(DdCat_T);
+            UpdateContext({
+                varFiltroID_T: Blank(),
+                varFiltroUser_T: Blank(),
+                varFiltroTipo_T: Blank(),
+                varFiltroCat_T: Blank()
+            })
+        RadiusBottomLeft: =17
+        RadiusBottomRight: =17
+        RadiusTopLeft: =17
+        RadiusTopRight: =17
+        Text: ="Limpiar"
+        Width: =100
+        X: =820
+        Y: =92
+        ZIndex: =91
+
+    ModalOverlayEditarT As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.5)
+        Height: =Parent.Height
+        OnSelect: |-
+            =UpdateContext({mostrarModalEditarT: false})
+        Visible: =mostrarModalEditarT
+        Width: =Parent.Width
+        ZIndex: =100
+
+    ModalEditarBoxT As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =680
+        Visible: =mostrarModalEditarT
+        Width: =660
+        X: =(Parent.Width - Self.Width) / 2
+        Y: =(Parent.Height - Self.Height) / 2
+        ZIndex: =101
+
+    ModalEditarHeaderBarT As rectangle:
+        Fill: =RGBA(255, 153, 0, 1)
+        Height: =6
+        Visible: =mostrarModalEditarT
+        Width: =660
+        X: =ModalEditarBoxT.X
+        Y: =ModalEditarBoxT.Y
+        ZIndex: =102
+
+    ModalEditarTitleT As label:
+        Color: =RGBA(35, 47, 62, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =32
+        Size: =16
+        Text: ="Editar Ticket"
+        Visible: =mostrarModalEditarT
+        Width: =400
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 18
+        ZIndex: =103
+
+    BtnCerrarEditarT As button:
+        BorderThickness: =0
+        Color: =RGBA(100, 100, 100, 1)
+        Fill: =RGBA(240, 240, 240, 1)
+        Height: =30
+        OnSelect: |-
+            =UpdateContext({mostrarModalEditarT: false})
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =14
+        Text: ="✕"
+        Visible: =mostrarModalEditarT
+        Width: =30
+        X: =ModalEditarBoxT.X + ModalEditarBoxT.Width - 44
+        Y: =ModalEditarBoxT.Y + 14
+        ZIndex: =104
+
+    ModalEditar_LblID As label:
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =18
+        Size: =9
+        Text: ="ID - CASO"
+        Visible: =mostrarModalEditarT
+        Width: =140
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 65
+        ZIndex: =105
+
+    ModalEditar_ValID As label:
+        Color: =RGBA(35, 47, 62, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =24
+        Size: =13
+        Text: ="TC-00123"
+        Visible: =mostrarModalEditarT
+        Width: =140
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 84
+        ZIndex: =106
+
+    ModalEditar_LblFecha As label:
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =18
+        Size: =9
+        Text: ="FECHA / HORA"
+        Visible: =mostrarModalEditarT
+        Width: =200
+        X: =ModalEditarBoxT.X + 190
+        Y: =ModalEditarBoxT.Y + 65
+        ZIndex: =107
+
+    ModalEditar_ValFecha As label:
+        Color: =RGBA(35, 47, 62, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =24
+        Size: =13
+        Text: ="15/04/2026 09:32 AM"
+        Visible: =mostrarModalEditarT
+        Width: =200
+        X: =ModalEditarBoxT.X + 190
+        Y: =ModalEditarBoxT.Y + 84
+        ZIndex: =108
+
+    ModalEditar_LblEstado As label:
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =18
+        Size: =9
+        Text: ="ESTADO"
+        Visible: =mostrarModalEditarT
+        Width: =140
+        X: =ModalEditarBoxT.X + 430
+        Y: =ModalEditarBoxT.Y + 65
+        ZIndex: =109
+
+    ModalEditar_ValEstado As label:
+        Color: =RGBA(35, 47, 62, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =24
+        Size: =13
+        Text: ="En Proceso"
+        Visible: =mostrarModalEditarT
+        Width: =140
+        X: =ModalEditarBoxT.X + 430
+        Y: =ModalEditarBoxT.Y + 84
+        ZIndex: =110
+
+    ModalEditar_DividerA As rectangle:
+        Fill: =RGBA(220, 225, 230, 1)
+        Height: =1
+        Visible: =mostrarModalEditarT
+        Width: =612
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 118
+        ZIndex: =111
+
+    ModalEditar_LblTipo As label:
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =18
+        Size: =9
+        Text: ="TIPO"
+        Visible: =mostrarModalEditarT
+        Width: =270
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 130
+        ZIndex: =112
+
+    DdEditarTipo_T As Desplegable.pcfdataset:
+        Fill: =RGBA(204, 218, 228, 1)
+        Height: =34
+        Items: =["Incidente", "Requerimiento"]
+        Visible: =mostrarModalEditarT
+        Width: =270
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 148
+        ZIndex: =113
+
+    ModalEditar_LblCat As label:
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =18
+        Size: =9
+        Text: ="CATEGORÍA"
+        Visible: =mostrarModalEditarT
+        Width: =290
+        X: =ModalEditarBoxT.X + 318
+        Y: =ModalEditarBoxT.Y + 130
+        ZIndex: =114
+
+    DdEditarCat_T As Desplegable.pcfdataset:
+        Fill: =RGBA(204, 218, 228, 1)
+        Height: =34
+        Items: =["Software", "Hardware", "Acceso"]
+        Visible: =mostrarModalEditarT
+        Width: =290
+        X: =ModalEditarBoxT.X + 318
+        Y: =ModalEditarBoxT.Y + 148
+        ZIndex: =115
+
+    ModalEditar_DividerB As rectangle:
+        Fill: =RGBA(220, 225, 230, 1)
+        Height: =1
+        Visible: =mostrarModalEditarT
+        Width: =612
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 183
+        ZIndex: =116
+
+    ModalEditar_LblUsuario As label:
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =18
+        Size: =9
+        Text: ="USUARIO"
+        Visible: =mostrarModalEditarT
+        Width: =200
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 195
+        ZIndex: =117
+
+    ModalEditar_ValUsuario As label:
+        Color: =RGBA(35, 47, 62, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =24
+        Size: =13
+        Text: ="Juan Pérez"
+        Visible: =mostrarModalEditarT
+        Width: =200
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 214
+        ZIndex: =118
+
+    ModalEditar_LblCorreo As label:
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =18
+        Size: =9
+        Text: ="CORREO"
+        Visible: =mostrarModalEditarT
+        Width: =300
+        X: =ModalEditarBoxT.X + 250
+        Y: =ModalEditarBoxT.Y + 195
+        ZIndex: =119
+
+    ModalEditar_ValCorreo As label:
+        Color: =RGBA(0, 69, 120, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =24
+        Size: =13
+        Text: ="juan.perez@amazon.com"
+        Visible: =mostrarModalEditarT
+        Width: =300
+        X: =ModalEditarBoxT.X + 250
+        Y: =ModalEditarBoxT.Y + 214
+        ZIndex: =120
+
+    ModalEditar_DividerC As rectangle:
+        Fill: =RGBA(220, 225, 230, 1)
+        Height: =1
+        Visible: =mostrarModalEditarT
+        Width: =612
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 248
+        ZIndex: =121
+
+    ModalEditar_LblDesc As label:
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =18
+        Size: =9
+        Text: ="DESCRIPCIÓN"
+        Visible: =mostrarModalEditarT
+        Width: =612
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 260
+        ZIndex: =122
+
+    ModalEditar_ValDesc As label:
+        Color: =RGBA(50, 50, 50, 1)
+        Height: =70
+        Size: =12
+        Text: ="El usuario reporta que no puede acceder al sistema ERP desde las 8:00 AM. El error mostrado es 'Acceso denegado - código 403'."
+        VerticalAlign: =VerticalAlign.Top
+        Visible: =mostrarModalEditarT
+        Width: =612
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 279
+        ZIndex: =123
+
+    ModalEditar_DividerD As rectangle:
+        Fill: =RGBA(220, 225, 230, 1)
+        Height: =1
+        Visible: =mostrarModalEditarT
+        Width: =612
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 360
+        ZIndex: =124
+
+    ModalEditar_LblAdj As label:
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =18
+        Size: =9
+        Text: ="DATOS ADJUNTOS"
+        Visible: =mostrarModalEditarT
+        Width: =200
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 372
+        ZIndex: =125
+
+    ModalEditar_ValAdj As label:
+        Color: =RGBA(35, 47, 62, 1)
+        Height: =24
+        Size: =12
+        Text: ="2 archivos adjuntos"
+        Visible: =mostrarModalEditarT
+        Width: =200
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 391
+        ZIndex: =126
+
+    ModalEditar_DividerE As rectangle:
+        Fill: =RGBA(220, 225, 230, 1)
+        Height: =1
+        Visible: =mostrarModalEditarT
+        Width: =612
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 425
+        ZIndex: =127
+
+    ModalEditar_LblAgente As label:
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =18
+        Size: =9
+        Text: ="AGENTE DESIGNADO"
+        Visible: =mostrarModalEditarT
+        Width: =300
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 437
+        ZIndex: =128
+
+    ModalEditar_ValAgente As label:
+        Color: =RGBA(0, 69, 120, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =24
+        Size: =13
+        Text: =If(IsBlank(varAgenteSeleccionadoT.DisplayName), itemSeleccionadoT.AgentDesign.DisplayName, varAgenteSeleccionadoT.DisplayName)
+        Visible: =mostrarModalEditarT
+        Width: =350
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 456
+        ZIndex: =129
+
+    BtnEscalarModalEditar_T As button:
+        BorderColor: =RGBA(255, 153, 0, 1)
+        BorderThickness: =1
+        Color: =RGBA(180, 100, 0, 1)
+        Fill: =RGBA(255, 248, 235, 1)
+        Height: =30
+        HoverFill: =RGBA(255, 230, 180, 1)
+        OnSelect: |-
+            =UpdateContext({mostrarGalleryAgentesT: true})
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =11
+        Text: ="⬆ Escalar"
+        Visible: =mostrarModalEditarT
+        Width: =110
+        X: =ModalEditarBoxT.X + 520
+        Y: =ModalEditarBoxT.Y + 450
+        ZIndex: =133
+
+    ModalAgentesOverlayT As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.4)
+        Height: =Parent.Height
+        OnSelect: |-
+            =UpdateContext({mostrarGalleryAgentesT: false})
+        Visible: =mostrarGalleryAgentesT
+        Width: =Parent.Width
+        ZIndex: =150
+
+    ModalAgentesBoxT As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =340
+        Visible: =mostrarGalleryAgentesT
+        Width: =480
+        X: =(Parent.Width - Self.Width) / 2
+        Y: =(Parent.Height - Self.Height) / 2
+        ZIndex: =151
+
+    ModalAgentesHeaderBarT As rectangle:
+        Fill: =RGBA(255, 153, 0, 1)
+        Height: =6
+        Visible: =mostrarGalleryAgentesT
+        Width: =480
+        X: =ModalAgentesBoxT.X
+        Y: =ModalAgentesBoxT.Y
+        ZIndex: =152
+
+    ModalAgentesTitleT As label:
+        Color: =RGBA(35, 47, 62, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =28
+        Size: =14
+        Text: ="Seleccionar agente"
+        Visible: =mostrarGalleryAgentesT
+        Width: =360
+        X: =ModalAgentesBoxT.X + 24
+        Y: =ModalAgentesBoxT.Y + 18
+        ZIndex: =153
+
+    BtnCerrarAgentesT As button:
+        BorderThickness: =0
+        Color: =RGBA(100, 100, 100, 1)
+        Fill: =RGBA(240, 240, 240, 1)
+        Height: =30
+        OnSelect: |-
+            =UpdateContext({mostrarGalleryAgentesT: false})
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =14
+        Text: ="✕"
+        Visible: =mostrarGalleryAgentesT
+        Width: =30
+        X: =ModalAgentesBoxT.X + ModalAgentesBoxT.Width - 44
+        Y: =ModalAgentesBoxT.Y + 14
+        ZIndex: =154
+
+    "GalleryAgentesEditar As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        BorderColor: =RGBA(220, 225, 230, 1)
+        BorderThickness: =1
+        Height: =240
+        Items: =Office365Users.SearchUser({searchTerm: "", top: 20})
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =56
+        Visible: =mostrarGalleryAgentesT
+        Width: =432
+        X: =ModalAgentesBoxT.X + 24
+        Y: =ModalAgentesBoxT.Y + 60
+        ZIndex: =155
+
+        AgenteEditarRowBg As rectangle:
+            Fill: =If(ThisItem.IsSelected, RGBA(235, 242, 250, 1), RGBA(255, 255, 255, 1))
+            Height: =Parent.TemplateHeight
+            Width: =Parent.TemplateWidth
+            ZIndex: =1
+
+        AgenteEditarIconCircle As button:
+            BorderThickness: =0
+            Fill: =RGBA(49, 89, 162, 0.15)
+            Height: =36
+            OnSelect: |-
+                =UpdateContext({varAgenteSeleccionadoT: ThisItem});
+                UpdateContext({mostrarGalleryAgentesT: false})
+            RadiusBottomLeft: =18
+            RadiusBottomRight: =18
+            RadiusTopLeft: =18
+            RadiusTopRight: =18
+            Size: =14
+            Text: =Left(ThisItem.DisplayName, 1)
+            Width: =36
+            X: =12
+            Y: =10
+            ZIndex: =3
+
+        AgenteEditarLblNombre As label:
+            Color: =RGBA(35, 47, 62, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =22
+            OnSelect: |-
+                =UpdateContext({varAgenteSeleccionadoT: ThisItem});
+                UpdateContext({mostrarGalleryAgentesT: false})
+            Size: =13
+            Text: =ThisItem.DisplayName
+            Width: =280
+            X: =58
+            Y: =8
+            ZIndex: =4
+
+        AgenteEditarLblEmail As label:
+            Color: =RGBA(100, 110, 120, 1)
+            Height: =18
+            OnSelect: |-
+                =UpdateContext({varAgenteSeleccionadoT: ThisItem});
+                UpdateContext({mostrarGalleryAgentesT: false})
+            Size: =10
+            Text: =ThisItem.Mail
+            Width: =300
+            X: =58
+            Y: =30
+            ZIndex: =5
+
+    ModalEditar_DividerF As rectangle:
+        Fill: =RGBA(220, 225, 230, 1)
+        Height: =1
+        Visible: =mostrarModalEditarT
+        Width: =612
+        X: =ModalEditarBoxT.X + 24
+        Y: =ModalEditarBoxT.Y + 490
+        ZIndex: =130
+
+    BtnActualizarDatosT As button:
+        Fill: =RGBA(51, 62, 72, 1)
+        Height: =38
+        HoverFill: =RGBA(0, 69, 120, 1)
+        OnSelect: |-
+            =Patch(
+                ITCM,
+                itemSeleccionadoT,
+                {
+                    TipoIR: { Value: DdEditarTipo_T.Selected.Value },
+                    Categoria: { Value: DdEditarCat_T.Selected.Value },
+                    AgentDesign: If(
+                        !IsBlank(varAgenteSeleccionadoT),
+                        { Claims: "i:0#.f|membership|" & varAgenteSeleccionadoT.Mail, DisplayName: varAgenteSeleccionadoT.DisplayName, Email: varAgenteSeleccionadoT.Mail },
+                        itemSeleccionadoT.AgentDesign
+                    )
+                }
+            );
+            Notify("Datos actualizados correctamente", NotificationType.Success);
+            UpdateContext({mostrarModalEditarT: false, varAgenteSeleccionadoT: Blank()})
+        RadiusBottomLeft: =19
+        RadiusBottomRight: =19
+        RadiusTopLeft: =19
+        RadiusTopRight: =19
+        Size: =13
+        Text: ="Actualizar datos"
+        Visible: =mostrarModalEditarT
+        Width: =170
+        X: =ModalEditarBoxT.X + ModalEditarBoxT.Width - 390
+        Y: =ModalEditarBoxT.Y + 620
+        ZIndex: =131
+
+    BtnCancelarEditarT As button:
+        BorderColor: =RGBA(51, 62, 72, 1)
+        BorderThickness: =1
+        Color: =RGBA(51, 62, 72, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =38
+        HoverFill: =RGBA(240, 240, 240, 1)
+        OnSelect: |-
+            =UpdateContext({mostrarModalEditarT: false})
+        RadiusBottomLeft: =19
+        RadiusBottomRight: =19
+        RadiusTopLeft: =19
+        RadiusTopRight: =19
+        Size: =13
+        Text: ="Cancelar"
+        Visible: =mostrarModalEditarT
+        Width: =130
+        X: =ModalEditarBoxT.X + ModalEditarBoxT.Width - 200
+        Y: =ModalEditarBoxT.Y + 620
+        ZIndex: =132
 

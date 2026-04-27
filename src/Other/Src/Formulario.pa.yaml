@@ -571,29 +571,7 @@ Screens:
             HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
             HoverColor: =Self.Color
             HoverFill: =ColorFade(Self.Fill, 20%)
-            OnSelect: |
-              =Patch(
-                  ITCM,
-                  Defaults(ITCM),
-                  Form5.Updates,
-                  {
-                      TipoIR: {
-                          '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
-                          Value: varTipoSeleccionado
-                      },
-                      Categoria: {
-                          '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
-                          Value: varCategoriaSeleccionado
-                      },
-                      Descripcion: Descripcion.Text
-                  }
-              );
-
-              Notify("¡Solicitud y evidencias guardadas!", NotificationType.Success);
-
-              ResetForm(Form5);
-              NewForm(Form5);
-              Reset(Descripcion);
+            OnSelect: "=Patch(\n    ITCM,\n    Defaults(ITCM),\n    Form5.Updates,\n    {\n        TipoIR: {\n            '@odata.type': \"#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference\",\n            Value: varTipoSeleccionado\n        },\n        Categoria: {\n            '@odata.type': \"#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference\",\n            Value: varCategoriaSeleccionado\n        },\n        Descripcion: Descripcion.Text,\n        Correo: User().Email,\n        Nombre:User().FullName\n\n        \n    }\n);\n\nNotify(\"¡Solicitud y evidencias guardadas!\", NotificationType.Success);\n\nResetForm(Form5);\nNewForm(Form5);\nReset(Descripcion);"
             PressedBorderColor: =Self.Fill
             PressedColor: =Self.Fill
             PressedFill: =Self.Color
@@ -604,8 +582,8 @@ Screens:
             Size: =13
             Text: ="Enviar Solicitud →"
             Width: =710
-            X: =417
-            Y: =663
+            X: =402
+            Y: =661
       - HeaderBg_F_2:
           Control: Rectangle@2.3.0
           Properties:
@@ -679,6 +657,7 @@ Screens:
             PressedFill: =Self.Color
             Size: =13
             Text: ="Tickets"
+            Visible: =varRolUsuario = "Lider" || varRolUsuario = "Agente"
             Width: =120
             X: =420
             Y: =10
@@ -703,9 +682,9 @@ Screens:
             DisabledColor: =RGBA(186, 186, 186, 1)
             Font: =Font.'Open Sans'
             Size: =15
-            Text: ="Hola, Usuario"
+            Text: ="Hola, " & First(Split(User().FullName, " ")).Value & "!"
             Width: =185
-            X: =1181
+            X: =1188
             Y: =10
       - BtnUserAvatar_G_3:
           Control: Classic/Button@2.2.0
@@ -732,7 +711,7 @@ Screens:
             Size: =13
             Text: ="J"
             Width: =36
-            X: =1129
+            X: =1140
             Y: =12
       - FooterBg_G_1:
           Control: Rectangle@2.3.0
@@ -776,8 +755,8 @@ Screens:
                   BorderColor: =RGBA(245, 245, 245, 1)
                   DataField: ="{Attachments}"
                   Default: =ThisItem.'Datos adjuntos'
-                  DisplayName: =DataSourceInfo([@ITCM],DataSourceInfo.DisplayName,'{Attachments}')
-                  Height: =166
+                  DisplayName: =DataSourceInfo([@ITCM],DataSourceInfo.DisplayName,'Datos adjuntos')
+                  Height: =96
                   Required: =false
                   Update: =Evidencias.Attachments
                   Width: =870

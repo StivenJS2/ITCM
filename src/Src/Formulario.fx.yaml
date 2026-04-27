@@ -506,7 +506,7 @@ Formulario As screen:
         Fill: =RGBA(35, 47, 62, 1)
         FontWeight: =FontWeight.Bold
         Height: =48
-        OnSelect: |
+        OnSelect: |-
             =Patch(
                 ITCM,
                 Defaults(ITCM),
@@ -520,7 +520,11 @@ Formulario As screen:
                         '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
                         Value: varCategoriaSeleccionado
                     },
-                    Descripcion: Descripcion.Text
+                    Descripcion: Descripcion.Text,
+                    Correo: User().Email,
+                    Nombre:User().FullName
+            
+                    
                 }
             );
             
@@ -535,8 +539,8 @@ Formulario As screen:
         RadiusTopRight: =4
         Text: ="Enviar Solicitud →"
         Width: =710
-        X: =417
-        Y: =663
+        X: =402
+        Y: =661
         ZIndex: =37
 
     HeaderBg_F_2 As rectangle:
@@ -569,6 +573,7 @@ Formulario As screen:
         Fill: =RGBA(35, 47, 62, 1)
         OnSelect: =Navigate(Tickets)
         Text: ="Tickets"
+        Visible: =varRolUsuario = "Lider" || varRolUsuario = "Agente"
         Width: =120
         X: =420
         Y: =10
@@ -587,9 +592,9 @@ Formulario As screen:
     LblUserHi_G_3 As label:
         Color: =RGBA(255, 255, 255, 1)
         Size: =15
-        Text: ="Hola, Usuario"
+        Text: ="Hola, " & First(Split(User().FullName, " ")).Value & "!"
         Width: =185
-        X: =1181
+        X: =1188
         Y: =10
         ZIndex: =43
 
@@ -602,7 +607,7 @@ Formulario As screen:
         RadiusTopRight: =18
         Text: ="J"
         Width: =36
-        X: =1129
+        X: =1140
         Y: =12
         ZIndex: =44
 
@@ -639,9 +644,9 @@ Formulario As screen:
             DataField: ="{Attachments}"
             Default: =ThisItem.'Datos adjuntos'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@ITCM],DataSourceInfo.DisplayName,'{Attachments}')
+            DisplayName: =DataSourceInfo([@ITCM],DataSourceInfo.DisplayName,'Datos adjuntos')
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =166
+            Height: =96
             Required: =false
             Update: =Evidencias.Attachments
             Width: =870

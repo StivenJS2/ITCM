@@ -9,8 +9,16 @@
 Screens:
   Gestion:
     Properties:
-      Fill: =RGBA(255, 255, 255, 1)
+      Fill: =
       LoadingSpinnerColor: =RGBA(0, 51, 102, 1)
+      OnVisible: |-
+        =UpdateContext({
+            varFiltroID: Blank(),
+            varFiltroUser: Blank(),
+            varFiltroEstado: Blank(),
+            varFiltroCat: Blank(),
+            varFiltroFecha: Blank()
+        })
     Children:
       - HeaderBg_G:
           Control: Rectangle@2.3.0
@@ -31,8 +39,8 @@ Screens:
           Control: Rectangle@2.3.0
           Properties:
             BorderColor: =RGBA(0, 0, 255, 1)
-            Fill: =RGBA(204, 218, 228, 0.9)
-            Height: =45
+            Fill: =RGBA(235, 240, 245, 1)
+            Height: =40
             Width: =Parent.Width - 60
             X: =30
             Y: =210
@@ -113,9 +121,9 @@ Screens:
             DisabledColor: =RGBA(186, 186, 186, 1)
             Font: =Font.'Open Sans'
             Size: =15
-            Text: ="Hola, Usuario"
+            Text: ="Hola, " & First(Split(User().FullName, " ")).Value & "!"
             Width: =185
-            X: =1166
+            X: =1188
             Y: =10
       - BtnUserAvatar_G:
           Control: Classic/Button@2.2.0
@@ -142,7 +150,7 @@ Screens:
             Size: =13
             Text: ="J"
             Width: =36
-            X: =1114
+            X: =1140
             Y: =12
       - LblAmazonLogo_G:
           Control: Label@2.5.1
@@ -180,32 +188,8 @@ Screens:
             RadiusTopRight: =17
             Size: =10
             Width: =130
-            X: =39
-            Y: =90
-      - TxtNum_G:
-          Control: Classic/TextInput@2.3.2
-          Properties:
-            BorderColor: =RGBA(0, 0, 0, 1)
-            BorderThickness: =1
-            DisabledBorderColor: =ColorFade(Self.BorderColor, 40%)
-            DisabledColor: =ColorFade(Self.Color, 40%)
-            DisabledFill: =Self.Fill
-            Fill: =RGBA(204, 218, 228, 1)
-            FocusedBorderThickness: =3
-            Font: =Font.'Open Sans'
-            Height: =34
-            HintText: ="N° Caso"
-            HoverBorderColor: =Self.Color
-            HoverColor: =Self.Color
-            HoverFill: =Self.Fill
-            RadiusBottomLeft: =17
-            RadiusBottomRight: =17
-            RadiusTopLeft: =17
-            RadiusTopRight: =17
-            Size: =10
-            Width: =130
-            X: =179
-            Y: =90
+            X: =194
+            Y: =94
       - TxtUser_G:
           Control: Classic/TextInput@2.3.2
           Properties:
@@ -228,18 +212,18 @@ Screens:
             RadiusTopRight: =17
             Size: =10
             Width: =180
-            X: =319
-            Y: =90
+            X: =360
+            Y: =94
       - DdEstado_G:
           Control: DropDown@0.0.45
           Properties:
             DisplayMode: =%DisplayMode.RESERVED%.Edit
             Fill: =RGBA(204, 218, 228, 1)
             Height: =34
-            Items: =["Estado", "Pendiente", "En Progreso", "Resuelto"]
+            Items: =["Estado", "Pendiente", "En Proceso", "Resuelto"]
             Width: =160
-            X: =509
-            Y: =90
+            X: =590
+            Y: =94
       - DdCat_G:
           Control: DropDown@0.0.45
           Properties:
@@ -248,12 +232,13 @@ Screens:
             Height: =34
             Items: =["Categoría", "Software", "Hardware", "Acceso"]
             Width: =160
-            X: =695
-            Y: =90
+            X: =800
+            Y: =94
       - DtFecha_G:
           Control: Classic/DatePicker@2.6.0
           Properties:
             BorderColor: =RGBA(51, 62, 72, 1)
+            DefaultDate: =Blank()
             DisabledBorderColor: =RGBA(51, 62, 72, 1)
             DisabledColor: =RGBA(70, 68, 64, 1)
             DisabledFill: =Self.Fill
@@ -263,8 +248,8 @@ Screens:
             IconBackground: =RGBA(35, 31, 32, 1)
             IconFill: =RGBA(255, 255, 255, 1)
             Width: =180
-            X: =881
-            Y: =90
+            X: =248
+            Y: =158
       - BtnFiltrar_G:
           Control: Classic/Button@2.2.0
           Properties:
@@ -280,6 +265,14 @@ Screens:
             HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
             HoverColor: =Self.Color
             HoverFill: =ColorFade(Self.Fill, 20%)
+            OnSelect: |-
+              =UpdateContext({
+                  varFiltroID: TxtID_G.Text,
+                  varFiltroUser: TxtUser_G.Text,
+                  varFiltroEstado: DdEstado_G.Selected.Value,
+                  varFiltroCat: DdCat_G.Selected.Value,
+                  varFiltroFecha: DtFecha_G.SelectedDate
+              })
             PressedBorderColor: =Self.Fill
             PressedColor: =Self.Fill
             PressedFill: =Self.Color
@@ -290,8 +283,8 @@ Screens:
             Size: =13
             Text: ="Filtrar"
             Width: =100
-            X: =1111
-            Y: =92
+            X: =465
+            Y: =157
       - BtnLimpiar_G:
           Control: Classic/Button@2.2.0
           Properties:
@@ -308,6 +301,19 @@ Screens:
             HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
             HoverColor: =Self.Color
             HoverFill: =ColorFade(Self.Fill, 20%)
+            OnSelect: |-
+              =Reset(TxtID_G);
+              Reset(TxtUser_G);
+              Reset(DdEstado_G);
+              Reset(DdCat_G);
+              Reset(DtFecha_G);
+              UpdateContext({
+                  varFiltroID: Blank(),
+                  varFiltroUser: Blank(),
+                  varFiltroEstado: Blank(),
+                  varFiltroCat: Blank(),
+                  varFiltroFecha: Blank()
+              })
             PressedBorderColor: =Self.Fill
             PressedColor: =Self.Fill
             PressedFill: =Self.Color
@@ -318,8 +324,8 @@ Screens:
             Size: =13
             Text: ="Limpiar"
             Width: =100
-            X: =1221
-            Y: =92
+            X: =590
+            Y: =157
       - LblTableTitle_G:
           Control: Label@2.5.1
           Properties:
@@ -342,7 +348,7 @@ Screens:
             DisabledColor: =RGBA(186, 186, 186, 1)
             Font: =Font.'Open Sans'
             Size: =10
-            Text: ="2 registros encontrados"
+            Text: =CountRows(Registros.AllItems) & " registros encontrados"
             Width: =200
             X: =Parent.Width - 230
             Y: =175
@@ -350,12 +356,12 @@ Screens:
           Control: Label@2.5.1
           Properties:
             BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(128, 128, 128, 1)
+            Color: =RGBA(100, 110, 120, 1)
             DisabledColor: =RGBA(186, 186, 186, 1)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
             Height: =29
-            Size: =11
+            Size: =10
             Text: ="CATEGORIA"
             Width: =107
             X: =808
@@ -364,12 +370,12 @@ Screens:
           Control: Label@2.5.1
           Properties:
             BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(128, 128, 128, 1)
+            Color: =RGBA(100, 110, 120, 1)
             DisabledColor: =RGBA(186, 186, 186, 1)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
             Height: =29
-            Size: =11
+            Size: =10
             Text: ="FECHA DE REGISTRO"
             Width: =159
             X: =282
@@ -379,12 +385,12 @@ Screens:
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(128, 128, 128, 1)
+            Color: =RGBA(100, 110, 120, 1)
             DisabledColor: =RGBA(186, 186, 186, 1)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
             Height: =28
-            Size: =11
+            Size: =10
             Text: ="ESTADO"
             Width: =82
             X: =78
@@ -393,16 +399,42 @@ Screens:
           Control: Label@2.5.1
           Properties:
             BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(128, 128, 128, 1)
+            Color: =RGBA(100, 110, 120, 1)
             DisabledColor: =RGBA(186, 186, 186, 1)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
             Height: =28
-            Size: =11
+            Size: =10
             Text: ="TIPO DE SOLICITUD"
             Width: =155
             X: =540
             Y: =221
+      - ModalCancelBtnBack:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =RGBA(51, 62, 72, 1)
+            BorderThickness: =1
+            Color: =RGBA(51, 62, 72, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Fill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, 20%)
+            OnSelect: |-
+              =UpdateContext({mostrarModalCancel: false})
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Size: =13
+            Text: ="Cancelar"
+            Visible: =mostrarModalCancel
+            Width: =120
+            X: =ModalCancelBox.X + (ModalCancelBox.Width / 2) + 10
+            Y: =ModalCancelBox.Y + 130
       - LblFoot_G:
           Control: Label@2.5.1
           Properties:
@@ -485,14 +517,23 @@ Screens:
             Width: =1300
             X: =30
             Y: =149
-      - Gallery3:
+      - Registros:
           Control: Gallery@2.15.0
           Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
           Properties:
             BorderColor: =RGBA(245, 245, 245, 1)
             Height: =458
-            Items: =ITCM
-            TemplateSize: =108
+            Items: |-
+              =Filter(
+                  ITCM,
+                  (IsBlank(varFiltroID) || ID = Value(varFiltroID)),
+                  (IsBlank(varFiltroUser) || StartsWith(Nombre, varFiltroUser)),
+                  (IsBlank(varFiltroEstado) || varFiltroEstado = "Estado" || Estado.Value = varFiltroEstado),
+                  (IsBlank(varFiltroCat) || varFiltroCat = "Categoría" || Categoria.Value = varFiltroCat),
+                  (IsBlank(varFiltroFecha) || ('Fecha/Hora' >= varFiltroFecha && 'Fecha/Hora' < DateAdd(varFiltroFecha, 1, TimeUnit.Days)))
+              )
+            TemplateFill: =If(ThisItem.IsSelected, RGBA(235, 242, 250, 1), RGBA(255, 255, 255, 1))
+            TemplateSize: =88
             Width: =1306
             X: =30
             Y: =250
@@ -501,8 +542,8 @@ Screens:
                 Control: Rectangle@2.3.0
                 Properties:
                   BorderColor: =RGBA(0, 0, 0, 0)
-                  Fill: =RGBA(255, 255, 255, 1)
-                  Height: =8
+                  Fill: =RGBA(220, 225, 230, 1)
+                  Height: =1
                   OnSelect: =Select(Parent)
                   Width: =Parent.TemplateWidth
                   Y: =Parent.TemplateHeight - Self.Height
@@ -511,155 +552,192 @@ Screens:
                 Properties:
                   Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
-                  Color: =RGBA(71, 69, 64, 1)
+                  Color: =RGBA(50, 60, 70, 1)
                   DisabledColor: =RGBA(161, 159, 157, 1)
                   DisplayMode: =DisplayMode.View
                   Font: =Font.'Segoe UI'
-                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                   Height: =24
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =12
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
                   Text: =ThisItem.TipoIR.Value
-                  VerticalAlign: =VerticalAlign.Top
                   Width: =154
                   X: =492
-                  Y: =41
+                  Y: =32
             - LblRowCat1_G_1:
                 Control: Label@2.5.1
                 Properties:
                   Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
-                  Color: =RGBA(128, 128, 128, 1)
+                  Color: =RGBA(100, 110, 120, 1)
                   DisabledColor: =RGBA(186, 186, 186, 1)
                   Font: =Font.'Open Sans'
-                  Height: =24
-                  Size: =10
+                  Height: =43
+                  Size: =12
                   Text: =ThisItem.'Fecha/Hora'
-                  Width: =148
-                  X: =256
-                  Y: =41
+                  Width: =133
+                  X: =271
+                  Y: =22
             - Subtitle3_3:
                 Control: Label@2.5.1
                 Properties:
                   Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
-                  Color: =RGBA(71, 69, 64, 1)
+                  Color: =RGBA(50, 60, 70, 1)
                   DisabledColor: =RGBA(161, 159, 157, 1)
                   DisplayMode: =DisplayMode.View
                   Font: =Font.'Segoe UI'
-                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                   Height: =24
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =12
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
                   Text: =ThisItem.Categoria.Value
-                  VerticalAlign: =VerticalAlign.Top
                   Width: =154
                   X: =732
-                  Y: =41
+                  Y: =32
             - BTN_ESTADO:
                 Control: Classic/Button@2.2.0
                 Properties:
                   BorderColor: =ColorFade(Self.Fill, -15%)
-                  BorderThickness: =3
-                  Color: =Switch(ThisItem.Estado.Value,"Registrado",RGBA(0,69,120,100),"Por Aprobacion",RGBA(63,87,27,100),"En Proceso",RGBA(255,191,0,100),"Solucionado",RGBA(118,0,0,100),RGBA(80,80,80,1))
+                  BorderThickness: =0
+                  Color: |-
+                    =Switch(
+                        ThisItem.Estado.Value,
+                        "Registrado", RGBA(0, 56, 100, 1),
+                        "Por Aprobacion", RGBA(130, 70, 0, 1),
+                        "En Proceso", RGBA(100, 75, 0, 1),
+                        "Solucionado", RGBA(40, 70, 10, 1),
+                        "Cancelado", RGBA(180, 0, 0, 1), 
+                        RGBA(60, 60, 60, 1)
+                    )
                   DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
                   DisabledColor: =ColorFade(Self.Fill, 90%)
                   DisabledFill: =ColorFade(Self.Fill, 70%)
-                  Fill: =Switch(ThisItem.Estado.Value,"Registrado",RGBA(102, 143, 174, 100),"Por Aprobacion",RGBA(187,221,140,100 ),"En Proceso",RGBA(222,222,124,47),"Solucionado",RGBA(220,153,153,100),RGBA(200,200,200,02))
+                  Fill: |-
+                    =Switch(
+                        ThisItem.Estado.Value,
+                        "Registrado", RGBA(210,228,242,1),
+                        "Por Aprobacion", RGBA(255, 230, 200, 1),
+                        "En Proceso", RGBA(255, 243, 180, 1),
+                        "Solucionado", RGBA(220, 240, 195, 1),
+                        "Cancelado", RGBA(255, 210, 210, 1),
+                        RGBA(220, 220, 220, 1)
+                    )
                   Font: =Font.'Open Sans'
                   FontWeight: =FontWeight.Normal
-                  Height: =30
+                  Height: =28
                   HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
                   HoverColor: =Self.Color
-                  HoverFill: =ColorFade(Self.Fill, 20%)
+                  HoverFill: =Switch(ThisItem.Estado.Value,"Registrado",RGBA(190,215,235,1),"Por Aprobacion",RGBA(200,230,165,1),"En Proceso",RGBA(245,230,155,1),"Solucionado",RGBA(235,190,190,1),RGBA(200,200,200,1))
                   PressedBorderColor: =Self.Fill
                   PressedColor: =Self.Fill
                   PressedFill: =Self.Color
-                  RadiusBottomLeft: =17
-                  RadiusBottomRight: =17
-                  RadiusTopLeft: =17
-                  RadiusTopRight: =17
-                  Size: =13
+                  RadiusBottomLeft: =14
+                  RadiusBottomRight: =14
+                  RadiusTopLeft: =14
+                  RadiusTopRight: =14
+                  Size: =11
                   Text: =ThisItem.Estado.Value
-                  Width: =152
-                  X: =17
-                  Y: =35
+                  Width: =140
+                  X: =22
+                  Y: =30
             - Divider1_F_5:
                 Control: Rectangle@2.3.0
                 Properties:
                   BorderColor: =RGBA(0, 0, 255, 1)
-                  Fill: =RGBA(145, 143, 141, 1)
+                  Fill: =RGBA(210, 215, 220, 1)
                   Height: =1
                   Width: =1300
                   X: =1
-                  Y: =103
+                  Y: =87
             - SimList_BtnVer1:
                 Control: Classic/Button@2.2.0
                 Properties:
                   BorderColor: =ColorFade(Self.Fill, -15%)
-                  Color: =RGBA(51, 51, 51, 1)
+                  Color: =RGBA(255, 255, 255, 1)
                   DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                  Fill: =RGBA(49, 89, 162, 0.6)
+                  Fill: =RGBA(49, 89, 162, 0.72)
                   Font: =Font.'Open Sans'
-                  FontWeight: =FontWeight.Bold
-                  Height: =36
+                  FontWeight: =FontWeight.Normal
+                  Height: =30
                   HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
                   HoverColor: =RGBA(255, 255, 255, 1)
-                  HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                  HoverFill: =ColorFade(RGBA(49, 89, 162, 1), -25%)
+                  OnSelect: |-
+                    =UpdateContext({
+                        mostrarModal: true, 
+                        itemSeleccionado: ThisItem
+                    })
                   PressedBorderColor: =Self.Fill
                   PressedColor: =Self.Fill
                   PressedFill: =Self.Color
-                  RadiusBottomLeft: =18
-                  RadiusBottomRight: =18
-                  RadiusTopLeft: =18
-                  RadiusTopRight: =18
-                  Text: ="VER"
-                  Width: =120
-                  X: =988
-                  Y: =35
+                  RadiusBottomLeft: =15
+                  RadiusBottomRight: =15
+                  RadiusTopLeft: =15
+                  RadiusTopRight: =15
+                  Size: =12
+                  Text: ="Ver"
+                  Width: =90
+                  X: =1010
+                  Y: =29
             - SimList_BtnVer1_1:
                 Control: Classic/Button@2.2.0
                 Properties:
-                  BorderColor: =ColorFade(Self.Fill, -15%)
-                  Color: =RGBA(64, 64, 64, 1)
+                  BorderColor: =RGBA(180, 60, 40, 1)
+                  BorderThickness: =1
+                  Color: =RGBA(160, 40, 20, 1)
                   DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                  Fill: =RGBA(213, 25, 0, 0.56)
+                  Fill: =RGBA(255, 245, 244, 1)
                   Font: =Font.'Open Sans'
-                  FontWeight: =FontWeight.Bold
-                  Height: =36
+                  FontWeight: =FontWeight.Normal
+                  Height: =30
                   HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
                   HoverColor: =RGBA(255, 255, 255, 1)
-                  HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                  HoverFill: =RGBA(200, 50, 30, 1)
+                  OnSelect: |-
+                    =UpdateContext({mostrarModalCancel: true, itemSeleccionado: ThisItem})
                   PressedBorderColor: =Self.Fill
                   PressedColor: =Self.Fill
                   PressedFill: =Self.Color
-                  RadiusBottomLeft: =18
-                  RadiusBottomRight: =18
-                  RadiusTopLeft: =18
-                  RadiusTopRight: =18
-                  Text: ="CANCELAR"
-                  Width: =120
+                  RadiusBottomLeft: =15
+                  RadiusBottomRight: =15
+                  RadiusTopLeft: =15
+                  RadiusTopRight: =15
+                  Size: =12
+                  Text: ="Cancelar"
+                  Width: =100
                   X: =1140
-                  Y: =35
+                  Y: =29
+            - Label4:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  BorderThickness: =2
+                  Color: =RGBA(50, 49, 48, 1)
+                  DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                  DisabledColor: =RGBA(161, 159, 157, 1)
+                  FocusedBorderThickness: =4
+                  Font: =Font.'Segoe UI'
+                  OnSelect: =Select(Parent)
+                  Text: =ThisItem.Título
+                  X: =511
+                  Y: =31
       - LblH4_G_1:
           Control: Label@2.5.1
           Properties:
             Align: =Align.Center
             BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(128, 128, 128, 1)
+            Color: =RGBA(100, 110, 120, 1)
             DisabledColor: =RGBA(186, 186, 186, 1)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
             Height: =29
-            Size: =11
+            Size: =10
             Text: ="ACCIONES"
             Width: =107
             X: =1107
@@ -678,3 +756,599 @@ Screens:
             Width: =100
             X: =94
             Y: =15
+      - ModalOverlay:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0.5)
+            Height: =Parent.Height
+            OnSelect: |-
+              =UpdateContext({mostrarModal: false})
+            Visible: =mostrarModal
+            Width: =Parent.Width
+      - ModalBox:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =615
+            Visible: =mostrarModal
+            Width: =570
+            X: =721
+            Y: =73
+      - ModalLblEstado:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =24
+            Size: =14
+            Text: ="Fecha de Registro"
+            Visible: =mostrarModal
+            Width: =191
+            X: =764
+            Y: =348
+      - ModalLblFecha:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            Height: =33
+            Size: =14
+            Text: =Text(itemSeleccionado.'Fecha/Hora')
+            Visible: =mostrarModal
+            Width: =179
+            X: =757
+            Y: =373
+      - ModalLblTipo:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =26
+            Size: =14
+            Text: ="Categoria:"
+            Visible: =mostrarModal
+            Width: =107
+            X: =763
+            Y: =420
+      - ModalCancelOverlay:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0.5)
+            Height: =Parent.Height
+            OnSelect: |-
+              =UpdateContext({mostrarModalCancel: false})
+            Visible: =mostrarModalCancel
+            Width: =Parent.Width
+      - ModalCancelBox:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =200
+            Visible: =mostrarModalCancel
+            Width: =400
+            X: =(Parent.Width - Self.Width) / 2
+            Y: =(Parent.Height - Self.Height) / 2
+      - ModalCancelTxt:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            Size: =12
+            Text: ="¿Estás seguro/a que deseas cancelar este registro?"
+            Visible: =mostrarModalCancel
+            Width: =ModalCancelBox.Width - 40
+            X: =ModalCancelBox.X + 20
+            Y: =ModalCancelBox.Y + 40
+      - ModalCancelBtnConfirm:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Fill: =RGBA(180, 60, 40, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, 20%)
+            OnSelect: |-
+              =Patch(
+                  ITCM, 
+                  itemSeleccionado, 
+                  { Estado: { Value: "Cancelado" } }
+              );
+              UpdateContext({mostrarModalCancel: false});
+              Notify("El estado se ha actualizado a Cancelado", NotificationType.Success)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Size: =13
+            Text: ="Confirmar"
+            Visible: =mostrarModalCancel
+            Width: =120
+            X: =ModalCancelBox.X + (ModalCancelBox.Width / 2) - 130
+            Y: =ModalCancelBox.Y + 130
+      - Icon1:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =9
+            Color: =RGBA(0, 69, 120, 1)
+            DisabledBorderColor: =RGBA(245, 245, 245, 1)
+            DisabledColor: =RGBA(225, 223, 221, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =30
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(16, 110, 190, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Cancel
+            OnSelect: |-
+              =UpdateContext({mostrarModal: false})
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(16, 110, 190, 1)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Visible: =mostrarModal
+            Width: =30
+            X: =1256
+            Y: =80
+      - Divider1_F_6:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(145, 143, 141, 1)
+            Height: =1
+            Visible: =mostrarModal
+            Width: =550
+            X: =740
+            Y: =240
+      - Divider1_F_7:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(145, 143, 141, 1)
+            Height: =1
+            OnSelect: =
+            Visible: =mostrarModal
+            Width: =550
+            X: =741
+            Y: =123
+      - Label1:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =29
+            Size: =18
+            Text: ="CASO -"
+            Visible: =mostrarModal
+            Width: =99
+            X: =741
+            Y: =85
+      - Label1_1:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =29
+            Size: =18
+            Text: =itemSeleccionado.ID
+            Visible: =mostrarModal
+            Width: =54
+            X: =827
+            Y: =85
+      - LblFoot_G_3:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(0, 69, 120, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            Height: =23
+            Size: =10
+            Text: ="Amazon Style ITCM | Soporte TI · © 2026"
+            Visible: =mostrarModal
+            Width: =290
+            X: =903
+            Y: =88
+      - Image1:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =User().Image
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Visible: =mostrarModal
+            X: =763
+            Y: =130
+      - Label2:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Text: =User().FullName
+            Visible: =mostrarModal
+            Width: =184
+            X: =881
+            Y: =135
+      - Label2_1:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =25
+            Text: =User().Email
+            Visible: =mostrarModal
+            Width: =267
+            X: =883
+            Y: =185
+      - BTN_ESTADO_1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            BorderThickness: =0
+            Color: |-
+              =Switch(
+                  itemSeleccionado.Estado.Value,
+                  "Registrado", RGBA(0, 56, 100, 1),
+                  "Por Aprobacion", RGBA(130, 70, 0, 1),
+                  "En Proceso", RGBA(100, 75, 0, 1),
+                  "Solucionado", RGBA(40, 70, 10, 1),
+                  "Cancelado", RGBA(180, 0, 0, 1), 
+                  RGBA(60, 60, 60, 1)
+              )
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Fill: |-
+              =Switch(
+                  itemSeleccionado.Estado.Value,
+                  "Registrado", RGBA(210, 228, 242, 1),
+                  "Por Aprobacion", RGBA(255, 230, 200, 1),
+                  "En Proceso", RGBA(255, 243, 180, 1),
+                  "Solucionado", RGBA(220, 240, 195, 1),
+                  "Cancelado", RGBA(255, 210, 210, 1),
+                  RGBA(220, 220, 220, 1)
+              )
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            Height: =28
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =Self.Color
+            HoverFill: =Switch(itemSeleccionado.Estado.Value,"Registrado",RGBA(190,215,235,1),"Por Aprobacion",RGBA(200,230,165,1),"En Proceso",RGBA(245,230,155,1),"Solucionado",RGBA(235,190,190,1),RGBA(200,200,200,1))
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =14
+            RadiusBottomRight: =14
+            RadiusTopLeft: =14
+            RadiusTopRight: =14
+            Size: =11
+            Text: =itemSeleccionado.Estado.Value
+            Visible: =mostrarModal
+            Width: =140
+            X: =761
+            Y: =284
+      - ModalLblTipo_1:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =22
+            Size: =14
+            Text: ="Estado del "
+            Visible: =mostrarModal
+            Width: =110
+            X: =753
+            Y: =247
+      - ModalLblTipo_2:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 153, 0, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =22
+            Size: =14
+            Text: =itemSeleccionado.TipoIR.Value
+            Visible: =mostrarModal
+            Width: =154
+            X: =852
+            Y: =248
+      - Rectangle1:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(161, 159, 157, 1)
+            Fill: =RGBA(255, 153, 0, 1)
+            FocusedBorderThickness: =4
+            Height: =615
+            HoverFill: =RGBA(0, 120, 212, 1)
+            PressedFill: =RGBA(0, 120, 212, 1)
+            Visible: =mostrarModal
+            Width: =3
+            X: =720
+            Y: =73
+      - Rectangle1_1:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(161, 159, 157, 1)
+            Fill: =RGBA(255, 153, 0, 1)
+            FocusedBorderThickness: =4
+            Height: =615
+            HoverFill: =RGBA(0, 120, 212, 1)
+            PressedFill: =RGBA(0, 120, 212, 1)
+            Visible: =mostrarModal
+            Width: =4
+            X: =1290
+            Y: =73
+      - Rectangle1_2:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(161, 159, 157, 1)
+            Fill: =RGBA(255, 153, 0, 1)
+            FocusedBorderThickness: =4
+            Height: =3
+            HoverFill: =RGBA(0, 120, 212, 1)
+            PressedFill: =RGBA(0, 120, 212, 1)
+            Visible: =mostrarModal
+            Width: =572
+            X: =721
+            Y: =71
+      - Divider1_F_8:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            Fill: =RGBA(128, 128, 128, 1)
+            Height: =5
+            Visible: =mostrarModal
+            Width: =574
+            X: =719
+            Y: =684
+      - ModalLblFecha_1:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =21
+            Size: =16
+            Text: =itemSeleccionado.Categoria.Value
+            Visible: =mostrarModal
+            Width: =147
+            X: =765
+            Y: =451
+      - ModalLblTipo_3:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =24
+            Size: =14
+            Text: ="Agente Designado:"
+            Visible: =mostrarModal
+            Width: =185
+            X: =765
+            Y: =496
+      - ModalLblFecha_2:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 69, 120, 1)
+            Color: =RGBA(0, 69, 120, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            DisabledFill: =RGBA(0, 69, 120, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =14
+            Text: =itemSeleccionado.AgentDesign.Email
+            Visible: =mostrarModal
+            Width: =265
+            X: =768
+            Y: =533
+      - ModalLblEstado_1:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =47
+            Size: =14
+            Text: ="Descripción del Problema"
+            Visible: =mostrarModal
+            Width: =193
+            X: =1051
+            Y: =292
+      - BtnNavForm_G_1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Fill: =RGBA(232, 232, 232, 0.48)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            Height: =128
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, 20%)
+            OnSelect: =
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Size: =11
+            Text: =itemSeleccionado.Descripcion
+            Visible: '=mostrarModal    '
+            Width: =215
+            X: =1051
+            Y: =356
+      - ModalLblEstado_2:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71, 69, 64, 1)
+            DisabledColor: =RGBA(186, 186, 186, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =47
+            Size: =14
+            Text: ="Datos Adjuntos"
+            Visible: =mostrarModal
+            Width: =193
+            X: =1061
+            Y: =509
+      - DataCardValue10_1:
+          Control: Attachments@2.3.0
+          Properties:
+            AddAttachmentText: =
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisabledFill: =RGBA(242, 242, 241, 0)
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(245, 245, 245, 1)
+            Font: =Font.'Segoe UI'
+            Height: =115
+            HoverColor: =RGBA(50, 49, 48, 1)
+            HoverFill: =RGBA(245, 245, 245, 1)
+            ItemColor: =RGBA(0, 0, 0, 1)
+            ItemFill: =RGBA(0, 120, 212, 1)
+            ItemHoverColor: =RGBA(50, 49, 48, 1)
+            ItemHoverFill: =RGBA(245, 245, 245, 1)
+            ItemSpacing: =12
+            Items: =itemSeleccionado.'Datos adjuntos'
+            Items.Name: =DisplayName
+            Items.Value: =Id
+            MaxAttachmentsText: =2
+            NoAttachmentsColor: =RGBA(161, 159, 157, 1)
+            PaddingBottom: =5
+            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+            PaddingRight: =5
+            PaddingTop: =5
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 120, 212, 1)
+            Tooltip: =
+            Visible: =mostrarModal
+            Width: =234
+            X: =1040
+            Y: =550
+      - Label3:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(168, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            Size: =19
+            Text: =CountRows(itemSeleccionado.'Datos adjuntos')
+            Visible: =mostrarModal
+            Width: =31
+            X: =1244
+            Y: =550
+      - ModalCancelBtnConfirm_1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Fill: =RGBA(153, 201, 238, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Normal
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, 20%)
+            OnSelect: |-
+              =UpdateContext({mostrarModalCancel: false})
+            PressedBorderColor: =Self.Fill
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(0, 108, 191, 1)
+            Size: =13
+            Text: ="Cancelar"
+            Visible: =mostrarModalCancel
+            Width: =120
+            X: =708
+            Y: =ModalCancelBox.Y + 130

@@ -114,7 +114,8 @@
     "DocumentType": "App",
     "EnableInstrumentation": false,
     "FileID": "93f7f3ae-c8f5-46ff-898a-9cfefe357d03",
-    "Id": "f529a8c5-2f86-43aa-a5e4-2014ad4d27b2",
+    "Id": "5f0a1224-ee30-4f8b-a498-9107794ffbec",
+    "LocalDatabaseReferences": "",
     "ManualOfflineProfileId": "",
     "Name": "SVRDTQ.msapp",
     "OriginatingVersion": "1.349",
@@ -133,7 +134,6 @@
     "UserLocale": "es-ES"
   },
   "ScreenOrder": [
-    "Presentacion",
     "Formulario",
     "Gestion",
     "Tickets"
