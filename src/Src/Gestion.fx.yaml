@@ -369,6 +369,10 @@ Gestion As screen:
         Items: |-
             =Filter(
                 ITCM,
+                // --- ESTA ES LA NUEVA CONDICIÓN DE PRIVACIDAD ---
+                Correo = User().Email, 
+                
+                // --- TUS FILTROS EXISTENTES ---
                 (IsBlank(varFiltroID) || ID = Value(varFiltroID)),
                 (IsBlank(varFiltroUser) || StartsWith(Nombre, varFiltroUser)),
                 (IsBlank(varFiltroEstado) || varFiltroEstado = "Estado" || Estado.Value = varFiltroEstado),
@@ -788,7 +792,7 @@ Gestion As screen:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Bold
         Size: =13
-        Text: =User().FullName
+        Text: =itemSeleccionado.Nombre
         Visible: =mostrarModal
         Width: =184
         X: =881
@@ -806,7 +810,7 @@ Gestion As screen:
         Font: =Font.'Segoe UI'
         Height: =25
         Size: =13
-        Text: =User().Email
+        Text: =itemSeleccionado.Correo
         Visible: =mostrarModal
         Width: =267
         X: =883
@@ -958,7 +962,7 @@ Gestion As screen:
         FontWeight: =FontWeight.Semibold
         Height: =14
         Size: =13
-        Text: =itemSeleccionado.AgentDesign.Email
+        Text: =itemSeleccionado.AgenteDesign
         Visible: =mostrarModal
         Width: =265
         X: =768

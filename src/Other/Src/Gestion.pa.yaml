@@ -523,15 +523,7 @@ Screens:
           Properties:
             BorderColor: =RGBA(245, 245, 245, 1)
             Height: =458
-            Items: |-
-              =Filter(
-                  ITCM,
-                  (IsBlank(varFiltroID) || ID = Value(varFiltroID)),
-                  (IsBlank(varFiltroUser) || StartsWith(Nombre, varFiltroUser)),
-                  (IsBlank(varFiltroEstado) || varFiltroEstado = "Estado" || Estado.Value = varFiltroEstado),
-                  (IsBlank(varFiltroCat) || varFiltroCat = "Categoría" || Categoria.Value = varFiltroCat),
-                  (IsBlank(varFiltroFecha) || ('Fecha/Hora' >= varFiltroFecha && 'Fecha/Hora' < DateAdd(varFiltroFecha, 1, TimeUnit.Days)))
-              )
+            Items: "=Filter(\n    ITCM,\n    // --- ESTA ES LA NUEVA CONDICIÓN DE PRIVACIDAD ---\n    Correo = User().Email, \n    \n    // --- TUS FILTROS EXISTENTES ---\n    (IsBlank(varFiltroID) || ID = Value(varFiltroID)),\n    (IsBlank(varFiltroUser) || StartsWith(Nombre, varFiltroUser)),\n    (IsBlank(varFiltroEstado) || varFiltroEstado = \"Estado\" || Estado.Value = varFiltroEstado),\n    (IsBlank(varFiltroCat) || varFiltroCat = \"Categoría\" || Categoria.Value = varFiltroCat),\n    (IsBlank(varFiltroFecha) || ('Fecha/Hora' >= varFiltroFecha && 'Fecha/Hora' < DateAdd(varFiltroFecha, 1, TimeUnit.Days)))\n)"
             TemplateFill: =If(ThisItem.IsSelected, RGBA(235, 242, 250, 1), RGBA(255, 255, 255, 1))
             TemplateSize: =88
             Width: =1306
@@ -1011,7 +1003,7 @@ Screens:
             FocusedBorderThickness: =4
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Bold
-            Text: =User().FullName
+            Text: =itemSeleccionado.Nombre
             Visible: =mostrarModal
             Width: =184
             X: =881
@@ -1028,7 +1020,7 @@ Screens:
             FocusedBorderThickness: =4
             Font: =Font.'Segoe UI'
             Height: =25
-            Text: =User().Email
+            Text: =itemSeleccionado.Correo
             Visible: =mostrarModal
             Width: =267
             X: =883
@@ -1209,7 +1201,7 @@ Screens:
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Semibold
             Height: =14
-            Text: =itemSeleccionado.AgentDesign.Email
+            Text: =itemSeleccionado.AgenteDesign
             Visible: =mostrarModal
             Width: =265
             X: =768

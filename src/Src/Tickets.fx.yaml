@@ -7,20 +7,6 @@ Tickets As screen:
             varFiltroCat_T: Blank()
         })
 
-    HeaderBg_T As rectangle:
-        Fill: =RGBA(35, 47, 62, 1)
-        Height: =60
-        Width: =Parent.Width
-        ZIndex: =1
-
-    TableHeaderBg_T As rectangle:
-        Fill: =RGBA(204, 218, 228, 1)
-        Height: =37
-        Width: =Parent.Width - 60
-        X: =30
-        Y: =210
-        ZIndex: =1
-
     RowBg1_T As rectangle:
         BorderColor: =RGBA(243, 245, 247, 1)
         BorderThickness: =1
@@ -31,59 +17,39 @@ Tickets As screen:
         Y: =250
         ZIndex: =1
 
-    BtnNavForm_T As button:
+    TableHeaderBg_T As rectangle:
+        Fill: =RGBA(204, 218, 228, 1)
+        Height: =37
+        Width: =Parent.Width - 60
+        X: =30
+        Y: =210
+        ZIndex: =2
+
+    HeaderBg_T As rectangle:
         Fill: =RGBA(35, 47, 62, 1)
-        OnSelect: =Navigate(Formulario)
-        Text: ="Formulario"
-        Width: =120
-        X: =160
-        Y: =10
-        ZIndex: =2
+        Height: =60
+        Width: =Parent.Width
+        ZIndex: =3
 
-    BtnNavGest_T As button:
-        Fill: =RGBA(35, 47, 62, 1)
-        OnSelect: =Navigate(Gestion)
-        Text: ="Gestión"
-        Width: =120
-        X: =290
-        Y: =10
-        ZIndex: =2
-
-    BtnNavTickets_T As button:
-        BorderColor: =RGBA(255, 153, 0, 1)
-        Fill: =RGBA(35, 47, 62, 1)
-        FontWeight: =FontWeight.Bold
-        OnSelect: =Navigate(Tickets)
-        Text: ="Tickets"
-        Width: =120
-        X: =420
-        Y: =10
-        ZIndex: =2
-
-    LblAmazonLogo_T As label:
-        Color: =RGBA(255, 255, 255, 1)
-        FontWeight: =FontWeight.Bold
-        Size: =20
-        Text: ="Amazon"
-        Width: =120
-        X: =20
-        Y: =15
-        ZIndex: =2
-
-    TxtID_T As text:
-        Color: =RGBA(0, 0, 0, 1)
+    DdCat_T As Desplegable.pcfdataset:
+        BasePaletteColor: =
         Fill: =RGBA(204, 218, 228, 1)
         Height: =34
-        HintText: ="ID Caso"
-        RadiusBottomLeft: =17
-        RadiusBottomRight: =17
-        RadiusTopLeft: =17
-        RadiusTopRight: =17
-        Size: =10
-        Width: =130
-        X: =30
+        Items: =["Categoría", "Software", "Hardware", "Acceso"]
+        Width: =160
+        X: =530
         Y: =92
-        ZIndex: =2
+        ZIndex: =4
+
+    DdTipo_T As Desplegable.pcfdataset:
+        BasePaletteColor: =RGBA(189, 178, 176, 1)
+        Fill: =RGBA(204, 218, 228, 1)
+        Height: =34
+        Items: =["Tipo", "Incidente", "Requerimiento"]
+        Width: =160
+        X: =360
+        Y: =92
+        ZIndex: =5
 
     TxtUser_T As text:
         Color: =RGBA(0, 0, 0, 1)
@@ -98,34 +64,68 @@ Tickets As screen:
         Width: =180
         X: =170
         Y: =92
-        ZIndex: =2
+        ZIndex: =6
 
-    DdTipo_T As Desplegable.pcfdataset:
-        BasePaletteColor: =RGBA(189, 178, 176, 1)
+    TxtID_T As text:
+        Color: =RGBA(0, 0, 0, 1)
         Fill: =RGBA(204, 218, 228, 1)
         Height: =34
-        Items: =["Tipo", "Incidente", "Requerimiento"]
-        Width: =160
-        X: =360
+        HintText: ="ID Caso"
+        RadiusBottomLeft: =17
+        RadiusBottomRight: =17
+        RadiusTopLeft: =17
+        RadiusTopRight: =17
+        Size: =10
+        Width: =130
+        X: =30
         Y: =92
-        ZIndex: =2
+        ZIndex: =7
 
-    DdCat_T As Desplegable.pcfdataset:
-        BasePaletteColor: =
-        Fill: =RGBA(204, 218, 228, 1)
-        Height: =34
-        Items: =["Categoría", "Software", "Hardware", "Acceso"]
-        Width: =160
-        X: =530
-        Y: =92
-        ZIndex: =2
+    LblAmazonLogo_T As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =20
+        Text: ="Amazon"
+        Width: =120
+        X: =20
+        Y: =15
+        ZIndex: =8
+
+    BtnNavTickets_T As button:
+        BorderColor: =RGBA(255, 153, 0, 1)
+        Fill: =RGBA(35, 47, 62, 1)
+        FontWeight: =FontWeight.Bold
+        OnSelect: =Navigate(Tickets)
+        Text: ="Tickets"
+        Width: =120
+        X: =420
+        Y: =10
+        ZIndex: =9
+
+    BtnNavGest_T As button:
+        Fill: =RGBA(35, 47, 62, 1)
+        OnSelect: =Navigate(Gestion)
+        Text: ="Gestión"
+        Width: =120
+        X: =290
+        Y: =10
+        ZIndex: =10
+
+    BtnNavForm_T As button:
+        Fill: =RGBA(35, 47, 62, 1)
+        OnSelect: =Navigate(Formulario)
+        Text: ="Formulario"
+        Width: =120
+        X: =160
+        Y: =10
+        ZIndex: =11
 
     FooterBg_G_2 As rectangle:
         Fill: =RGBA(35, 47, 62, 1)
         Height: =60
         Width: =Parent.Width
         Y: =Parent.Height - Self.Height
-        ZIndex: =9
+        ZIndex: =12
 
     LblFoot_G_2 As label:
         Color: =RGBA(221, 221, 221, 1)
@@ -135,7 +135,7 @@ Tickets As screen:
         Width: =290
         X: =20
         Y: =726
-        ZIndex: =10
+        ZIndex: =13
 
     Divider1_F_3 As rectangle:
         Fill: =RGBA(145, 143, 141, 1)
@@ -143,7 +143,7 @@ Tickets As screen:
         Width: =1300
         X: =29
         Y: =149
-        ZIndex: =11
+        ZIndex: =14
 
     LblUserHi_G_1 As label:
         Color: =RGBA(255, 255, 255, 1)
@@ -152,7 +152,7 @@ Tickets As screen:
         Width: =185
         X: =1188
         Y: =10
-        ZIndex: =12
+        ZIndex: =15
 
     BtnUserAvatar_G_1 As button:
         Fill: =RGBA(255, 153, 0, 1)
@@ -165,7 +165,7 @@ Tickets As screen:
         Width: =36
         X: =1140
         Y: =12
-        ZIndex: =13
+        ZIndex: =16
 
     LblTableTitle_T As label:
         FontWeight: =FontWeight.Bold
@@ -272,7 +272,7 @@ Tickets As screen:
         Width: =1306
         X: =30
         Y: =245
-        ZIndex: =29
+        ZIndex: =25
 
         SeparatorT As rectangle:
             BorderColor: =RGBA(0, 0, 0, 0)
@@ -399,6 +399,8 @@ Tickets As screen:
             HoverFill: =RGBA(255, 191, 0, 0.35)
             OnSelect: |-
                 =UpdateContext({mostrarModalEditarT: true, itemSeleccionadoT: ThisItem})
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =
             RadiusBottomLeft: =15
             RadiusBottomRight: =15
             RadiusTopLeft: =15
@@ -428,7 +430,7 @@ Tickets As screen:
             =UpdateContext({mostrarModalCancelT: false})
         Visible: =mostrarModalCancelT
         Width: =Parent.Width
-        ZIndex: =50
+        ZIndex: =26
 
     ModalCancelBoxT As rectangle:
         Fill: =RGBA(255, 255, 255, 1)
@@ -437,7 +439,7 @@ Tickets As screen:
         Width: =400
         X: =(Parent.Width - Self.Width) / 2
         Y: =(Parent.Height - Self.Height) / 2
-        ZIndex: =51
+        ZIndex: =27
 
     ModalCancelTxtT As label:
         Align: =Align.Center
@@ -447,7 +449,7 @@ Tickets As screen:
         Width: =ModalCancelBoxT.Width - 40
         X: =ModalCancelBoxT.X + 20
         Y: =ModalCancelBoxT.Y + 40
-        ZIndex: =52
+        ZIndex: =28
 
     ModalCancelBtnConfirmT As button:
         Fill: =RGBA(180, 60, 40, 1)
@@ -469,7 +471,7 @@ Tickets As screen:
         Width: =120
         X: =ModalCancelBoxT.X + (ModalCancelBoxT.Width / 2) - 130
         Y: =ModalCancelBoxT.Y + 130
-        ZIndex: =53
+        ZIndex: =29
 
     ModalCancelBtnBackT As button:
         BorderColor: =RGBA(51, 62, 72, 1)
@@ -488,8 +490,7 @@ Tickets As screen:
         Width: =120
         X: =ModalCancelBoxT.X + (ModalCancelBoxT.Width / 2) + 10
         Y: =ModalCancelBoxT.Y + 130
-        ZIndex: =54
-
+        ZIndex: =30
 
     ModalOverlayEscalar As rectangle:
         Fill: =RGBA(0, 0, 0, 0.55)
@@ -498,7 +499,7 @@ Tickets As screen:
             =UpdateContext({mostrarModalEscalar: false})
         Visible: =mostrarModalEscalar
         Width: =Parent.Width
-        ZIndex: =80
+        ZIndex: =31
 
     ModalBoxEscalar As rectangle:
         Fill: =RGBA(255, 255, 255, 1)
@@ -507,7 +508,7 @@ Tickets As screen:
         Width: =480
         X: =(Parent.Width - Self.Width) / 2
         Y: =(Parent.Height - Self.Height) / 2
-        ZIndex: =81
+        ZIndex: =32
 
     ModalEscalarHeaderBar As rectangle:
         Fill: =RGBA(255, 153, 0, 1)
@@ -516,7 +517,7 @@ Tickets As screen:
         Width: =480
         X: =ModalBoxEscalar.X
         Y: =ModalBoxEscalar.Y
-        ZIndex: =82
+        ZIndex: =33
 
     ModalEscalarTitle As label:
         Color: =RGBA(35, 47, 62, 1)
@@ -528,7 +529,7 @@ Tickets As screen:
         Width: =390
         X: =475
         Y: =193
-        ZIndex: =83
+        ZIndex: =34
 
     BtnCerrarEscalar As button:
         BorderThickness: =0
@@ -547,7 +548,7 @@ Tickets As screen:
         Width: =30
         X: =884
         Y: =191
-        ZIndex: =84
+        ZIndex: =35
 
     "GalleryAgentes As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         BorderColor: =RGBA(220, 225, 230, 1)
@@ -562,7 +563,7 @@ Tickets As screen:
         Width: =432
         X: =ModalBoxEscalar.X + 24
         Y: =ModalBoxEscalar.Y + 80
-        ZIndex: =87
+        ZIndex: =36
 
         AgenteRowBg As rectangle:
             Fill: =RGBA(255, 255, 255, 1)
@@ -620,7 +621,7 @@ Tickets As screen:
         Width: =200
         X: =ModalBoxEscalar.X + ModalBoxEscalar.Width - 224
         Y: =ModalBoxEscalar.Y + 350
-        ZIndex: =88
+        ZIndex: =37
 
     LblH_Tipo_T_1 As label:
         Align: =Align.Center
@@ -632,7 +633,7 @@ Tickets As screen:
         Width: =100
         X: =53
         Y: =211
-        ZIndex: =89
+        ZIndex: =38
 
     BtnFiltrar_T As button:
         Fill: =RGBA(51, 62, 72, 1)
@@ -652,7 +653,7 @@ Tickets As screen:
         Width: =100
         X: =710
         Y: =92
-        ZIndex: =90
+        ZIndex: =39
 
     BtnLimpiar_T As button:
         BorderColor: =RGBA(35, 47, 62, 1)
@@ -679,7 +680,7 @@ Tickets As screen:
         Width: =100
         X: =820
         Y: =92
-        ZIndex: =91
+        ZIndex: =40
 
     ModalOverlayEditarT As rectangle:
         Fill: =RGBA(0, 0, 0, 0.5)
@@ -688,7 +689,7 @@ Tickets As screen:
             =UpdateContext({mostrarModalEditarT: false})
         Visible: =mostrarModalEditarT
         Width: =Parent.Width
-        ZIndex: =100
+        ZIndex: =41
 
     ModalEditarBoxT As rectangle:
         Fill: =RGBA(255, 255, 255, 1)
@@ -697,7 +698,7 @@ Tickets As screen:
         Width: =660
         X: =(Parent.Width - Self.Width) / 2
         Y: =(Parent.Height - Self.Height) / 2
-        ZIndex: =101
+        ZIndex: =42
 
     ModalEditarHeaderBarT As rectangle:
         Fill: =RGBA(255, 153, 0, 1)
@@ -706,7 +707,7 @@ Tickets As screen:
         Width: =660
         X: =ModalEditarBoxT.X
         Y: =ModalEditarBoxT.Y
-        ZIndex: =102
+        ZIndex: =43
 
     ModalEditarTitleT As label:
         Color: =RGBA(35, 47, 62, 1)
@@ -718,7 +719,7 @@ Tickets As screen:
         Width: =400
         X: =ModalEditarBoxT.X + 24
         Y: =ModalEditarBoxT.Y + 18
-        ZIndex: =103
+        ZIndex: =44
 
     BtnCerrarEditarT As button:
         BorderThickness: =0
@@ -737,7 +738,7 @@ Tickets As screen:
         Width: =30
         X: =ModalEditarBoxT.X + ModalEditarBoxT.Width - 44
         Y: =ModalEditarBoxT.Y + 14
-        ZIndex: =104
+        ZIndex: =45
 
     ModalEditar_LblID As label:
         Color: =RGBA(100, 110, 120, 1)
@@ -749,19 +750,19 @@ Tickets As screen:
         Width: =140
         X: =ModalEditarBoxT.X + 24
         Y: =ModalEditarBoxT.Y + 65
-        ZIndex: =105
+        ZIndex: =46
 
     ModalEditar_ValID As label:
         Color: =RGBA(35, 47, 62, 1)
         FontWeight: =FontWeight.Bold
         Height: =24
         Size: =13
-        Text: ="TC-00123"
+        Text: =itemSeleccionadoT.ID
         Visible: =mostrarModalEditarT
-        Width: =140
-        X: =ModalEditarBoxT.X + 24
-        Y: =ModalEditarBoxT.Y + 84
-        ZIndex: =106
+        Width: =54
+        X: =394
+        Y: =131
+        ZIndex: =47
 
     ModalEditar_LblFecha As label:
         Color: =RGBA(100, 110, 120, 1)
@@ -773,19 +774,19 @@ Tickets As screen:
         Width: =200
         X: =ModalEditarBoxT.X + 190
         Y: =ModalEditarBoxT.Y + 65
-        ZIndex: =107
+        ZIndex: =48
 
     ModalEditar_ValFecha As label:
         Color: =RGBA(35, 47, 62, 1)
         FontWeight: =FontWeight.Bold
         Height: =24
         Size: =13
-        Text: ="15/04/2026 09:32 AM"
+        Text: =itemSeleccionadoT.'Fecha/Hora'
         Visible: =mostrarModalEditarT
         Width: =200
         X: =ModalEditarBoxT.X + 190
         Y: =ModalEditarBoxT.Y + 84
-        ZIndex: =108
+        ZIndex: =49
 
     ModalEditar_LblEstado As label:
         Color: =RGBA(100, 110, 120, 1)
@@ -797,19 +798,19 @@ Tickets As screen:
         Width: =140
         X: =ModalEditarBoxT.X + 430
         Y: =ModalEditarBoxT.Y + 65
-        ZIndex: =109
+        ZIndex: =50
 
     ModalEditar_ValEstado As label:
         Color: =RGBA(35, 47, 62, 1)
         FontWeight: =FontWeight.Bold
-        Height: =24
+        Height: =21
         Size: =13
-        Text: ="En Proceso"
+        Text: =itemSeleccionadoT.Estado.Value
         Visible: =mostrarModalEditarT
-        Width: =140
+        Width: =204
         X: =ModalEditarBoxT.X + 430
         Y: =ModalEditarBoxT.Y + 84
-        ZIndex: =110
+        ZIndex: =51
 
     ModalEditar_DividerA As rectangle:
         Fill: =RGBA(220, 225, 230, 1)
@@ -818,7 +819,7 @@ Tickets As screen:
         Width: =612
         X: =ModalEditarBoxT.X + 24
         Y: =ModalEditarBoxT.Y + 118
-        ZIndex: =111
+        ZIndex: =52
 
     ModalEditar_LblTipo As label:
         Color: =RGBA(100, 110, 120, 1)
@@ -830,9 +831,10 @@ Tickets As screen:
         Width: =270
         X: =ModalEditarBoxT.X + 24
         Y: =ModalEditarBoxT.Y + 130
-        ZIndex: =112
+        ZIndex: =53
 
     DdEditarTipo_T As Desplegable.pcfdataset:
+        DefaultSelectedItems: =itemSeleccionadoT.TipoIR
         Fill: =RGBA(204, 218, 228, 1)
         Height: =34
         Items: =["Incidente", "Requerimiento"]
@@ -840,7 +842,7 @@ Tickets As screen:
         Width: =270
         X: =ModalEditarBoxT.X + 24
         Y: =ModalEditarBoxT.Y + 148
-        ZIndex: =113
+        ZIndex: =54
 
     ModalEditar_LblCat As label:
         Color: =RGBA(100, 110, 120, 1)
@@ -852,9 +854,10 @@ Tickets As screen:
         Width: =290
         X: =ModalEditarBoxT.X + 318
         Y: =ModalEditarBoxT.Y + 130
-        ZIndex: =114
+        ZIndex: =55
 
     DdEditarCat_T As Desplegable.pcfdataset:
+        DefaultSelectedItems: =itemSeleccionadoT.Categoria
         Fill: =RGBA(204, 218, 228, 1)
         Height: =34
         Items: =["Software", "Hardware", "Acceso"]
@@ -862,7 +865,7 @@ Tickets As screen:
         Width: =290
         X: =ModalEditarBoxT.X + 318
         Y: =ModalEditarBoxT.Y + 148
-        ZIndex: =115
+        ZIndex: =56
 
     ModalEditar_DividerB As rectangle:
         Fill: =RGBA(220, 225, 230, 1)
@@ -871,7 +874,7 @@ Tickets As screen:
         Width: =612
         X: =ModalEditarBoxT.X + 24
         Y: =ModalEditarBoxT.Y + 183
-        ZIndex: =116
+        ZIndex: =57
 
     ModalEditar_LblUsuario As label:
         Color: =RGBA(100, 110, 120, 1)
@@ -883,19 +886,18 @@ Tickets As screen:
         Width: =200
         X: =ModalEditarBoxT.X + 24
         Y: =ModalEditarBoxT.Y + 195
-        ZIndex: =117
+        ZIndex: =58
 
     ModalEditar_ValUsuario As label:
         Color: =RGBA(35, 47, 62, 1)
         FontWeight: =FontWeight.Bold
-        Height: =24
-        Size: =13
-        Text: ="Juan Pérez"
+        Size: =12
+        Text: =itemSeleccionadoT.Nombre
         Visible: =mostrarModalEditarT
-        Width: =200
-        X: =ModalEditarBoxT.X + 24
-        Y: =ModalEditarBoxT.Y + 214
-        ZIndex: =118
+        Width: =219
+        X: =377
+        Y: =263
+        ZIndex: =59
 
     ModalEditar_LblCorreo As label:
         Color: =RGBA(100, 110, 120, 1)
@@ -905,30 +907,30 @@ Tickets As screen:
         Text: ="CORREO"
         Visible: =mostrarModalEditarT
         Width: =300
-        X: =ModalEditarBoxT.X + 250
-        Y: =ModalEditarBoxT.Y + 195
-        ZIndex: =119
+        X: =668
+        Y: =240
+        ZIndex: =60
 
     ModalEditar_ValCorreo As label:
         Color: =RGBA(0, 69, 120, 1)
         FontWeight: =FontWeight.Bold
         Height: =24
         Size: =13
-        Text: ="juan.perez@amazon.com"
+        Text: =itemSeleccionadoT.Correo
         Visible: =mostrarModalEditarT
-        Width: =300
-        X: =ModalEditarBoxT.X + 250
-        Y: =ModalEditarBoxT.Y + 214
-        ZIndex: =120
+        Width: =320
+        X: =668
+        Y: =260
+        ZIndex: =61
 
     ModalEditar_DividerC As rectangle:
         Fill: =RGBA(220, 225, 230, 1)
         Height: =1
         Visible: =mostrarModalEditarT
         Width: =612
-        X: =ModalEditarBoxT.X + 24
-        Y: =ModalEditarBoxT.Y + 248
-        ZIndex: =121
+        X: =378
+        Y: =312
+        ZIndex: =62
 
     ModalEditar_LblDesc As label:
         Color: =RGBA(100, 110, 120, 1)
@@ -938,21 +940,21 @@ Tickets As screen:
         Text: ="DESCRIPCIÓN"
         Visible: =mostrarModalEditarT
         Width: =612
-        X: =ModalEditarBoxT.X + 24
-        Y: =ModalEditarBoxT.Y + 260
-        ZIndex: =122
+        X: =378
+        Y: =320
+        ZIndex: =63
 
     ModalEditar_ValDesc As label:
         Color: =RGBA(50, 50, 50, 1)
-        Height: =70
+        Height: =56
         Size: =12
-        Text: ="El usuario reporta que no puede acceder al sistema ERP desde las 8:00 AM. El error mostrado es 'Acceso denegado - código 403'."
+        Text: =itemSeleccionadoT.Descripcion
         VerticalAlign: =VerticalAlign.Top
         Visible: =mostrarModalEditarT
         Width: =612
         X: =ModalEditarBoxT.X + 24
-        Y: =ModalEditarBoxT.Y + 279
-        ZIndex: =123
+        Y: =342
+        ZIndex: =64
 
     ModalEditar_DividerD As rectangle:
         Fill: =RGBA(220, 225, 230, 1)
@@ -961,7 +963,7 @@ Tickets As screen:
         Width: =612
         X: =ModalEditarBoxT.X + 24
         Y: =ModalEditarBoxT.Y + 360
-        ZIndex: =124
+        ZIndex: =65
 
     ModalEditar_LblAdj As label:
         Color: =RGBA(100, 110, 120, 1)
@@ -973,27 +975,16 @@ Tickets As screen:
         Width: =200
         X: =ModalEditarBoxT.X + 24
         Y: =ModalEditarBoxT.Y + 372
-        ZIndex: =125
-
-    ModalEditar_ValAdj As label:
-        Color: =RGBA(35, 47, 62, 1)
-        Height: =24
-        Size: =12
-        Text: ="2 archivos adjuntos"
-        Visible: =mostrarModalEditarT
-        Width: =200
-        X: =ModalEditarBoxT.X + 24
-        Y: =ModalEditarBoxT.Y + 391
-        ZIndex: =126
+        ZIndex: =66
 
     ModalEditar_DividerE As rectangle:
         Fill: =RGBA(220, 225, 230, 1)
         Height: =1
         Visible: =mostrarModalEditarT
         Width: =612
-        X: =ModalEditarBoxT.X + 24
-        Y: =ModalEditarBoxT.Y + 425
-        ZIndex: =127
+        X: =375
+        Y: =524
+        ZIndex: =67
 
     ModalEditar_LblAgente As label:
         Color: =RGBA(100, 110, 120, 1)
@@ -1005,19 +996,67 @@ Tickets As screen:
         Width: =300
         X: =ModalEditarBoxT.X + 24
         Y: =ModalEditarBoxT.Y + 437
-        ZIndex: =128
+        ZIndex: =68
 
-    ModalEditar_ValAgente As label:
-        Color: =RGBA(0, 69, 120, 1)
-        FontWeight: =FontWeight.Bold
-        Height: =24
-        Size: =13
-        Text: =If(IsBlank(varAgenteSeleccionadoT.DisplayName), itemSeleccionadoT.AgentDesign.DisplayName, varAgenteSeleccionadoT.DisplayName)
+    ModalEditar_DividerF As rectangle:
+        Fill: =RGBA(220, 225, 230, 1)
+        Height: =1
         Visible: =mostrarModalEditarT
-        Width: =350
-        X: =ModalEditarBoxT.X + 24
-        Y: =ModalEditarBoxT.Y + 456
-        ZIndex: =129
+        Width: =612
+        X: =378
+        Y: =604
+        ZIndex: =69
+
+    BtnActualizarDatosT As button:
+        Fill: =RGBA(51, 62, 72, 1)
+        Height: =38
+        HoverFill: =RGBA(0, 69, 120, 1)
+        OnSelect: |-
+            =Patch(
+                ITCM,
+                itemSeleccionadoT,
+                {
+                    TipoIR: { Value: DdEditarTipo_T.Selected.Value },
+                    Categoria: { Value: DdEditarCat_T.Selected.Value },
+                    AgenteDesign: If(
+                        !IsBlank(varAgenteSeleccionadoT.Correo),
+                        varAgenteSeleccionadoT.Correo,
+                        itemSeleccionadoT.AgenteDesign
+                    )
+                }
+            );
+            Notify("Datos actualizados correctamente", NotificationType.Success);
+            UpdateContext({mostrarModalEditarT: false, varAgenteSeleccionadoT: Blank()})
+        RadiusBottomLeft: =19
+        RadiusBottomRight: =19
+        RadiusTopLeft: =19
+        RadiusTopRight: =19
+        Text: ="Actualizar datos"
+        Visible: =mostrarModalEditarT
+        Width: =170
+        X: =ModalEditarBoxT.X + ModalEditarBoxT.Width - 390
+        Y: =ModalEditarBoxT.Y + 620
+        ZIndex: =70
+
+    BtnCancelarEditarT As button:
+        BorderColor: =RGBA(51, 62, 72, 1)
+        BorderThickness: =1
+        Color: =RGBA(51, 62, 72, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =38
+        HoverFill: =RGBA(240, 240, 240, 1)
+        OnSelect: |-
+            =UpdateContext({mostrarModalEditarT: false})
+        RadiusBottomLeft: =19
+        RadiusBottomRight: =19
+        RadiusTopLeft: =19
+        RadiusTopRight: =19
+        Text: ="Cancelar"
+        Visible: =mostrarModalEditarT
+        Width: =130
+        X: =ModalEditarBoxT.X + ModalEditarBoxT.Width - 200
+        Y: =ModalEditarBoxT.Y + 620
+        ZIndex: =71
 
     BtnEscalarModalEditar_T As button:
         BorderColor: =RGBA(255, 153, 0, 1)
@@ -1036,9 +1075,54 @@ Tickets As screen:
         Text: ="⬆ Escalar"
         Visible: =mostrarModalEditarT
         Width: =110
-        X: =ModalEditarBoxT.X + 520
-        Y: =ModalEditarBoxT.Y + 450
-        ZIndex: =133
+        X: =539
+        Y: =536
+        ZIndex: =72
+
+    DataCardValue10_2 As attachments:
+        AddAttachmentText: ="Adjuntar un archivo"
+        AttachedFileListLabel: ="Archivos adjuntos"
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(50, 49, 48, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        DisabledFill: =RGBA(242, 242, 241, 0)
+        DisplayMode: =DisplayMode.View
+        DownloadErrorMessageText: ="No se pudo descargar el archivo solicitado."
+        DownloadErrorMessageTitle: ="Error de descarga"
+        FetchErrorMessageText: ="No se pudo obtener el archivo."
+        Fill: =RGBA(245, 245, 245, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =71
+        HoverColor: =RGBA(50, 49, 48, 1)
+        HoverFill: =RGBA(245, 245, 245, 1)
+        IsInDataCard: =true
+        ItemColor: =RGBA(0, 0, 0, 1)
+        ItemFill: =RGBA(0, 120, 212, 1)
+        ItemHoverColor: =RGBA(50, 49, 48, 1)
+        ItemHoverFill: =RGBA(245, 245, 245, 1)
+        Items: =itemSeleccionadoT.'Datos adjuntos'
+        ItemSpacing: =12
+        MaxAttachmentsText: ="Se alcanzó el número máximo de archivos."
+        NoAttachmentsColor: =RGBA(161, 159, 157, 1)
+        NoAttachmentsText: ="No hay nada adjunto."
+        PaddingBottom: =5
+        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+        PaddingRight: =5
+        PaddingTop: =5
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 120, 212, 1)
+        RemoveAttachmentTooltip: ="Quitar"
+        Tooltip: =
+        UndoRemoveAttachmentTooltip: ="Deshacer la eliminación"
+        Visible: =mostrarModalEditarT
+        Width: =458
+        X: =384
+        Y: =440
+        ZIndex: =73
 
     ModalAgentesOverlayT As rectangle:
         Fill: =RGBA(0, 0, 0, 0.4)
@@ -1047,16 +1131,7 @@ Tickets As screen:
             =UpdateContext({mostrarGalleryAgentesT: false})
         Visible: =mostrarGalleryAgentesT
         Width: =Parent.Width
-        ZIndex: =150
-
-    ModalAgentesBoxT As rectangle:
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =340
-        Visible: =mostrarGalleryAgentesT
-        Width: =480
-        X: =(Parent.Width - Self.Width) / 2
-        Y: =(Parent.Height - Self.Height) / 2
-        ZIndex: =151
+        ZIndex: =74
 
     ModalAgentesHeaderBarT As rectangle:
         Fill: =RGBA(255, 153, 0, 1)
@@ -1065,19 +1140,39 @@ Tickets As screen:
         Width: =480
         X: =ModalAgentesBoxT.X
         Y: =ModalAgentesBoxT.Y
-        ZIndex: =152
+        ZIndex: =75
+
+    ModalEditar_LblUsuario_1 As label:
+        Color: =RGBA(100, 110, 120, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =18
+        Size: =9
+        Text: ="Agentete Designado"
+        Visible: =mostrarModalEditarT
+        Width: =200
+        X: =382
+        Y: =544
+        ZIndex: =76
+
+    ModalAgentesBoxT As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =340
+        Visible: =mostrarGalleryAgentesT
+        Width: =480
+        X: =(Parent.Width - Self.Width) / 2
+        Y: =(Parent.Height - Self.Height) / 2
+        ZIndex: =77
 
     ModalAgentesTitleT As label:
         Color: =RGBA(35, 47, 62, 1)
         FontWeight: =FontWeight.Bold
         Height: =28
-        Size: =14
         Text: ="Seleccionar agente"
         Visible: =mostrarGalleryAgentesT
         Width: =360
         X: =ModalAgentesBoxT.X + 24
         Y: =ModalAgentesBoxT.Y + 18
-        ZIndex: =153
+        ZIndex: =78
 
     BtnCerrarAgentesT As button:
         BorderThickness: =0
@@ -1096,132 +1191,176 @@ Tickets As screen:
         Width: =30
         X: =ModalAgentesBoxT.X + ModalAgentesBoxT.Width - 44
         Y: =ModalAgentesBoxT.Y + 14
-        ZIndex: =154
+        ZIndex: =79
 
-    "GalleryAgentesEditar As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
-        BorderColor: =RGBA(220, 225, 230, 1)
-        BorderThickness: =1
-        Height: =240
-        Items: =Office365Users.SearchUser({searchTerm: "", top: 20})
+    ModalEditar_ValUsuario_1 As label:
+        Color: =RGBA(35, 47, 62, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =26
+        Size: =12
+        Text: =If(IsBlank(varAgenteSeleccionadoT.Correo), itemSeleccionadoT.AgenteDesign, varAgenteSeleccionadoT.Correo)
+        Visible: =mostrarModalEditarT
+        Width: =412
+        X: =381
+        Y: =568
+        ZIndex: =80
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        BorderColor: =RGBA(245, 245, 245, 1)
+        DelayItemLoading: =true
+        Height: =280
+        Items: |-
+            =Filter(
+                'Roles De Usuario', 
+                Rol.Value = "Lider" || Rol.Value = "Agente"
+            )
         Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
-        TemplateSize: =56
+        TemplateSize: =79
         Visible: =mostrarGalleryAgentesT
-        Width: =432
-        X: =ModalAgentesBoxT.X + 24
-        Y: =ModalAgentesBoxT.Y + 60
-        ZIndex: =155
+        Width: =455
+        X: =454
+        Y: =264
+        ZIndex: =81
 
-        AgenteEditarRowBg As rectangle:
-            Fill: =If(ThisItem.IsSelected, RGBA(235, 242, 250, 1), RGBA(255, 255, 255, 1))
-            Height: =Parent.TemplateHeight
-            Width: =Parent.TemplateWidth
-            ZIndex: =1
+        Title1 As label:
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =12
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Título
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =103
+            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1.Size * 1.8)) / 2
+            ZIndex: =2
 
-        AgenteEditarIconCircle As button:
-            BorderThickness: =0
-            Fill: =RGBA(49, 89, 162, 0.15)
-            Height: =36
-            OnSelect: |-
-                =UpdateContext({varAgenteSeleccionadoT: ThisItem});
-                UpdateContext({mostrarGalleryAgentesT: false})
-            RadiusBottomLeft: =18
-            RadiusBottomRight: =18
-            RadiusTopLeft: =18
-            RadiusTopRight: =18
-            Size: =14
-            Text: =Left(ThisItem.DisplayName, 1)
-            Width: =36
-            X: =12
-            Y: =10
+        Subtitle1 As label:
+            Color: =RGBA(96, 94, 92, 1)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =21
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =12
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Agente #"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =99
+            X: =33
+            Y: =16
             ZIndex: =3
 
-        AgenteEditarLblNombre As label:
-            Color: =RGBA(35, 47, 62, 1)
-            FontWeight: =FontWeight.Semibold
-            Height: =22
-            OnSelect: |-
-                =UpdateContext({varAgenteSeleccionadoT: ThisItem});
-                UpdateContext({mostrarGalleryAgentesT: false})
-            Size: =13
-            Text: =ThisItem.DisplayName
-            Width: =280
-            X: =58
-            Y: =8
-            ZIndex: =4
-
-        AgenteEditarLblEmail As label:
-            Color: =RGBA(100, 110, 120, 1)
-            Height: =18
-            OnSelect: |-
-                =UpdateContext({varAgenteSeleccionadoT: ThisItem});
-                UpdateContext({mostrarGalleryAgentesT: false})
-            Size: =10
-            Text: =ThisItem.Mail
-            Width: =300
-            X: =58
-            Y: =30
+        Separator1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
             ZIndex: =5
 
-    ModalEditar_DividerF As rectangle:
-        Fill: =RGBA(220, 225, 230, 1)
-        Height: =1
-        Visible: =mostrarModalEditarT
-        Width: =612
-        X: =ModalEditarBoxT.X + 24
-        Y: =ModalEditarBoxT.Y + 490
-        ZIndex: =130
+        Rectangle6 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 120, 212, 1)
+            Height: =Parent.TemplateHeight - Separator1.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
 
-    BtnActualizarDatosT As button:
-        Fill: =RGBA(51, 62, 72, 1)
-        Height: =38
-        HoverFill: =RGBA(0, 69, 120, 1)
-        OnSelect: |-
-            =Patch(
-                ITCM,
-                itemSeleccionadoT,
-                {
-                    TipoIR: { Value: DdEditarTipo_T.Selected.Value },
-                    Categoria: { Value: DdEditarCat_T.Selected.Value },
-                    AgentDesign: If(
-                        !IsBlank(varAgenteSeleccionadoT),
-                        { Claims: "i:0#.f|membership|" & varAgenteSeleccionadoT.Mail, DisplayName: varAgenteSeleccionadoT.DisplayName, Email: varAgenteSeleccionadoT.Mail },
-                        itemSeleccionadoT.AgentDesign
-                    )
-                }
-            );
-            Notify("Datos actualizados correctamente", NotificationType.Success);
-            UpdateContext({mostrarModalEditarT: false, varAgenteSeleccionadoT: Blank()})
-        RadiusBottomLeft: =19
-        RadiusBottomRight: =19
-        RadiusTopLeft: =19
-        RadiusTopRight: =19
-        Size: =13
-        Text: ="Actualizar datos"
-        Visible: =mostrarModalEditarT
-        Width: =170
-        X: =ModalEditarBoxT.X + ModalEditarBoxT.Width - 390
-        Y: =ModalEditarBoxT.Y + 620
-        ZIndex: =131
+        Subtitle1_1 As label:
+            Color: =RGBA(96, 94, 92, 1)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =21
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =12
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.ID
+            VerticalAlign: =VerticalAlign.Top
+            Width: =99
+            X: =103
+            Y: =16
+            ZIndex: =9
 
-    BtnCancelarEditarT As button:
-        BorderColor: =RGBA(51, 62, 72, 1)
-        BorderThickness: =1
-        Color: =RGBA(51, 62, 72, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =38
-        HoverFill: =RGBA(240, 240, 240, 1)
-        OnSelect: |-
-            =UpdateContext({mostrarModalEditarT: false})
-        RadiusBottomLeft: =19
-        RadiusBottomRight: =19
-        RadiusTopLeft: =19
-        RadiusTopRight: =19
-        Size: =13
-        Text: ="Cancelar"
-        Visible: =mostrarModalEditarT
-        Width: =130
-        X: =ModalEditarBoxT.X + ModalEditarBoxT.Width - 200
-        Y: =ModalEditarBoxT.Y + 620
-        ZIndex: =132
+        Subtitle1_2 As label:
+            Color: =RGBA(96, 94, 92, 1)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =29
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =12
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =13
+            Text: =ThisItem.Correo
+            VerticalAlign: =VerticalAlign.Top
+            Width: =279
+            X: =33
+            Y: =37
+            ZIndex: =10
+
+        BtnEditarT_1 As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: |-
+                =Switch(
+                    ThisItem.Rol.Value,
+                    "Lider", RGBA(180, 0, 0, 1), 
+                    "Agente", RGBA(0, 56, 100, 1),
+                    "Usuario", RGBA(40, 70, 10, 1),
+                    RGBA(60, 60, 60, 1)
+                )
+            Fill: |-
+                =Switch(
+                    ThisItem.Rol.Value,
+                    "Lider", RGBA(255, 210, 210, 1),
+                    "Agente", RGBA(210,228,242,1),
+                    "Usuario", RGBA(220, 240, 195, 1),
+                    RGBA(220, 220, 220, 1)
+                )
+            Height: =30
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(255, 191, 0, 0.35)
+            OnSelect: |-
+                =UpdateContext({varAgenteSeleccionadoT: ThisItem, mostrarGalleryAgentesT: false})
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =12
+            Text: =ThisItem.Rol.Value
+            Visible: =mostrarGalleryAgentesT
+            Width: =90
+            X: =348
+            Y: =28
+            ZIndex: =11
+
+        ModalEditar_DividerC_1 As rectangle:
+            Fill: =RGBA(220, 225, 230, 1)
+            Height: =1
+            Visible: =mostrarModalEditarT
+            Width: =400
+            X: =38
+            Y: =78
+            ZIndex: =12
 
